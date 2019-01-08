@@ -1,0 +1,27 @@
+body {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+.cardHeader {
+  text-align: center;
+  background: #eee;
+}
+
+.bp3-card {
+  padding: 3px;
+}
+
+.topicList {
+  list-style: none;
+  padding-left: 0px;
+  margin: 0px;
+}
+
+.topicList li {
+  background: #fee;
+}
+
+.topicColumn {
+  flex-grow: 1;
+  margin-left: 5px;
+  margin-right: 5px;
+}
