@@ -1,0 +1,3305 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Modelica Web Reference - v1.0-&beta;</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content="A web-based reference for the Modelica modeling language"/>
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="https://fonts.googleapis.com/css?family=Philosopher:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="css/cheatsheet.css" rel="stylesheet" media="screen">
+    <link rel="icon"
+	  type="image/png"
+	  href="http://www.xogeny.com/favicon.ico">
+  </head>
+  <body>
+    <!-- Header block -->
+    <div class="container">
+      <div id="header" class="row">
+	<div class="span1">
+	  <a href="http://www.xogeny.com"><img src="img/Xogeny.png"></a>
+	</div>
+	<div class="span1">
+	</div>
+	<div class="span8 centered">
+	  <span>
+	    <span class="heading">
+	    Modelica Web Reference - v1.0-&beta;
+	    </span>
+	    <span>
+	      <span class="heading"><i class="clickable icon-comment"></i></span>
+	      <div class="popover" data-placement="bottom"
+		   title="Caveats and Limitations">
+		<p>
+		  <strong>Note</strong>: This reference material covers
+		  Modelica version <strong>3.3</strong><br>(with the
+		  notable exception of newly introduced synchronous
+		  features).
+		</p>
+		<br>
+		<p class="seminarrow">
+		  <strong>Note</strong>: To properly view the material
+		  on this page, browser window needs to be at least 940
+		  pixels wide and ideally 915 pixels or greater high.
+		</p>
+	      </div>
+	    </span>
+	  </span>
+	</div>
+	<div class="span1 rightjust">
+	</div>
+	<div class="span1 rightjust rightlogo">
+	  <a href="http://www.cydesign.com"><img src="img/CyDesign.png"></a>
+	</div>
+      </div>
+
+      <div class="row">
+	<div class="span12">
+	  <table class="root">
+	    <tr>
+	      <td class="column col1">
+		
+
+<!--- MODULE: Lexical conventions -->
+<div class="module">
+  <span class="pull-right headbut">
+    <i class="clickable icon-comment"></i>
+    <div class="popover" data-placement="right">
+      See <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=11" target="_blank">&sect;2</a> for more details.
+    </div>
+  </span>
+
+  <h5>Lexical Rules</h5>
+  <div class="modbod">
+    <span>
+      Comments
+      <span class="pull-right"><i class="clickable icon-align-left"></i>
+	<div class="popover" data-placement="bottom">
+	  <table class="table">
+	    <tr>
+	      <th>
+		Single line comments
+	      </th>
+	    </tr>
+	    <tr>
+	      <td>
+		<code><span class="comment">// until EOL</span></code>
+	      </td>
+	    </tr>
+	    <tr>
+	      <th>
+		Multi-Line Comment
+	      </th>
+	    </tr>
+	    <tr>
+	      <td>
+		<code>
+		  <span class="comment">
+		    /* Can span multiple<br>&nbsp;&nbsp;&nbsp;lines */
+		  </span>
+		</code>
+	      </td>
+	    </tr>
+	  </table>
+	</div>
+      </span>
+    </span><br>
+
+    <span>
+      Identifiers
+      <span class="pull-right"><i class="clickable icon-align-left"></i>
+	<div class="popover" data-placement="bottom">
+	  <table class="table">
+	    <tr>
+	      <th>
+		Normal Identifier
+	      </th>
+	      <th>
+		Examples
+	      </th>
+	      <th>
+	      </th>
+	    </tr>
+	    <tr>
+	      <td rowspan="3">
+		Syntax:<br>
+		<code class="pull-right">[A-Za-z_][A-Za-z_0-9]*</code>
+	      </td>
+	      <td>
+		<code>aVariable</code>
+	      </td>
+	      <td>
+		<i class="pull-right">
+		  Variable names typically start with lower
+		  case letters.
+		</i>
+	      </td>
+	    </tr>
+	    <tr>
+	      <td>
+		<code>another_variable</code>
+	      </td>
+	      <td>
+		<i class="pull-right">
+		  Word breaks are sometimes represented with underscores.
+		</i>
+	      </td>
+	    </tr>
+	    <tr>
+	      <td>
+		<code>ClassNames</code>
+	      </td>
+	      <td>
+		<i class="pull-right">
+		  By convention, class names start with upper case letter.
+		</i>
+	      </td>
+	    </tr>
+	    <tr>
+	      <th>Quoted Identifiers</th>
+	      <th></th>
+	      <th></th>
+	    </tr>
+	    <tr>
+	      <td>
+		Syntax:
+		<code class="pull-right">'...'</code>
+	      </td>
+	      <td colspan="2" class="narrow">
+		<p>
+		  If an identifier is surrounded by single quotes, it can
+		  contains spaces, digits and non-digits anywhere in the
+		  name.  Furthermore, it can contain any of the following
+		  characters:
+		</p>
+		<code>! # $ % & ( ) * + , - . / : ; < > = ? @ [ ] ^ { } | ~</code>
+	      </td>
+	    </tr>
+	  </table>
+	</div>
+      </span>
+    </span><br>
+
+    <span>
+      Numbers
+      <span class="pull-right"><i class="clickable icon-align-left"></i>
+	<div class="popover" data-placement="bottom" title="Numbers">
+	  <table>
+	    <tr><th>Floating Point Numbers</th></tr>
+	    <tr><td><code>1, 1.0, 0.5, 2.3e-5, 78.2E+2</code></td></tr>
+	    <tr><td><br></td></tr>
+	    <tr><th>Leading zeros</th></tr>
+	    <tr><td><code>.7</code> (as one example) is <b>not</b> a
+	    valid floating point number in Modelica because the
+	    lexical rules state that a floating point number must have
+	    a digit before the decimal point. However, several tools
+	    will accept such numbers anyway.</td></tr>
+	    <tr><th>Complications with signed numbers</th></tr>
+	    <tr><td class="seminarrow">Examples of expressions which
+	    are not allowed in Modelica because of interactions
+	    between binary operators and unary operators (see <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=15" target="_blank">&sect;3.2</a>):<br>
+		<code>2*-2, --2, ++2, 2--2</code>
+	      </td>
+	    </tr>
+	  </table>
+	</div>
+      </span>
+    </span><br>
+  </div>
+</div>
+		
+
+<!--- MODULE: Restricted classes -->
+<div class="module">
+  <span class="pull-right headbut">
+    <i class="clickable icon-comment"></i>
+    <div class="popover">
+      More information on the various kinds of classes can be found
+      in <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=41" target="_blank">&sect;4.6</a>.
+    </div>
+  </span>
+  <h5>Specialized Classes</h5>
+  <div class="modbod">
+    <span>
+      <b><code>model</code></b>
+      <span class="pull-right"><i class="clickable icon-align-left"></i>
+	<div class="popover" data-placement="right" title="Canonical Model">
+	  <b><code>model</code></b> <span class="typename">ModelName</span> <span class="descstr">"Descriptive String"</span>
+<br>
+<code class="comment">&nbsp;&nbsp;// parameters, connectors and sub-compoennts</code>
+<br>
+<code>&nbsp;&nbsp;<b>parameter</b> <span class="typename">TypeName</span>   varName <span class="descstr">"Parameter declaration"</span>;</code><br>
+<code>&nbsp;&nbsp;<span class="typename">ConnectorType</span>   conName <span class="descstr">"Connector declaration"</span>;</code><br>
+<code>&nbsp;&nbsp;<span class="typename">ModelType</span>   subcompName <span class="descstr">"Sub-component declaration"</span>;</code>
+<br>
+<code>&nbsp;&nbsp;<span class="typename">SomeType</span>
+condComp <b>if</b> ... <span class="descstr">"Conditions
+component (see <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=38" target="_blank">&sect;4.4.5</a>)"</span>;</code>
+<br>
+<code><b>protected</b></code><br>
+<code>&nbsp;&nbsp;<span class="typename">TypeName</span>   varName <span class="descstr">"Protected declaration"</span>;</code><br>
+<b><code id="initeqs">initial equation</code></b>
+<br>
+<code><span class="comment">
+&nbsp;&nbsp;// Place any equations that apply only at the
+<br>
+&nbsp;&nbsp;// start of a simulation here</span></code>
+<br>
+<b><code id="eqs">equation</code></b><br>
+<code><span class="comment">
+&nbsp;&nbsp;// Equations go here
+</span>
+</code>
+<br>
+<code>&nbsp;&nbsp;<b>annotation</b>(...);</code>
+<br>
+<b><code>end </code></b><span class="typename">ModelName</span><code>;</code>
+	</div>
+      </span>
+    </span><br>
+    <span id="record">
+      <b><code>record</code></b>
+      <span class="pull-right"><i class="clickable icon-align-left"></i>
+	<div class="popover" data-placement="right" title="Sample Record">
+	  
+
+<code>
+<b>record</b> <span class="typename">RecordName</span><br>
+&nbsp;&nbsp;<span class="typename">Real</span> x;<br>
+&nbsp;&nbsp;<span class="typename">Real</span> y;<br>
+<b>end</b> <span class="typename">RecordName</span>;<br>
+</code>
+<div class="footnote">
+  <p>
+    <i>Note</i>:
+    <code><b>record</b></code> <i>definitions cannot contain</i>
+    <code><b>protected</b></code> <i>sections,</i> <code><b>equation</b></code>
+    <i>sections or</i> <br><code><b>algorithm</b></code> <i>sections</i>.  See
+    <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=41" target="_blank">&sect;4.6</a> for additional restrictions.
+    </i>
+  </p>
+</div>
+	</div>
+      </span>
+    </span><br>
+    <span id="connector">
+      <b><code>connector</code></b>
+      <span class="pull-right"><i class="clickable icon-align-left"></i>
+	<div class="popover" data-placement="right" title="Connector Examples">
+	  <code>
+  <span class="comment">// Typical Phyical Connector</span><br>
+  <b>connector</b> <span class="typename">ConName</span><br>
+  &nbsp;&nbsp;<span class="typename">Real</span> acrossVar;<br>
+  &nbsp;&nbsp;<b>flow</b> <span class="typename">Real</span> throughVar;<br>
+  <b>end</b> <span class="typename">ConName</span>;<br>
+  <br>
+  <span class="comment">// Causal Connector</span><br>
+  <b>connector</b> <span class="typename">ConName</span> = <b>input</b> <span class="typename">Real</span>;<br>
+  <br>
+  <span class="comment">// Expandable Connector</span><br>
+  <b>expandable</b> <b>connector</b> <span class="typename">ConName</span><br>
+  &nbsp;&nbsp;<span class="comment">// Minimum connector elements</span><br>
+  &nbsp;&nbsp;<b>input</b> <span class="typename">Real</span> alwaysPresent;<br>
+  <b>end</b> <span class="typename">ConName</span>;<br>
+  <br>
+</code>
+<div class="footnote">
+  <p>
+    <i>Note</i>: A complete list of restrictions for the 
+    <code><b>connector</b></code> class can be find in <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=42" target="_blank">&sect;4.6</a>.  More information about <code><b>expandable</b></code> connectors
+    can be found in <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=94" target="_blank">&sect;9.1.3</a>.
+    </i>
+  </p>
+</div>
+	</div>
+      </span>
+    </span><br>
+    <span id="block">
+      <b><code>block</code></b>
+      <span class="pull-right"><i class="clickable icon-align-left"></i>
+	<div class="popover" data-placement="right" title="Canonical Block">
+	  <b><code>block</code></b> <span class="typename">BlockName</span> <span class="descstr">"Descriptive String"</span>
+<br>
+<code class="comment">&nbsp;&nbsp;// parameters, connectors and sub-compoennts</code>
+<br>
+<code>&nbsp;&nbsp;<b>parameter</b> <span class="typename">TypeName</span>   varName <span class="descstr">"Parameter declaration"</span>;</code><br>
+<code>&nbsp;&nbsp;<b>input</b> <span class="typename">ConnectorType</span>   conName <span class="descstr">"Connector declaration"</span>;</code><br>
+<code>&nbsp;&nbsp;<span class="typename">ModelType</span>   subcompName <span class="descstr">"Sub-component declaration"</span>;</code>
+<br>
+<code><b>protected</b></code><br>
+<code>&nbsp;&nbsp;<span class="typename">TypeName</span>   varName <span class="descstr">"Protected declaration"</span>;</code><br>
+<b><code id="initeqs">initial equation</code></b>
+<br>
+<code><span class="comment">
+&nbsp;&nbsp;// Place any equations that apply only at the
+<br>
+&nbsp;&nbsp;// start of a simulation here</span></code>
+<br>
+<b><code id="eqs">equation</code></b><br>
+<code><span class="comment">
+&nbsp;&nbsp;// Equations go here
+</span>
+</code>
+<br>
+<code>&nbsp;&nbsp;<b>annotation</b>(...);</code>
+<br>
+<b><code>end </code></b><span class="typename">BlockName</span><code>;</code>
+<div class="footnote">
+  <p>
+    <i>Note: a</i> <code><b>block</b></code> <i>is just like
+    a</i> <code><b>model</b></code> <i>except that all connector instances
+    (or their constituents) must have
+    either</i> <code><b>input</b></code> <i>or</i> <code><b>output</b></code>
+    <i>qualifiers.
+    </i>
+  </p>
+</div>
+	</div>
+      </span>
+    </span><br>
+    <span id="type">
+      <b><code>type</code></b>
+      <span class="pull-right"><i class="clickable icon-align-left"></i>
+	<div class="popover" data-placement="right" title="Type Examples">
+	  <code><span class="comment">// Extending built-in types</span></code><br>
+<code><b>type</b> <span class="typename">Pressure</span> = <span class="typename">Real</span>(unit="Pa");</code><br>
+<br>
+<code><span class="comment">// Creating enumerated types</span></code><br>
+<code><b>type</b> <span class="typename">AssertionLevel</span> = <b>enumeration</b>(warning, error);</code><br>
+<br>
+<code><span class="comment">// Named type for arrays</span></code><br>
+<code><b>type</b> <span class="typename">Point</span> = <span class="typename">Real</span>[3];</code>
+	</div>
+      </span>
+    </span><br>
+    <span id="package">
+      <b><code>package</code></b>
+      <span class="pull-right"><i class="clickable icon-align-left"></i>
+	<div class="popover" data-placement="right" title="Canonical Package">
+	  
+
+<code>
+<b>within</b> <span class="typename">ParentPackage</span>; <span class="comment">// <b>within</b>; for top-level packages</span><br>
+<b>package</b> <span class="typename">PackageName</span> <span class="descstr">"Package description"</span><br>
+&nbsp;&nbsp;<span class="comment">// The fully qualified name for this package</span><br>
+&nbsp;&nbsp;<span class="comment">// will be PackageName.NestedPackage</span><br>
+&nbsp;&nbsp;<b>package</b> <span class="typename">NestedPackage</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// Package contents</span><br>
+&nbsp;&nbsp;<b>end</b> <span class="typename">NestedPackage</span>;<br>
+&nbsp;&nbsp;<br>
+&nbsp;&nbsp;<span class="comment">// The fully qualified name for this model</span><br>
+&nbsp;&nbsp;<span class="comment">// will be PackageName.SomeModel</span><br>
+&nbsp;&nbsp;<b>model</b> <span class="typename">SomeModel</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;...<br>
+&nbsp;&nbsp;<b>end</b> <span class="typename">SomeModel</span>;<br><br>
+&nbsp;&nbsp;<b>annotation</b>(version="1.0", <span class="comment">// This package's version number,</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// if it is a top-level package</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// Set of packages this package depends on</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;uses(AnotherPackageName(version="2.0"),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;YetAnother(version="1.2")));<br>
+<b>end</b> <span class="typename">PackageName</span>;
+</code>
+<div class="footnote">
+  <p>
+    <i>For more details about packages, see <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=161" target="_blank">&sect;13</a></i>
+  </p>
+</div>
+
+	</div>
+      </span>
+    </span><br>
+    <span id="function">
+      <b><code>function</code></b>
+      <span class="pull-right"><i class="clickable icon-align-left"></i>
+	<div class="popover" data-placement="right" title="Canonical Function">
+	  
+
+<code>
+<b>function</b> <span class="typename">FunctionName</span> <span class="descstr">"Function description"</span><br>
+&nbsp;&nbsp;<b>input</b> Real a;<br>
+&nbsp;&nbsp;<b>input</b> Integer b;<br>
+&nbsp;&nbsp;<b>output</b> Boolean c;<br>
+<b>algorithm</b><br>
+&nbsp;&nbsp;<span class="comment">// Whatever value the <b>output</b> variables have after the</span><br>
+&nbsp;&nbsp;<span class="comment">// <b>algorithm</b> section is completed or when a <b>return</b> statement</span><br>
+&nbsp;&nbsp;<span class="comment">// is encountered will be returned as the output values.</span><br>
+<b>end</b> <span class="typename">FunctionName</span>;
+</code>
+<div class="footnote">
+  <p>
+    <i>For more details about functions, see <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=134" target="_blank">&sect;12.2</a></i>
+  </p>
+</div>
+
+	</div>
+      </span>
+    </span><br>
+  </div>
+</div>
+		
+
+<div class="module">
+    <div class="pull-right headbut">
+      <i class="clickable icon-comment"></i>
+      <div class="popover" data-placement="right">
+	  For complete details on all the predefined types, see <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=48" target="_blank">&sect;4.8</a>.
+      </div>
+    </div>
+  <h5>Class Definitions
+  </h5>
+  <div class="modbod">
+    <span>
+      <b><code>extends</code></b> (inheritance)
+      <span class="pull-right"><i class="clickable icon-align-left"></i>
+	<div class="popover" data-placement="right" title="Canonical Model">
+	  <code><b>extends</b> <span class="typename">BaseClass</span>(<span class="comment">/* modifications */</span>);</code>
+	</div>
+      </span>
+    </span><br>
+    <span>
+      <b><code>replaceable</code></b>
+      <span class="pull-right"><i class="clickable icon-align-left"></i>
+	<div class="popover" data-placement="right" title="Canonical Model">
+	  <table class="table">
+	    <tr>
+	      <th>Replaceable Component</th>
+	    </tr>
+	    <tr>
+	      <td>
+		<code class="pull-right nobreak">
+		  <b>replaceable</b> <span class="typename">D</span> comp;
+		</code>
+	      </td>
+	    </tr>
+	    <tr>
+	      <th>Replaceable Class</th>
+	    </tr>
+	    <tr>
+	      <td>
+		<code class="pull-right nobreak">
+		  <b>replaceable</b> <b>model</b>
+		  <span class="typename">M</span> =
+		  <span class="typename">D</span>
+		</code>
+	      </td>
+	    </tr>
+	  </table>
+	</div>
+      </span>
+    </span><br>
+
+    <span>
+      <b><code>redeclare</code></b>
+      <span class="pull-right"><i class="clickable icon-align-left"></i>
+	<div class="popover" data-placement="right" title="Redeclarations">
+	  <div>
+	    <p class="seminarrow">
+	      The <code><b>redeclare</b></code> keyword is used to override the
+	      value of a <code><b>replaceable</b></code> component. This is
+	      typically done either through inheritance or through
+	      modifications applied to components.  To demonstrate,
+	      consider the following model:<br>
+	      <div class="indented">
+		<code>
+		  <b>model</b> <code class="typename">Circuit</code><br>
+		  &nbsp;&nbsp;...<br>
+		  &nbsp;&nbsp;<b>replaceable</b> <code class="typename">Resistor</code> R(R=100.0);<br>
+		  &nbsp;&nbsp;...<br>
+		  <b>end</b> <code class="typename">Circuit</code>;<br>
+		</code>
+	      </div>
+	    </p>
+	  </div>
+	  <table class="table">
+	    <tr>
+	      <th>Redeclaration in <code><b>extends</b></code> clauses</th>
+	    </tr>
+	    <tr>
+	      <td class="seminarrow">
+		When inheriting from a definition, it is possible to
+		redeclare <code><b>replaceable</b></code> components as follows:<br><br>
+		<div class="indented">
+		  <code>
+		    <b>model</b> <code class="typename">ThermalCircuit</code><br>
+		    &nbsp;&nbsp;<b>extends</b> <code class="typename">Circuit</code>(<b>redeclare</b>
+		    <code class="typename">ThermalResistor</code> R(R=100.0));<br>
+		    <b>end</b> <code class="typename">ThermalCircuit</code>;<br>
+		  </code>
+		</div>
+	      </td>
+	    </tr>
+	    <tr>
+	      <th>Redeclaration in component modifications</th>
+	    </tr>
+	    <tr>
+	      <td class="seminarrow">
+		When instantiating a component, it is possible to
+		redeclare <code><b>replaceable</b></code> sub-components as follows:<br><br>
+		<div class="indented">
+		  <code>
+		    <b>model</b> <code class="typename">UsesCircuit</code><br>
+		    &nbsp;&nbsp;<code class="typename">Circuit</code> circuit(<b>redeclare</b> <code class="typename">ThermalResistor</code> R(R=100.0));<br>
+		    <b>end</b> <code class="typename">UsesCircuit</code>;<br>
+		  </code>
+		</div>
+	      </td>
+	    </tr>
+	  </table>
+	  <div class="footnote">
+	    <p class="seminarrow">
+	      More details about modifications and redeclarations can be
+	      found in <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=70" target="_blank">&sect;7.2</a> and <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=73" target="_blank">&sect;7.3</a>,
+	      respectively.
+	    </p>
+	  </div>
+	</div>
+      </span>
+    </span><br>
+
+    <span>
+      <b><code>constrainedby</code></b>
+      <span class="pull-right"><i class="clickable icon-align-left"></i>
+	<div class="popover" data-placement="right" title="Canonical Model">
+	  <table class="table">
+	    <tr>
+	      <th>Replaceable Component</th>
+	    </tr>
+	    <tr>
+	      <td>
+		<code class="pull-right nobreak">
+		  <b>replaceable</b> <span class="typename">D</span> comp
+		  <b>constrainedby</b> <span class="typename">C</span>;
+		</code>
+	      </td>
+	    </tr>
+	    <tr>
+	      <th>Replaceable Class</th>
+	    </tr>
+	    <tr>
+	      <td>
+		<code class="pull-right nobreak">
+		  <b>replaceable</b> <b>model</b>
+		  <span class="typename">M</span> = <span class="typename">D</span> <b>constrainedby</b> <span class="typename">C</span>;
+		</code>
+	      </td>
+	    </tr>
+	  </table>
+	</div>
+      </span>
+    </span><br>
+
+    <span>
+      <b><code>import</code></b>
+      <span class="pull-right"><i class="clickable icon-align-left"></i>
+	<div class="popover" data-placement="right" title="Imports">
+	  <table class="table">
+	      <th colspan="2">
+		Import a named definition
+	      </th>
+	    </tr>
+	    <tr>
+	      <td class="nobreak">
+		<code><b>import</b> <code class="typename">Modelica.SIunits.Velocity</code>;</code>
+	      </td>
+	      <td>
+		<p class="seminarrow">
+		Adds the definition
+		<code class="typename">Modelica.SIunits.Velocity</code> to the local
+		scope under the name <code class="typename">Velocity</code>.
+		</p>
+	      </td>
+	    </tr>
+	    <tr>
+	      <th colspan="2">Import definition under an alias</th>
+	    </tr>
+	    <tr>
+	      <td>
+		<code><b>import</b>
+		<code class="typename">SI</code>=<code class="typename">Modelica.SIunits</code>;</code>
+	      </td>
+	      <td>
+		<p class="seminarrow">
+		Adds a given definition to the local scope under an
+		alias name (e.g., <code class="typename">Modelica.SIunits.Velocity</code>
+		could be referenced as <code class="typename">SI.Velocity</code> in
+		this case).
+		<p>
+	      </td>
+	    </tr>
+	    <tr>
+	      <th colspan="2">Import contents of a <code><b>package</b></code></th>
+	    </tr>
+	    <tr>
+	      <td>
+		<code><b>import</b> <code class="typename">Modelica.SIunits.*</code>;</code>
+	      </td>
+	      <td>
+		<p class="seminarrow">
+		Adds all the definitions defined in
+		<code class="typename">Modelica.SIunits</code> to the local scope
+		(under their normal names).
+		</p>
+		<div class="alert alert-error">
+		  <p class="seminarrow">
+		    Use of the so-called "wildcard import" feature is
+		    strongly discouraged.  It makes it unclear which
+		    definitions are actually used and can easily
+		    result in duplicate conflicting local names.
+		  </p>
+		</div>
+	      </td>
+	    </tr>
+	  </table>
+	  <div class="footnote">
+	    <b>Note:</b> Imports always uses fully qualified names.
+	    This means the name used must start from the top-level
+	    namespace.
+	  </div>
+	</div>
+      </span>
+    </span><br>
+
+    <span>
+      <b><code>encapsulated</code></b>
+      <span class="pull-right"><i class="clickable icon-comment"></i>
+	<div class="popover" data-placement="top">
+	  <p class="seminarrow">
+	    The <code><b>encapsulated</b></code> keyword forces all types
+	    not belonging to a definition to be imported.  More details
+	    can be found in <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=54" target="_blank">&sect;5.3.1</a>.
+	  </p>
+	</div>
+      </span>
+    </span><br>
+
+    <span>
+      <b><code>final</code></b>
+      <span class="pull-right"><i class="clickable icon-comment"></i>
+	<div class="popover" data-placement="top">
+	  <p class="seminarrow">
+	    The <code><b>final</b></code> keyword is used to indicate
+	    that no more modifications will be permitted to a
+	    variable. See <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=73" target="_blank">&sect;7.2.6</a> for more details.
+	  </p>
+	</div>
+      </span>
+    </span><br>
+
+    <span>
+      <b><code>partial</code></b>
+      <span class="pull-right"><i class="clickable icon-comment"></i>
+	<div class="popover" data-placement="top">
+	  <p class="seminarrow">
+	    The <code><b>partial</b></code> keyword is used to indicate
+	    that a given definition is incomplete.  This makes it
+	    clear to both users and the tools that the definition, as
+	    it stands, cannot be instantiated.  Normally,
+	    a <code><b>partial</b></code> definition is extended from to
+	    create a complete (instantiable) definition.  See <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=43" target="_blank">&sect;4.7</a> for more details.
+	  </p>
+	</div>
+      </span>
+    </span><br>
+
+    <span>
+      <b><code>expandable</code></b>
+      <span class="pull-right"><i class="clickable icon-comment"></i>
+	<div class="popover" data-placement="top">
+	  <p class="seminarrow">
+	    The <code><b>expandable</b></code> keyword can be applied to
+	    a <code><b>connector</b></code> to indicate that additional
+	    signals can be added (through connections) beyond those
+	    declared explicitly in the <code><b>connector</b></code>
+	    definition.  More information about expandable connectors
+	    can be found in <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=94" target="_blank">&sect;9.1.3</a>.
+	  </p>
+	</div>
+      </span>
+    </span>
+
+  </div>
+</div>
+		
+
+<!--- MODULE: Connector qualifiers -->
+<div id="con_quals" class="module">
+  <span class="pull-right headbut">
+    <i class="clickable icon-warning-sign"></i>
+    <div class="popover" data-placement="right">
+      <p class="seminarrow">
+      If a variable in a connector lacks any qualifier, the
+      default<br> connection behavior is to <b>generate an equality
+      equation</b><br> with its counterpart on all other connectors in
+      the connection<br> set.  More information on connections and
+      connectors can be found in <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=93" target="_blank">&sect;9.1</a>.
+      </p>
+    </div>
+  </span>
+  <h5>Connector Qualifiers</h5>
+  <div class="modbod">
+    <span>
+      <b><code>input</code></b>
+      <span class="pull-right"><i class="clickable icon-comment"></i>
+	<div class="popover" data-placement="right">
+	  <p class="seminarrow">
+	  The <code><b>input</b></code> qualifier in a connector indicates that
+	  exactly one of that elements counterparts in a resulting
+	  connection set (<a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=94" target="_blank">&sect;9.1.1</a>) must have the
+	  <code><b>output</b></code> qualifier.  More discussion of
+	  <code><b>input</b></code> and <code><b>output</b></code> qualifiers can be found
+	  in <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=101" target="_blank">&sect;9.3</a>.
+	  </p>
+	</div>
+      </span>
+    </span><br>
+    <span>
+      <b><code>output</code></b>
+      <span class="pull-right"><i class="clickable icon-comment"></i>
+	<div class="popover" data-placement="right">
+	  <p class="seminarrow">
+	  The <code><b>output</b></code> qualifier in a connector indicates that
+	  all other matching elements in a connection set must have
+	  the <code><b>input</b></code> qualifier.  More discussion of
+	  <code><b>input</b></code> and <code><b>output</b></code> qualifiers can be found
+	  in <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=101" target="_blank">&sect;9.3</a>.
+	  </p>
+	</div>
+      </span>
+    </span><br>
+    <span>
+      <b><code>flow</code></b>
+      <span class="pull-right"><i class="clickable icon-comment"></i>
+	<div class="popover" data-placement="right">
+	  <p class="seminarrow">
+	  The <code><b>flow</b></code> qualifier in a connector indicates that
+	  all other matching elements in a connection set must also
+	  have the <code><b>flow</b></code> qualifier.  When the connection set
+	  is resolved, an equation is generated that sums these
+	  matching elements to zero.  More details on how equations
+	  are generated for <code><b>flow</b></code> elements can be found in
+	  <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=98" target="_blank">&sect;9.2</a>.
+	  </p>
+	</div>
+      </span>
+    </span><br>
+    <span>
+      <b><code>stream</code></b>
+      <span class="pull-right"><i class="clickable icon-comment"></i>
+	<div class="popover" data-placement="right">
+	  <p class="seminarrow">
+	  The <code><b>stream</b></code> qualifier is used to indicate when a
+	  given element in a connector is an intensive property of
+	  flowing through the connector.  More details about "stream
+	  connectors" can be found in <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=175" target="_blank">&sect;15</a>.
+	  <p class="seminarrow">
+	</div>
+      </span>
+    </span>
+  </div>
+</div>
+		
+
+<!--- MODULE: Information about variability qualifiers -->
+<div id="variability" class="module">
+  <span class="pull-right headbut">
+    <i class="clickable icon-warning-sign"></i>
+    <div class="popover" data-placement="right">
+      <p class="seminarrow">
+	Default variability is <b>continuous</b>.  So if a variable<br>
+	doesn't have a variability qualifier, it is assumed to be<br>
+	continuous. See <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=30" target="_blank">&sect;3.8</a> for more details.
+      </p>
+    </div>
+  </span>
+  <h5>Variability</h5>
+  <div class="modbod">
+    <span>
+      <b><code>constant</code></b>
+      <span class="pull-right"><i class="clickable icon-comment"></i>
+	<div class="popover" data-placement="right">
+	  <p class="seminarrow">
+	    The <b><code>constant</code></b> qualifier is used for variables
+	    whose value will be the same across all potential
+	    simulations. (<a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=31" target="_blank">&sect;3.8.1</a>)
+	  </p>
+	</div>
+      </span>
+    </span><br>
+    <span>
+      <b><code>parameter</code></b>
+      <span class="pull-right"><i class="clickable icon-comment"></i>
+	<div class="popover" data-placement="right">
+	  <p class="seminarrow">
+	    The <b><code>parameter</code></b> qualifier is used for variables whose
+	    value may change from one simulation to another but won't
+	    change during a given simulation.  (<a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=31" target="_blank">&sect;3.8.2</a>)
+	  </p>
+	</div>
+      </span>
+    </span><br>
+    <span>
+      <b><code>discrete</code></b>
+      <span class="pull-right"><i class="clickable icon-comment"></i>
+	<div class="popover" data-placement="right">
+	  <p class="seminarrow">
+	    The <b><code>discrete</code></b> qualifier is used for variables whose
+	    value changes during a simulation but only in response to
+	    discrete events. (<a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=31" target="_blank">&sect;3.8.3</a>)
+	  </p>
+	</div>
+      </span>
+    </span><br>
+  </div>
+</div>
+	      </td>
+	      <td class="column col2">
+		
+
+
+
+
+
+
+
+<!--- MODULE: Information about built-in types -->
+<div class="module">
+    <div class="pull-right headbut">
+      <i class="clickable icon-comment"></i>
+      <div class="popover" data-placement="right">
+	  For complete details on all the predefined types, see <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=48" target="_blank">&sect;4.8</a>.
+      </div>
+    </div>
+  <h5>Builtin Types
+  </h5>
+  <div class="modbod">
+    <span>
+      <code class="typename">Real</code>
+      <span class="pull-right"><i class="clickable icon-comment"></i>
+	<div id="real_attrs" class="popover"
+	     title="Real Attributes" data-placement="bottom">
+	  <table class="table table-striped">
+	    
+<tr>
+  <th>Attribute</th>
+  <th><span class="pull-right">Type</span></th>
+  <th>&nbsp;&nbsp;<span class="pull-right">Default</span></th>
+</tr>
+
+	    
+<tr>
+  <td><code>unit:</code></td>
+  <td><code><span class="pull-right typename">String</span></code></td>
+  <td>
+    <code><span class="pull-right">&nbsp;""</span></code>
+  </td>
+</tr>
+<tr>
+  <td><code>displayUnit:</code></td>
+  <td><code><span class="pull-right typename">String</span></code></td>
+  <td><code><span class="pull-right">""</span></code></td>
+</tr>
+<tr>
+  <td><code>nominal:</code></td>
+  <td><code><span class="pull-right typename">Real</span></code></td>
+  <td></td>
+</tr>
+<tr>
+  <td><code>stateSelect:&nbsp;&nbsp;</code></td>
+  <td><code><span class="pull-right typename">StateSelect</span></code></td>
+  <td><code><span class="pull-right">&nbsp;default</span></code></td>
+</tr>
+
+	    
+<tr>
+  <td><code>min:</code></td>
+  <td><code><span class="pull-right typename">Real</span></code></td>
+  <td><span class="pull-right">&nbsp;-infinity</span></td>
+</tr>
+<tr>
+  <td><code>max:</code></td>
+  <td><code><span class="pull-right typename">Real</span></code></td>
+  <td><span class="pull-right">&nbsp;-infinity</span></td>
+</tr>
+
+	    
+<tr>
+  <td><code>fixed:</code></td>
+  <td><code><span class="pull-right typename">Boolean</span></code></td>
+  <td><span class="pull-right">&nbsp;<code>false</code><sup>*</sup></span></td>
+</tr>
+
+	    
+<tr>
+  <td><code>quantity:&nbsp;&nbsp;</code></td>
+  <td><code><span class="pull-right typename">String</span></code></td>
+  <td><code><span class="pull-right">&nbsp;""</span></code></td>
+</tr>
+<tr>
+  <td><code>start:</code></td>
+  <td><code><span class="pull-right typename">Real</span></code></td>
+  <td><code><span class="pull-right">&nbsp;0.0</span></code></td>
+</tr>
+
+	  </table>
+	  <div class="footnote">
+	    <b>Units Examples:</b>&nbsp;
+	    <code class="op">N.m</code>
+	    <code class="op">J/(kg.K)</code>
+	    <code class="op">m/s</code>
+	    <code class="op">mm2</code> 
+	    <code class="op">m.s-2</code>
+	    (see <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=235" target="_blank">&sect;19.1</a>)
+	  </div>
+	</div>
+      </span>
+    </span><br>
+    <span>
+      <code class="typename">Integer</code>
+      <span class="pull-right"><i class="clickable icon-comment"></i>
+	<div class="popover" title="Integer Attributes" data-placement="bottom">
+	  <table class="table table-striped">
+	    
+<tr>
+  <th>Attribute</th>
+  <th><span class="pull-right">Type</span></th>
+  <th>&nbsp;&nbsp;<span class="pull-right">Default</span></th>
+</tr>
+
+	    
+<tr>
+  <td><code>min:</code></td>
+  <td><code><span class="pull-right typename">Integer</span></code></td>
+  <td><span class="pull-right">&nbsp;-infinity</span></td>
+</tr>
+<tr>
+  <td><code>max:</code></td>
+  <td><code><span class="pull-right typename">Integer</span></code></td>
+  <td><span class="pull-right">&nbsp;-infinity</span></td>
+</tr>
+
+	    
+<tr>
+  <td><code>fixed:</code></td>
+  <td><code><span class="pull-right typename">Boolean</span></code></td>
+  <td><span class="pull-right">&nbsp;<code>false</code><sup>*</sup></span></td>
+</tr>
+
+	    
+<tr>
+  <td><code>quantity:&nbsp;&nbsp;</code></td>
+  <td><code><span class="pull-right typename">String</span></code></td>
+  <td><code><span class="pull-right">&nbsp;""</span></code></td>
+</tr>
+<tr>
+  <td><code>start:</code></td>
+  <td><code><span class="pull-right typename">Integer</span></code></td>
+  <td><code><span class="pull-right">&nbsp;0</span></code></td>
+</tr>
+
+	  </table>
+	</div>
+      </span>
+    </span><br>
+    <span>
+      <code class="typename">Boolean</code>
+      <span class="pull-right"><i class="clickable icon-comment"></i>
+	<div class="popover" title="Boolean Attributes" data-placement="bottom">
+	  <table class="table table-striped">
+	    
+<tr>
+  <th>Attribute</th>
+  <th><span class="pull-right">Type</span></th>
+  <th>&nbsp;&nbsp;<span class="pull-right">Default</span></th>
+</tr>
+
+	    
+<tr>
+  <td><code>fixed:</code></td>
+  <td><code><span class="pull-right typename">Boolean</span></code></td>
+  <td><span class="pull-right">&nbsp;<code>false</code><sup>*</sup></span></td>
+</tr>
+
+	    
+<tr>
+  <td><code>quantity:&nbsp;&nbsp;</code></td>
+  <td><code><span class="pull-right typename">String</span></code></td>
+  <td><code><span class="pull-right">&nbsp;""</span></code></td>
+</tr>
+<tr>
+  <td><code>start:</code></td>
+  <td><code><span class="pull-right typename">Boolean</span></code></td>
+  <td><code><span class="pull-right">&nbsp;false</span></code></td>
+</tr>
+
+	  </table>
+	</div>
+      </span>
+    </span><br>
+    <span>
+      <code class="typename">String</code>
+      <span class="pull-right"><i class="clickable icon-comment"></i>
+	<div class="popover" title="String Attributes" data-placement="bottom">
+	  <table class="table table-striped">
+	    
+<tr>
+  <th>Attribute</th>
+  <th><span class="pull-right">Type</span></th>
+  <th>&nbsp;&nbsp;<span class="pull-right">Default</span></th>
+</tr>
+
+	    
+<tr>
+  <td><code>quantity:&nbsp;&nbsp;</code></td>
+  <td><code><span class="pull-right typename">String</span></code></td>
+  <td><code><span class="pull-right">&nbsp;""</span></code></td>
+</tr>
+<tr>
+  <td><code>start:</code></td>
+  <td><code><span class="pull-right typename">String</span></code></td>
+  <td><code><span class="pull-right">&nbsp;""</span></code></td>
+</tr>
+
+	  </table>
+	</div>
+      </span>
+    </span><br>
+    <span>
+      <code><b>enumeration</b></code>
+      <span class="pull-right"><i class="clickable icon-comment"></i>
+	<div class="popover" title="Enumerations" data-placement="bottom">
+	  <table class="table">
+	    <tr>
+	      <th colspan="2">
+		Syntax
+	      </th>
+	    </tr>
+	    <tr>
+	      <td colspan="2">
+		<code><b>type</b> <span class="typename">E</span> = <b>enumeration</b>(e1, ..., en);</code>
+	      </td>
+	    </tr>
+	    <tr>
+	      <th>Attributes</th>
+	      <th>Conversions</th>
+	    </tr>
+	    <tr>
+	      <td>
+		<code><span class="typename">E</span>.e1</code>,
+		...,
+		<code><span class="typename">E</span>.en</code>
+		<br>
+		<code><span class="typename">E</span>.start=e1</code>
+		<br>
+		<code><span class="typename">E</span>.min=e1</code>, 
+		<br>
+		<code><span class="typename">E</span>.max=en</code>
+	      </td>
+	      <td>
+		<code>Integer(<span class="typename">E</span>.e1)=1</code>
+		<br>
+		<code>Integer(<span class="typename">E</span>.en)=n</code>
+		<br>
+		<code>String(<span class="typename">E</span>.e1)="e1"</code>
+	      </td>
+	    </tr>
+	    <tr>
+	      <th colspan="2">Examples</td>
+	    </tr>
+	    <tr>
+	      <td colspan="2">
+		<code><b>type</b> <span class="typename">AssertionLevel</span> = <b>enumeration</b>(warning, error);</code><br>
+		<code><b>type</b> <span class="typename">StateSelect</span> = <b>enumeration</b>(never, avoid, default, prefer, always);</code><br>
+	      </td>
+	    </tr>
+	  </table>
+	  <div class="footnote">
+	    Complete details on enumerations can be found in <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=50" target="_blank">&sect;4.8.5</a>
+	  </div>
+	</div>
+      </span>
+    </span><br>
+    <span>
+      <code class="typename">ExternalObject</code>
+      <span class="pull-right"><i class="clickable icon-comment"></i>
+	<div class="popover" title="External Objects" data-placement="bottom">
+	  <p class="seminarrow">
+	  External objects are used to refer (opaquely) to data or
+	  information outside the scope of the Modelica language.
+	  That are initialized through <code><b>external</b></code>
+	  functions and can be passed back to <code><b>external</b></code>
+	  functions.
+	  </p>
+	  <p class="seminarrow">
+	    More information about the <code class="typename">ExternalObject</code>
+	    type can be found in <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=159" target="_blank">&sect;12.9.7</a>.
+	  </p>
+	</div>
+      </span>
+    </span>
+  </div>
+</div>
+		
+
+<!--- MODULE: Standard Enums --->
+<div id="std_enums" class="module">
+  <h5 class="nobreak">Standard Enumerations</h5>
+  <div class="modbod">
+    <span>
+      <code class="typename">AssertionLevel</code>
+      <span class="pull-right"><i class="clickable icon-comment"></i>
+	<div class="popover" data-placement="top">
+	  <code><span class="comment">// From <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=86" target="_blank">&sect;8.3.7</a></span></code><br>
+	  <code><b>type</b> <span class="typename">AssertionLevel</span> = <b>enumeration</b>(warning, error);</code><br>
+	</div>
+      </span>
+    </span><br>
+    <span>
+      <code class="typename">StateSelect</code>
+      <span class="pull-right"><i class="clickable icon-comment"></i>
+	<div class="popover" data-placement="top">
+	  <code><span class="comment">// From <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=52" target="_blank">&sect;4.8.8.1</a></span></code><br>
+	  <code><b>type</b> <span class="typename">StateSelect</span> = <b>enumeration</b>(never, avoid, default, prefer, always);</code><br>
+	</div>
+      </span>
+    </span><br>
+  </div>
+</div>
+		
+
+
+
+
+
+
+<div class="module">
+  <h5>Arithmetic Operators</h5>
+  <div class="modbod">
+    <span class="pull-right"><i class="clickable icon-comment"></i>
+      <div class="popover" data-placement="bottom">
+	<table class="table">
+	  <tr>
+	    <th></th>
+	    <th>Name</th>
+	    <th>Description</th>
+	  </tr>
+	  
+<tr>
+  <td><code>+</code></td>
+  <td>Addition</td>
+  <td>Can be used on both scalars and
+	  arrays of the same size</td>
+</tr>
+
+	  <tr>
+	    <td><code>-</code></td>
+	    <td>Subtraction</td>
+	    <td>Can be used on both scalars and arrays of the
+	      same size</td>
+	  </tr>
+	  <tr>
+	    <td><code>*</code></td>
+	    <td>Multiplication</td>
+	    <td class="narrow">Can be used to multiply arrays by
+	      scalars or to take the inner product between two
+	      arrays.</td>
+	  </tr>
+	  <tr>
+	    <td><code>/</code></td>
+	    <td>Division</td>
+	    <td class="narrow">Can be used on scalars.  Can also
+	      be used with arrays as long as the denominator is a
+	      scalar.</td>
+	  </tr>
+	  <tr>
+	    <td><code>.+ .- .* ./</code></td>
+	    <td>Element-wise<br>Versions</td>
+	    <td class="narrow">When applied to arrays (of the
+	      same size), these operators perform their operation
+	      between scalars at matching positions in each
+	      array.</td>
+	  </tr>
+	</table>
+      </div>
+    </span>
+    <span>
+      
+<code class="op">+</code>
+
+      
+<code class="op">-</code>
+
+      
+<code class="op">*</code>
+
+      
+<code class="op">/</code>
+
+      
+<code class="op">.+</code>
+
+      
+<code class="op">.-</code>
+
+      
+<code class="op">.*</code>
+
+      
+<code class="op">./</code>
+
+    </span>
+  </div>
+</div>
+
+<div class="module">
+  <h5>Logical and Relational Operators</h5>
+  <div class="modbod">
+    <span class="pull-right"><i class="clickable icon-warning-sign"></i>
+      <div class="popover" data-placement="bottom">
+	<p class="seminarrow">
+	These role of these operators is self-explanatory.  However,
+	it is worth pointing out that the relational
+	operators <code>&lt;</code>, <code>&gt;</code>, <code>&lt;=</code>
+	and <code>&gt;=</code> will generate events when used in
+	conjunction with continuous time variables.  More discussion
+	of such events and how to avoid them can be found in <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=29" target="_blank">&sect;3.7.3</a>.
+	</p>
+      </div>
+    </span>
+    <span>
+      
+<code class="op"><b>and</b></code>
+
+      
+<code class="op"><b>or</b></code>
+
+      
+<code class="op"><b>not</b></code>
+
+      
+<code class="op">&lt;&gt;</code>
+
+      
+<code class="op">&lt;</code>
+
+      
+<code class="op">&gt;</code>
+
+      
+<code class="op">&lt;=</code>
+
+      
+<code class="op">&gt;=</code>
+
+    </span>
+  </div>
+</div>
+
+<div class="module">
+  <h5>Mathematical Functions</h5>
+  <div class="modbod">
+    <span class="pull-right"><i class="clickable icon-comment"></i>
+      <div class="popover" data-placement="bottom">
+	<table>
+	  <tr>
+	    <th>Function</th>
+	    <th>Details</th>
+	  </tr>
+	  <tr>
+	    <td><code>asin(x)</code></td>
+	    <td>-1 &lt;= <code>x</code> &lt;= 1</td>
+	  </tr>
+	  <tr>
+	    <td><code>acos(x)</code></td>
+	    <td>-1 &lt;= <code>x</code> &lt;= 1</td>
+	  </tr>
+	  <tr>
+	    <td><code>atan2(y, x)</code></td>
+	    <td>tangent of <code>y/x</code></td>
+	  </tr>
+	  <tr>
+	    <td><code>log(x)</code></td>
+	    <td><code>x</code>&gt;0</td>
+	  </tr>
+	  <tr>
+	    <td><code>log10(x)</code></td>
+	    <td><code>x</code>&gt;0</td>
+	  </tr>
+	  <tr>
+	    <td><code>tan(x)</code></td>
+	    <td>"<code>x</code> shall not be ..., -&pi;/2, &pi;/2,
+	    3&pi;/2, ..."</td>
+	  </tr>
+	</table>
+	<div class="footnote">
+	  See <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=21" target="_blank">&sect;3.7.1.2</a> for further details about
+	  these functions.
+	</div>
+      </div>
+    </span>
+    <span>
+      
+<code class="op">acos</code>
+
+      
+<code class="op">asin</code>
+
+      
+<code class="op">atan</code>
+
+      
+<code class="op">atan2</code>
+
+      
+<code class="op">cos</code>
+
+      
+<code class="op">cosh</code>
+
+      
+<code class="op">exp</code>
+
+      
+<code class="op">log</code>
+
+      
+<code class="op">log10</code>
+
+      
+<code class="op">sin</code>
+
+      
+<code class="op">sinh</code>
+
+      
+<code class="op">tan</code>
+
+      
+<code class="op">tanh</code>
+
+    </span>
+  </div>
+</div>
+
+<div class="module">
+  <h5>Array Functions</h5>
+  <div class="modbod">
+    <span class="pull-right"><i class="clickable icon-comment"></i>
+      <div class="popover" data-placement="right" title="Array Functions">
+	<table>
+	  <tr>
+	    <th>Functions</th>
+	    <th>Documentation</th>
+	  </tr>
+	  <tr>
+	    <td>
+	      <code>scalar(A)</code><br>
+	      <code>vector(A)</code><br>
+	      <code>matrix(A)</code><hr>
+	    </td>
+	    <td><a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=112" target="_blank">&sect;10.3.2</a></td>
+	  </tr>
+	  <tr>
+	    <td>
+	      <code>identity(n)</code><br>
+	      <code>diagonal(v)</code><br>
+	      <code>zeros(n1,n2,n3,...)</code><br>
+	      <code>ones(n1,n2,n3,...)</code><br>
+	      <code>fill(s,n1,n2,n3,...)</code><br>
+	      <code>linspace(x1,x2,n)</code><hr>
+	    </td>
+	    <td><a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=112" target="_blank">&sect;10.3.3</a></td>
+	  </tr>
+	  <tr>
+	    <td>
+	      <code>transpose(A)</code><br>
+	      <code>outerProduct(v1,v2)</code><br>
+	      <code>symmetric(A)</code><br>
+	      <code>cross(x,y)</code><br>
+	      <code>skew(x)</code>
+	    </td>
+	    <td><a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=114" target="_blank">&sect;10.3.5</a></td>
+	  </tr>
+	</table>
+      </div>
+    </span>
+    <span>
+      
+<code class="op">scalar</code>
+
+      
+<code class="op">vector</code>
+
+      
+<code class="op">matrix</code>
+
+      
+<code class="op">identity</code>
+
+      
+<code class="op">diagonal</code>
+
+      
+<code class="op">zeros</code>
+
+      
+<code class="op">ones</code>
+
+      
+<code class="op">fill</code>
+
+      
+<code class="op">linspace</code>
+
+      
+<code class="op">transpose</code>
+
+      
+<code class="op">outerProduct</code>
+
+      
+<code class="op">symmetric</code>
+
+      
+<code class="op">cross</code>
+
+      
+<code class="op">skew</code>
+
+    </span>
+  </div>
+</div>
+
+<div class="module">
+  <h5>Event Generating Functions</h5>
+  <div class="modbod">
+    <span class="pull-right"><i class="clickable icon-comment"></i>
+      <div class="popover" data-placement="top">
+	<p class="seminarrow">
+	  The functions shown here <b>generate events</b>.  More
+	  information about these functions can be found in <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=21" target="_blank">&sect;3.7.1.1</a> along with information about how to use
+	  the <code>noEvent</code> operator to suppress event generation.
+	</p>
+      </div>
+    </span>
+    <span>
+      
+<code class="op">ceil</code>
+
+      
+<code class="op">div</code>
+
+      
+<code class="op">fill</code>
+
+      
+<code class="op">floor</code>
+
+      
+<code class="op">integer</code>
+
+      
+<code class="op">max</code>
+
+      
+<code class="op">min</code>
+
+      
+<code class="op">mod</code>
+
+      
+<code class="op">rem</code>
+
+    </span>
+  </div>
+</div>
+
+<div class="module">
+  <h5>Numeric and Conversion Functions</h5>
+  <div class="modbod">
+    <span class="pull-right"><i class="clickable icon-comment"></i>
+      <div class="popover" data-placement="bottom">
+	<p class="seminarrow">
+	  Explanations for these functions can be found in <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=20" target="_blank">&sect;3.7.1</a>.
+	</p>
+      </div>
+    </span>
+    <span>
+      
+<code class="op">abs</code>
+
+      
+<code class="op">sign</code>
+
+      
+<code class="op">sqrt</code>
+
+      
+<code class="op">Integer</code>
+
+      
+<code class="op">String</code>
+
+    </span>
+  </div>
+</div>
+	      </td>
+	      <td class="column col3">
+		
+
+<!--- MODULE: Information about built-in operators -->
+<div class="module">
+  <h5 style="padding: 0px 30px">Special Operators</h5>
+  <div class="modbod">
+    <span><code>connect</code></span>
+    <span class="pull-right"><i class="clickable icon-align-left"></i>
+      <div class="popover" data-placement="right">
+	<code>connect(a, b);</code> (see <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=93" target="_blank">&sect;9.1</a>)
+      </div>
+    </span><br>
+    <span><code>der</code></span>
+    <span class="pull-right"><i class="clickable icon-align-left"></i>
+      <div class="popover" data-placement="right">
+	<code>der(x)</code> - Take the derivative of a variable
+	or <b>expression</b> (see <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=22" target="_blank">&sect;3.7.2</a> )
+      </div>
+    </span>
+    <br>
+    <span>
+      <code>inStream</code>
+    </span>
+    <span class="pull-right"><i class="clickable icon-align-left"></i>
+      <div class="popover" data-placement="bottom">
+	<table>
+	  <tr>
+	    <th>Usage</th>
+	    <th>Description</th>
+	  </tr>
+
+	  <tr>
+	    <td>
+	      <code>inStream(v)</code>
+	    </td>
+	    <td class="seminarrow">
+	      <code>v</code> must be a stream variable (<i>i.e.,</i> be
+	      preceded by the <code><b>stream</b></code> qualifier on a
+	      connector).  This operator provides the value of the
+	      stream variable close to the connection point assuming
+	      inward flow.  For more details, see <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=176" target="_blank">&sect;15.2</a>.
+	    </td>
+	  </tr>
+	</table>
+      </div>
+    </span>
+    <br>
+    <span>
+      <code>actualStream</code>
+    </span>
+    <span class="pull-right"><i class="clickable icon-align-left"></i>
+      <div class="popover" data-placement="bottom">
+	<table>
+	  <tr>
+	    <th>Usage</th>
+	    <th>Description</th>
+	  </tr>
+
+	  <tr>
+	    <td>
+	      <code>actualStream(v)</code>
+	    </td>
+	    <td class="seminarrow">
+	      Returns the actual value of the stream
+	      variable <code>v</code> for any flow direction.  For more
+	      details, see <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=179" target="_blank">&sect;15.3</a>.
+	    </td>
+	  </tr>
+	</table>
+      </div>
+    </span>
+
+    <span><code>semiLinear</code></span>
+    <span class="pull-right"><i class="clickable icon-align-left"></i>
+      <div class="popover" data-placement="bottom">
+	<table>
+	  <tr>
+	    <th>Usage</th>
+	    <th>Description</th>
+	  </tr>
+
+	  <tr>
+	    <td>
+	      <code>semiLinear(x, postivieSlope, negativeSlope)</code>
+	    </td>
+	    <td class="seminarrow">
+	      Equivalent to:
+	      <code class="nobreak"><b>if</b> x&gt;=0 <b>then</b>
+	      positiveSlope*x <b>else</b> negativeSlope*x;</code><br>
+	      See <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=23" target="_blank">&sect;3.7.2</a> for more details.
+	    </td>
+	  </tr>
+	</table>
+      </div>
+    </span>
+
+    <br>
+    <span>
+      <code><span class="toowide">spatialDistribution</span></code>
+    </span>
+    <span class="pull-right"><i class="clickable icon-align-left"></i>
+      <div class="popover" data-placement="bottom">
+	<table>
+	  <tr>
+	    <th>Usage</th>
+	    <th>Description</th>
+	  </tr>
+
+	  <tr>
+	    <td>
+	      <code>spatialDistribution(...)</code>
+	    </td>
+	    <td class="seminarrow">
+	      See <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=23" target="_blank">&sect;3.7.2.2</a>
+	    </td>
+	  </tr>
+	</table>
+      </div>
+    </span>
+    <br>
+
+    <span>
+      <code>getInstanceName</code>
+    </span>
+    <span class="pull-right"><i class="clickable icon-align-left"></i>
+      <div class="popover" data-placement="bottom">
+	<table>
+	  <tr>
+	    <th>Usage</th>
+	    <th>Description</th>
+	  </tr>
+
+	  <tr>
+	    <td>
+	      <code>getInstanceName()</code>
+	    </td>
+	    <td class="seminarrow">
+	      Returns a string with model/block and instance names
+	      from which it is called.  See <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=28" target="_blank">&sect;3.7.2.6</a>
+	      for further details.
+	    </td>
+	  </tr>
+	</table>
+      </div>
+    </span>
+    <br>
+
+    <span><code>homotopy</code></span>
+    <span class="pull-right"><i class="clickable icon-align-left"></i>
+      <div class="popover" data-placement="bottom">
+	<table>
+	  <tr>
+	    <th>Usage</th>
+	    <th>Description</th>
+	  </tr>
+
+	  <tr>
+	    <td>
+	      <code>homotopy(actual=...,simplified=...)</code>
+	    </td>
+	    <td class="seminarrow">
+	      The <code>homotopy</code> operator can be used to ease the
+	      solving of non-linear systems.  Further discussion of
+	      its use can be found in <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=22" target="_blank">&sect;3.7.2</a>.
+	    </td>
+	  </tr>
+	</table>
+      </div>
+    </span>
+    <br>
+
+    <span><code>delay</code></span>
+    <span class="pull-right"><i class="clickable icon-align-left"></i>
+      <div class="popover" data-placement="top">
+	<table>
+	  <tr>
+	    <th>Usage</th>
+	    <th>Description</th>
+	  </tr>
+	  <tr>
+	    <td><code>delay(expr, delayTime)</code><br>
+	      <code class="nobreak">delay(expr, delayTime, delayMax)&nbsp;</code>
+	    </td>
+	    <td class="seminarrow">
+	      Give the value of <code>expr</code> delayed by (the
+	      potentially variable) <code>delayTime</code>.  See <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=22" target="_blank">&sect;3.7.2</a> and <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=23" target="_blank">&sect;3.7.2.1</a> for
+	      more details.
+	    </td>
+	  </tr>
+	</table>
+      </div>
+    </span>
+    <br>
+
+    <span><code>assert</code></span>
+    <span class="pull-right"><i class="clickable icon-align-left"></i>
+      <div class="popover" data-placement="top">
+	<table>
+	  <tr>
+	    <th>Usage</th>
+	    <th>Description</th>
+	  </tr>
+
+	  <tr>
+	    <td>
+	      <code class="nobreak"><code>assert(cond, message, level=<code class="typename">AssertionLevel</code>.error)</code>
+	    </td>
+	    <td class="seminarrow">
+	      Assertions are used to enforce limitations in a model
+	      through the conditional expression, <code>cond</code>.
+	      Normally, the <code>level</code> argument defaults to
+	      <code><code class="typename">AssertionLevel</code>.error</code>.  However, if
+	      a <code><b>false</b></code> value for <code>cond</code> isn't strictly
+	      an error, the <code>level</code> argument can be set to
+	      <code><code class="typename">AssertionLevel</code>.warning</code>.  See <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=87" target="_blank">&sect;8.3.7</a> for more details
+	      about <code>assert</code>.
+	    </td>
+	  </tr>
+	</table>
+      </div>
+    </span>
+    <br>
+
+    <span><code>ndims</code></span>
+    <span class="pull-right"><i class="clickable icon-align-left"></i>
+      <div class="popover" data-placement="top">
+	<table>
+	  <tr>
+	    <th>Usage</th>
+	    <th>Description</th>
+	  </tr>
+
+	  <tr>
+	    <td>
+	      <code class="nobreak"><code>ndims(A)</code>
+	    </td>
+	    <td class="seminarrow">
+	      Returns the number of dimensions of <code>A</code>.  See <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=112" target="_blank">&sect;10.3.1</a> for more details.
+	    </td>
+	  </tr>
+	</table>
+      </div>
+    </span>
+    <br>
+
+    <span><code>size</code></span>
+    <span class="pull-right"><i class="clickable icon-align-left"></i>
+      <div class="popover" data-placement="top">
+	<table>
+	  <tr>
+	    <th>Usage</th>
+	    <th>Description</th>
+	  </tr>
+
+	  <tr>
+	    <td>
+	      <code class="nobreak"><code>size(A,i)</code>
+	    </td>
+	    <td class="seminarrow">
+	      Returns the size of dimension <t>i</t> in <code>A</code>
+	      where 0 &lt; <code>i</code> &lt;= <code>ndims(A)</code>.
+	    </td>
+	  </tr>
+
+	  <tr>
+	    <td>
+	      <code class="nobreak"><code>size(A)</code>
+	    </td>
+	    <td class="seminarrow">
+	      Returns a vector containing the size of each dimension
+	      of <code>A</code>.
+	    </td>
+	  </tr>
+	</table>
+	<div class="footnote">
+	  See <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=112" target="_blank">&sect;10.3.1</a> for more discussion about
+	  the <code>size</code> function.
+	</div>
+      </div>
+    </span>
+    <br>
+
+    <span><code>cardinality</code></span>
+    <span class="pull-right"><i class="clickable icon-warning-sign"></i>
+      <div class="popover" data-placement="top">
+	This operator is <b>deprecated</b>.  It should no longer be
+	used (see <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=22" target="_blank">&sect;3.7.2</a>).
+      </div>
+    </span>
+    <br>
+
+    <span><code>isPresent</code></span>
+    <span class="pull-right"><i class="clickable icon-warning-sign"></i>
+      <div class="popover" data-placement="top">
+	This operator was <b>removed</b> from the language as of
+	version 3.0.
+      </div>
+    </span>
+
+  </div>
+</div>
+
+		
+
+<div class="module">
+  <span class="pull-right headbut">
+    <i class="clickable icon-comment"></i>
+    <div class="popover" data-placement="top">
+      Reduction operators are discussed in <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=113" target="_blank">&sect;10.3.4</a>.
+    </div>
+  </span>
+  <h5>Reduction Operators</h5>
+  <div class="modbod">
+    <span><code>max</code></span>
+    <span class="pull-right"><i class="clickable icon-align-left"></i>
+      <div class="popover" data-placement="top">
+	<table>
+	  <tr>
+	    <th>Usage</th>
+	    <th>Description</th>
+	  </tr>
+
+	  <tr>
+	    <td>
+	      <code class="nobreak">max(A)</code>
+	    </td>
+	    <td class="seminarrow">
+	      When applied to an array, the <code>max</code> function
+	      returns the element of the array with the greatest
+	      value.  For example,<br>
+	      <div class="indented">
+		<code>max([1, 5; 7, 3])</code> returns <code>7</code><br>
+		<code>max({3, 8, 1})</code> returns <code>8</code>
+	      </div>
+	    </td>
+	  </tr>
+
+	  <tr>
+	    <td>
+	      <code class="nobreak">max(x, y)</code>
+	    </td>
+	    <td class="seminarrow">
+	      When used with two scalar arguments, <code>max</code>
+	      returns the greater of the two arguments.
+	    </td>
+	  </tr>
+
+	  <tr>
+	    <td>
+	      <code class="nobreak">
+		max(e, for i in u, j in v, ...)&nbsp;&nbsp;
+	      </code>
+	    </td>
+	    <td class="seminarrow">
+	      Returns the greatest value among all possible values
+	      of <code>e</code> over the range of all possible index
+	      combinations.
+	    </td>
+	  </tr>
+	</table>
+      </div>
+    </span>
+    <br>
+    <span><code>min</code></span>
+    <span class="pull-right"><i class="clickable icon-align-left"></i>
+      <div class="popover" data-placement="top">
+	<table>
+	  <tr>
+	    <th>Usage</th>
+	    <th>Description</th>
+	  </tr>
+
+	  <tr>
+	    <td>
+	      <code class="nobreak">min(A)</code>
+	    </td>
+	    <td class="seminarrow">
+	      When applied to an array, the <code>min</code> function
+	      returns the element of the array with the least value.
+	      For example,<br>
+	      <div class="indented">
+		<code>min([1, 5; 7, 3])</code> returns <code>1</code><br>
+		<code>min({3, 8, 1})</code> returns <code>1</code>
+	      </div>
+	    </td>
+	  </tr>
+	  <tr>
+	    <td>
+	      <code class="nobreak">min(x, y)</code>
+	    </td>
+	    <td class="seminarrow">
+	      When used with two scalar arguments, <code>min</code>
+	      returns the lesser of the two arguments.
+	    </td>
+	  </tr>
+	  <tr>
+	    <td>
+	      <code class="nobreak">
+		min(e, for i in u, j in v, ...)&nbsp;&nbsp;
+	      </code>
+	    </td>
+	    <td class="seminarrow">
+	      Returns the least value among all possible values
+	      of <code>e</code> over the range of all possible index
+	      combinations.
+	    </td>
+	  </tr>
+	</table>
+      </div>
+    </span>
+    <br>
+    <span><code>product</code></span>
+    <span class="pull-right"><i class="clickable icon-align-left"></i>
+      <div class="popover" data-placement="top">
+	<table>
+	  <tr>
+	    <th>Usage</th>
+	    <th>Description</th>
+	  </tr>
+	  <tr>
+	    <td>
+	      <code class="nobreak">product(A)</code>
+	    </td>
+	    <td class="seminarrow">
+	      When applied to an array, the <code>product</code>
+	      function returns the product of all elements in the
+	      array.  For example,<br>
+	      <div class="indented">
+		<code>product([1, 5; 7, 3])</code> returns <code>105</code><br>
+		<code>product({3, 8, 1})</code> returns <code>24</code>
+	      </div>
+	    </td>
+	  </tr>
+	  <tr>
+	    <td>
+	      <code class="nobreak">
+		product(e, for i in u, j in v, ...)&nbsp;&nbsp;
+	      </code>
+	    </td>
+	    <td class="seminarrow">
+	      Returns the product of all values of <code>e</code> over all
+	      possible index combinations.
+	    </td>
+	  </tr>
+	</table>
+      </div>
+    </span>
+    <br>
+    <span><code>sum</code></span>
+    <span class="pull-right"><i class="clickable icon-align-left"></i>
+      <div class="popover" data-placement="top">
+	<table>
+	  <tr>
+	    <th>Usage</th>
+	    <th>Description</th>
+	  </tr>
+	  <tr>
+	    <td>
+	      <code class="nobreak">sum(A)</code>
+	    </td>
+	    <td class="seminarrow">
+	      When applied to an array, the <code>sum</code>
+	      function returns the sum of all elements in the
+	      array.  For example,<br>
+	      <div class="indented">
+		<code>sum([1, 5; 7, 3])</code> returns <code>16</code><br>
+		<code>sum({3, 8, 1})</code> returns <code>12</code>
+	      </div>
+	    </td>
+	  </tr>
+	  <tr>
+	    <td>
+	      <code class="nobreak">
+		sum(e, for i in u, j in v, ...)
+	      </code>
+	    </td>
+	    <td class="seminarrow">
+	      Returns the sum of all values of <code>e</code> over all
+	      possible index combinations.
+	    </td>
+	  </tr>
+	</table>
+      </div>
+    </span>
+  </div>
+</div>
+		
+
+<!--- MODULE: Information about event related operators -->
+<div class="module">
+  <span class="pull-right headbut">
+    <i class="clickable icon-comment"></i>
+    <div class="popover" data-placement="top">
+      These event related operators are discussed in <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=29" target="_blank">&sect;3.7.3</a>.
+    </div>
+  </span>
+  <h5>Event Operators</h5>
+  <div class="modbod">
+    <span>
+      <code>pre</code>
+    </span>
+    <span class="pull-right"><i class="clickable icon-align-left"></i>
+      <div class="popover" data-placement="right">
+	<table>
+	  <tr>
+	    <th>Usage</th>
+	    <th>Description</th>
+	  </tr>
+	  <tr>
+	    <td><code>pre(y)</code></td>
+	    <td class="seminarrow">
+	      At an event, the <code>pre</code> operator is used to refer
+	      to the value of a variable prior to that event.  There
+	      are several caveats related to the use of <code>pre</code>.
+	      These can be found in <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=29" target="_blank">&sect;3.7.3</a>.
+	    </td>
+	  </tr>
+	</table>
+      </div>
+    </span>
+    <br>
+    <span>
+      <code>noEvent</code>
+    </span>
+    <span class="pull-right"><i class="clickable icon-align-left"></i>
+      <div class="popover" data-placement="right">
+	<table>
+	  <tr>
+	    <th>Usage</th>
+	    <th>Description</th>
+	  </tr>
+	  <tr>
+	    <td><code>noEvent(expr)</code></td>
+	    <td class="seminarrow">
+	      The <code>noEvent</code> operator suppresses the generation
+	      of events by any event generating operators or functions
+	      in the expression <code>expr</code>.  Further information
+	      about the <code>noEvent</code> operator can be found in <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=29" target="_blank">&sect;3.7.3.2</a> and <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=88" target="_blank">&sect;8.5</a>.
+	    </td>
+	  </tr>
+	</table>
+      </div>
+    </span>
+    <br>
+    <span>
+      <code>change</code>
+    </span>
+    <span class="pull-right"><i class="clickable icon-align-left"></i>
+      <div class="popover" data-placement="right">
+	<table>
+	  <tr>
+	    <th>Usage</th>
+	    <th>Description</th>
+	  </tr>
+	  <tr>
+	    <td><code>change(v)</code></td>
+	    <td class="seminarrow">
+	      The expression <code>change(v)</code>
+	      becomes <code><b>true</b></code> only for the instant that
+	      the value of the variable <code>v</code> changes
+	      (<i>i.e.,</i> <code>v<>pre(v)</code>). See the <code>pre</code>
+	      operator and/or <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=30" target="_blank">&sect;3.7.3.1</a> for more
+	      details and restrictions.
+	    </td>
+	  </tr>
+	</table>
+      </div>
+    </span>
+    <br>
+    <span>
+      <code>edge</code>
+    </span>
+    <span class="pull-right"><i class="clickable icon-align-left"></i>
+      <div class="popover" data-placement="right">
+	<table>
+	  <tr>
+	    <th>Usage</th>
+	    <th>Description</th>
+	  </tr>
+	  <tr>
+	    <td><code>edge(b)</code></td>
+	    <td class="seminarrow">
+	      The <code>edge</code> operator
+	      becomes <code><b>true</b></code> only at the instant
+	      when the expression <code>b</code> goes
+	      from <code><b>false</b></code>
+	      to <code><b>true</b></code> (<i>i.e.,</i> <code>b and
+	      not pre(b)</code>). See the <code>pre</code> operator
+	      and/or <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=30" target="_blank">&sect;3.7.3.1</a> for more details and
+	      restrictions.
+	    </td>
+	  </tr>
+	</table>
+      </div>
+    </span>
+    <br>
+    <span>
+      <code>initial</code>
+    </span>
+    <span class="pull-right"><i class="clickable icon-align-left"></i>
+      <div class="popover" data-placement="right">
+	<table>
+	  <tr>
+	    <th>Usage</th>
+	    <th>Description</th>
+	  </tr>
+	  <tr>
+	    <td><code>initial()</code></td>
+	    <td class="seminarrow">
+	      The <code>initial</code> operator is <code><b>true</b></code>
+	      during the initialization phase of the simulation.
+	    </td>
+	  </tr>
+	</table>
+      </div>
+    </span>
+    <br>
+    <span>
+      <code>terminal</code>
+    </span>
+    <span class="pull-right"><i class="clickable icon-align-left"></i>
+      <div class="popover" data-placement="right">
+	<table>
+	  <tr>
+	    <th>Usage</th>
+	    <th>Description</th>
+	  </tr>
+	  <tr>
+	    <td><code>terminal()</code></td>
+	    <td class="seminarrow">
+	      The <code>terminal</code> operator
+	      becomes <code><b>true</b></code> at the end of
+	      a <b>successful</b> simulation.
+	    </td>
+	  </tr>
+	</table>
+      </div>
+    </span>
+    <br>
+    <span>
+      <code>reinit</code>
+    </span>
+    <span class="pull-right"><i class="clickable icon-align-left"></i>
+      <div class="popover" data-placement="right">
+	<table>
+	  <tr>
+	    <th>Usage</th>
+	    <th>Description</th>
+	  </tr>
+	  <tr>
+	    <td><code>reinit(x, expr)</code></td>
+	    <td class="seminarrow">
+	      The <code>reinit</code> operator sets the value of the
+	      variable <code>x</code> to be equal to the of <code>expr</code>.
+	      Note, <code>reinit</code> can only be used within a
+	      <code><b>when</b></code> clause.  For more details on the usage
+	      and restrictions of <code>reinit</code>, see <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=86" target="_blank">&sect;8.3.6</a>.
+	    </td>
+	  </tr>
+	</table>
+      </div>
+    </span>
+    <br>
+    <span>
+      <code>sample</code>
+    </span>
+    <span class="pull-right"><i class="clickable icon-align-left"></i>
+      <div class="popover" data-placement="right">
+	<table>
+	  <tr>
+	    <th>Usage</th>
+	    <th>Description</th>
+	  </tr>
+	  <tr>
+	    <td><code>sample(start, interval)</code></td>
+	    <td class="seminarrow">
+	      The <code>sample</code> operator because true
+	      when <code>time>=start</code> and again
+	      every <code>interval</code> seconds after that.  Further
+	      details can be found in <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=29" target="_blank">&sect;3.7.3</a>.
+	    </td>
+	  </tr>
+	</table>
+      </div>
+    </span>
+    <br>
+    <span>
+      <code>smooth</code>
+    </span>
+    <span class="pull-right"><i class="clickable icon-align-left"></i>
+      <div class="popover" data-placement="right">
+	<table>
+	  <tr>
+	    <th>Usage</th>
+	    <th>Description</th>
+	  </tr>
+	  <tr>
+	    <td><code>smooth(p, expr)</code></td>
+	    <td class="seminarrow">
+	      When evaluated, the <code>smooth</code> operator simply
+	      returns the value of the expression <code>expr</code>.  But
+	      it also acts as a guarantee that <code>expr</code> is
+	      <code>p</code> times continuously differentiable.  For
+	      further details, see <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=30" target="_blank">&sect;3.7.3.2</a>.
+	    </td>
+	  </tr>
+	</table>
+      </div>
+    </span>
+    <br>
+    <span>
+      <code>terminate</code>
+    </span>
+    <span class="pull-right"><i class="clickable icon-align-left"></i>
+      <div class="popover" data-placement="right">
+	<table>
+	  <tr>
+	    <th>Usage</th>
+	    <th>Description</th>
+	  </tr>
+	  <tr>
+	    <td><code>terminate()</code></td>
+	    <td class="seminarrow">
+	      The <code>terminate</code> operator instructs the underlying
+	      simulation environment to terminate the simulation after
+	      the completion of the next integration step or event
+	      iteration.  See <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=87" target="_blank">&sect;8.3.8</a> for more
+	      details.
+	    </td>
+	  </tr>
+	</table>
+      </div>
+    </span>
+    <br>
+  </div>
+</div>
+	      </td>
+	      <td class="column col4">
+		
+
+<!--- MODULE: Different statement types -->
+<div class="module">
+  <h5>Statements</h5>
+  <div class="modbod">
+    <span>
+      <b><code>if</code></b>
+      <span class="pull-right"><i class="clickable icon-align-left"></i>
+	<div class="popover" data-placement="bottom">
+	  <table class="table">
+  <tr>
+    <th>If Statement (<a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=129" target="_blank">&sect;11.2.6</a>)
+    </th>
+  </tr>
+  <tr>
+    <td>
+      <code><b>if</b> cond <b>then</b><br>
+	    &nbsp;&nbsp;...<br>
+	    <b>elseif</b> cond <b>then</b><br>
+	    &nbsp;&nbsp;...<br>
+	    <b>else</b><br>
+	    &nbsp;&nbsp;...<br>
+	    <b>end</b> <b>if;</b>
+      </code>
+    </td>
+  </tr>
+  <tr><th>If Expression (<a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=18" target="_blank">&sect;3.6.5</a>)</th></tr>
+  <tr>
+    <td>
+      <code>
+	<b>if</b> cond1 <b>then</b> expr1 <b>elseif</b> cond2 <b>then</b> expr2 <b>else</b> expr3;
+      </code>
+    </td>
+  </tr>
+</table>
+	</div>
+      </span>
+    </span><br>
+
+    <span>
+      <b><code>when</code></b>
+      <span class="pull-right"><i class="clickable icon-align-left"></i>
+	<div class="popover" data-placement="bottom">
+	  
+
+<table class="table">
+  <tr>
+    <th>When Statement (<a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=130" target="_blank">&sect;11.2.7</a>)
+    </th>
+  </tr>
+  <tr>
+    <td>
+      <code>
+	<b>when</b> cond <b>then</b><br>
+	&nbsp;&nbsp;...<br>
+	<b>elsewhen</b> cond <b>then</b><br>
+	&nbsp;&nbsp;...<br>
+	<b>end</b> <b>when</b>;
+      </code>
+    </td>
+  </tr>
+</table>
+<div class="footnote">
+  <div class="seminarrow">
+    <p><b>Tip:</b> It is easy to get into trouble with algebraic loops
+      when using <code><b>when</b></code> clauses.  To avoid problems, assign
+      your conditional expression, <code>cond</code>, to a
+      variable, <code>v</code>, and then state your when condition
+      as <code><b>when</b> pre(v) <b>then</b></code>.  This is a fancy way
+      of saying "when I know that this condition has happened for sure
+      (and can't be undone by the equations in this when clause), do
+      this...".
+    </p>
+    <br>
+    <p><b>Restrictions</b>:
+      <ul>
+	<li>Cannot be used in a function</li>
+	<li>Cannot be nested</li>
+	<li>Cannot occur inside <code><b>while</b></code>, <code><b>if</b></code> or <code><b>for</b></code> clauses.</li>
+      </ul>
+    </p>    
+    <p>
+      If the conditional expression for the <code><b>when</b></code> clause
+      is a vector, the contents of the <code><b>when</b></code> clause
+      become active when <b><i>any</i></b> of the elements in the vector
+      become true.
+    </p>
+  </div>
+</div>
+	</div>
+      </span>
+    </span><br>
+
+    <span>
+      <b><code>while</code></b>
+      <span class="pull-right"><i class="clickable icon-align-left"></i>
+	<div class="popover" data-placement="bottom">
+	  <table class="table">
+  <tr>
+    <th>While Statement (<a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=128" target="_blank">&sect;11.2.3</a>)
+    </th>
+  </tr>
+  <tr>
+    <td>
+      <code>
+	<b>while</b> cond <b>loop</b><br>
+	&nbsp;&nbsp;...<br>
+	<b>end</b> <b>while</b>;
+      </code>
+    </td>
+  </tr>
+</table>
+	</div>
+      </span>
+    </span><br>
+
+    <span>
+      <b><code>for</code></b>
+      <span class="pull-right"><i class="clickable icon-align-left"></i>
+	<div class="popover" data-placement="bottom">
+	  <table class="table">
+  <tr>
+    <th colspan="2">For Statement (<a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=127" target="_blank">&sect;11.2.2</a>)
+    </th>
+  </tr>
+  <tr>
+    <td>
+      Syntax
+    </td>
+    <td>
+      <code>
+	<b>for</b> indices <b>loop</b><br>
+	&nbsp;&nbsp;...<br>
+	<b>end</b> <b>for</b>;
+      </code>
+    </td>
+  </tr>
+  <tr>
+    <th colspan="2">Indices</th>
+  </tr>
+  <tr>
+    <td>
+      <code><b>for<b> i <b>in</b> 1:10 <b>loop</b>
+    </td>
+    <td>Looping over a range of integers<br>
+    <code>1,2,3,...,10</code></td>
+  </tr>
+
+  <tr>
+    <td>
+      <code><b>for<b> i <b>in</b> 1.0 : 1.5 : 5.5 <b>loop</b>
+    </td>
+    <td>Looping over reals<br>
+      <code>1.0, 2.5, 4.0, 5.5</code></td>
+  </tr>
+
+  <tr>
+    <td>
+      <code><b>for<b> i <b>in</b> {1,3,6,7} <b>loop</b>
+    </td>
+    <td>Looping over a collection of values<br>
+    <code>1, 3, 6, 7</code></td>
+  </tr>
+
+  <tr>
+    <td>
+      <code><b>for<b> i <b>in</b> TwoEnums <b>loop</b>
+    </td>
+    <td>Looping over enum values<br>
+    <code>TwoEnums.one, TwoEnums.two</code><br>
+    where <code><b>type</b> TwoEnums = <b>enumeration</b>(one, two)</code></td>
+  </tr>
+</table>
+	</div>
+      </span>
+    </span><br>
+  </div>
+</div>
+		
+
+<!--- MODULE: Complex expressions -->
+<div class="module">
+  <h5>Complex Expression</h5>
+  <div class="modbod">
+    <span>
+      Vector Literal
+      <span class="pull-right"><i class="clickable icon-align-left"></i>
+	<div class="popover" data-placement="top">
+	  <code>
+	    {..., ....}
+	  </code>
+	</div>
+      </span>
+    </span><br>
+
+    <span>
+      Array Literals
+      <span class="pull-right"><i class="clickable icon-align-left"></i>
+	<div class="popover" data-placement="top">
+	  <code>
+	    [..., ...; ..., ...]
+	  </code>
+	</div>
+      </span>
+    </span><br>
+
+    <span>
+      Array Comprehensions
+      <span class="pull-right"><i class="clickable icon-align-left"></i>
+	<div class="popover" data-placement="top"
+	     title="Array Comprehensions">
+	  <table class="table">
+	    <tr>
+	      <td>One index</td>
+	      <td>
+		<span class="nobreak">
+		  <code class="pull-right">{ f(i) <b>for</b> i <b>in</b> 1:ni }</code>
+		</span>
+	      </td>
+	    </tr>
+	    <tr>
+	      <td>Two indices</td>
+	      <td>
+		<span class="nobreak">
+		  <code class="pull-right">{ f(i,j) <b>for</b> i <b>in</b> 1:ni, j <b>in</b> 1:nj }</code>
+		</span><br>
+		<b>Note:</b> The resulting array will have dimensions <code>[nj,ni]</code>.
+	      </td>
+	    </tr>
+	  </table>
+	</div>
+      </span>
+    </span><br>
+  </div>
+</div>
+		
+
+
+
+<!--- MODULE: Restricted classes -->
+<div class="module">
+  <span class="pull-right headbut"><i class="clickable icon-comment"></i>
+    <div class="popover">
+      <p class="seminarrow">
+	Operator overloading is a complex topic and is covered in
+	detail in <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=167" target="_blank">&sect;14</a>
+      </p>
+    </div>
+  </span>
+  <h5>Operators</h5>
+  <div class="modbod">
+    <span id="operator record">
+      <b><code>operator record</code></b>
+    </span>
+    <span class="pull-right"><i class="clickable icon-align-left"></i>
+      <div class="popover" title="Records with Overloaded Operators"
+	   data-placement="bottom">
+	<table class="table">
+	  <tr>
+	    <th>What's an <code><b>operator record</b></code>?</th>
+	  </tr>
+	  <tr>
+	    <td>
+	      <p class="seminarrow">
+		An <code><b>operator record</b></code> is like an
+		ordinary <code><b>record</b></code> except that it is
+		possible to define custom behavior for operators
+		like <code>+</code>, <code>-</code>, etc.  For more details,
+		see <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=167" target="_blank">&sect;14</a>.
+	      </p>
+	    </td>
+	  </tr>
+	  <tr>
+	    <th>
+	      Canonical Syntax
+	    </th>
+	  </tr>
+	  <tr>
+	    <td>
+	      <code><b>operator record</b> <code class="typename">Complex</code><br>
+		&nbsp;&nbsp;<code class="typename">Real</code> re;<br>
+		&nbsp;&nbsp;<code class="typename">Real</code> im;<br>
+		&nbsp;&nbsp;...<br>
+		<code class="comment">
+		  &nbsp;&nbsp;// Definition of <b>operator function</b>s<br>
+		  &nbsp;&nbsp;// <b>operator</b>s<br></code>
+		<b>end</b> <code class="typename">Complex</code>;
+	      </code>
+	    </td>
+	  </tr>
+	</table>
+      </div>
+    </span>
+    <br>
+    <span id="operator function">
+      <b><code>operator function</code></b>
+    </span>
+    <span class="pull-right"><i class="clickable icon-align-left"></i>
+      <div class="popover" title="Operator Functions" data-placement="left">
+	<table class="table">
+	  <tr>
+	    <th colspan="2">What's an <code><b>operator function</b></code>?</th>
+	  </tr>
+	  <tr>
+	    <td colspan="2">
+	      <p class="seminarrow">
+		An <code><b>operator function</b></code> is a function
+		that implements an operator for an <code><b>operator
+		record</b><code/>.
+	      </p>
+	    </td>
+	  </tr>
+	  <tr>
+	    <th colspan="2">Possible Operators</th>
+	  </tr>
+	  <tr>
+	    <td>Constructors (see <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=168" target="_blank">&sect;14.2</a>):</td>
+	    <td><code>constructor</code>, <code>0</code></td>
+	  </tr>
+	  <tr>
+	    <td>Conversions (see <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=169" target="_blank">&sect;14.3</a>):</td>
+	    <td><code>String</code></td>
+	  </tr>
+	  <tr>
+	    <td>Binary Operators (see <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=169" target="_blank">&sect;14.4</a>):</td>
+	    <td>
+	      
+<code class="op">+</code>
+ , 
+<code class="op">-</code>
+, 
+<code class="op">*</code>
+, 
+<code class="op">/</code>
+,
+	      
+<code class="op">^</code>
+, 
+<code class="op">==</code>
+, <br> 
+<code class="op">&lt;&gt;</code>
+,
+	      
+<code class="op">&gt;</code>
+, 
+<code class="op">&lt;</code>
+, 
+<code class="op">&gt;=</code>
+,
+	      
+<code class="op">&lt;=</code>
+, 
+<code class="op"><b>and</b></code>
+, 
+<code class="op"><b>or</b></code>
+
+	    </td>
+	  </tr>
+	  <tr>
+	    <td>Unary Operators (see <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=170" target="_blank">&sect;14.5</a>):</td>
+	    <td> 
+<code class="op">-</code>
+, 
+<code class="op"><b>not</b></code>
+</td>
+	  </tr>
+	  <tr>
+	    <th colspan="2">Examples</th>
+	  </tr>
+	  <tr>
+	    <td colspan="2">
+	      <code><b>encapsulated operator function</b> '+'<br>
+		&nbsp;&nbsp;<b>import</b> <span class="typename">Complex</span>;<br>
+		&nbsp;&nbsp;<b>input</b> <span class="typename">Complex</span>
+		c1;<br>
+		&nbsp;&nbsp;<b>input</b> <span class="typename">Complex</span>
+		c2;<br>
+		&nbsp;&nbsp;<b>output</b> <span class="typename">Complex</span>
+		result;<br>
+		<b>algorithm</b><br>
+		&nbsp;&nbsp;result
+		:= <span class="typename">Complex</span>(c1.re+c2.re,
+		c1.im+c2.im);<br>
+		&nbsp;&nbsp;<b>annotation</b>(Inline=<b>true</b>);<br>
+		<b>end</b> '+';<br>
+	    </td>
+	  </tr>
+	</table>
+	<div class="footnote">
+	  <b>Note:</b> An <code><b>operator function</b></code> should
+	  be encapsulated.
+	</div>
+      </div>
+    </span>
+    <br>
+    <span id="operator">
+      <b><code>operator</code></b>
+    </span>
+    <span class="pull-right"><i class="clickable icon-align-left"></i>
+      <div class="popover" title="Multiple Operator Implementations"
+	   data-placement="left">
+	<table class="table">
+	  <tr>
+	    <th>What's an <code><b>operator</b></code>?</th>
+	  </tr>
+	  <tr>
+	    <td>
+	      <p class="seminarrow">
+		When an <code><b>operator record</b></code> requires more
+		than one implementation of a given operator,
+		e.g., <code>'+'</code>, a special type
+		of <code><b>package</b></code> called
+		an <code><b>operator</b></code> is created with the name
+		of the overloaded operator.
+		This <code><b>operator</b></code> "package" includes all
+		the various implementations of the operator.
+	      </p>
+	    </td>
+	  </tr>
+	  <tr>
+	    <th>Example</th>
+	  </tr>
+	  <tr>
+	    <td>
+	      <code>
+		<b>enscapsulated operator</b> '-'<br>
+		&nbsp;&nbsp;<code><b>import</b></code> <code class="typename">Complex</code>;<br>
+		&nbsp;&nbsp;<code><b>function</b></code> <code class="typename">negate</code><br>
+		&nbsp;&nbsp;&nbsp&nbsp;<code><b>input</b></code> <code class="typename">Complex</code> c;<br>
+		&nbsp;&nbsp;&nbsp&nbsp;<code><b>output</b></code> <code class="typename">Complex</code> result;<br>
+		&nbsp;&nbsp;<code><b>algorithm</b></code><br>
+		&nbsp;&nbsp;&nbsp;&nbsp;result := <code class="typename">Complex</code>(-c.re, -c.im);<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;<code><b>annotation</b></code>(Inline=<code><b>true</b></code>);<br>
+		&nbsp;&nbsp;<code><b>end</b></code> <code class="typename">negate</code>;<br>
+		<br>
+
+		&nbsp;&nbsp;<code><b>function</b></code> <code class="typename">subtract</code><br>
+		&nbsp;&nbsp;&nbsp&nbsp;<code><b>input</b></code> <code class="typename">Complex</code> c1;<br>
+		&nbsp;&nbsp;&nbsp&nbsp;<code><b>input</b></code> <code class="typename">Complex</code> c2;<br>
+		&nbsp;&nbsp;&nbsp&nbsp;<code><b>output</b></code> <code class="typename">Complex</code> result;<br>
+		&nbsp;&nbsp;<code><b>algorithm</b></code><br>
+		&nbsp;&nbsp;&nbsp;&nbsp;result := <code class="typename">Complex</code>(c1.re-c2.re, c1.im-c2.im);<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;<code><b>annotation</b></code>(Inline=<code><b>true</b></code>);<br>
+		&nbsp;&nbsp;<code><b>end</b></code> <code class="typename">subtract</code>;<br>
+		<b>end</b> '-';
+	      </code>
+	    </td>
+	  </tr>
+	</table>
+	<div class="footnote">
+	  <b>Note:</b> An <code><b>operator</b></code> should
+	  be encapsulated.
+	</div>
+      </div>
+    </span>
+  </div>
+</div>
+		
+
+<!--- MODULE: Information about standard annotations -->
+<div id="variability" class="module">
+  <h5 style="padding: 0px 70px">Annotations</h5>
+  <div class="modbod">
+    <code>choices</code>
+    <span class="pull-right"><i class="clickable icon-align-left"></i>
+      <div class="popover" data-placement="top">
+	<table class="table">
+	  <tr><th>Explicit values for a variable</th></tr>
+	  <tr>
+	    <td>
+	      <code>
+		<b>parameter</b> <code class="typename">Integer</code> x<br>
+		&nbsp;&nbsp;<b>annotation</b>(choices(choice=3 "Desc", choice=5 "Desc"));
+	      </code><br>
+	    </td>
+	  </tr>
+	  <tr><th>Explicit redeclarations</th></tr>
+	  <tr>
+	    <td>
+	      <code>
+		<b>replaceable</b> model <code class="typename">Resistor</code> Load(R=2) <b>constrainedby</b> <code class="typename">TwoPin</code><br>
+		&nbsp;&nbsp;<b>annotation</b>(choices(<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;choice(<b>redeclare</b> <code class="typename">ThermalResistor</code> Load(R=2,T0=273)),<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;choice(<b>redeclare</b> <code class="typename">Capacitor</code> Load(C=2e-3))));<br>
+	      </code>
+	    </td>
+	  </tr>
+	</table>
+      </div>
+    </span>
+
+    <br>
+    <code>defaultComponentName</code>
+    <span class="pull-right"><i class="clickable icon-comment"></i>
+      <div class="popover" data-placement="top">
+	<p class="seminarrow">
+	The <code>defaultComponentName</code> annotation allows a default
+	name to be associated with a given definition.  When dragging
+	new instances of a given definition into a diagram, the string
+	associated with the <code>defaultComponentName</code> should be
+	used as the basis for the initial instance name.
+	</p>
+      </div>
+    </span>
+    <br>
+    <code>defaultComponentPrefixes</code>
+    <span class="pull-right"><i class="clickable icon-comment"></i>
+      <div class="popover" data-placement="top">
+	<p class="seminarrow">
+	The <code>defaultComponentPrefixes</code> annotation allows a
+	default set of prefixes to be associated with a given
+	definition.  When dragging new instances of a given definition
+	into a diagram, these prefixes should automatically be applied
+	to the new instance.
+	</p>
+      </div>
+    </span>
+    <br>
+    <code>derivative</code>
+    <span class="pull-right"><i class="clickable icon-align-left"></i>
+      <div class="popover" data-placement="left">
+	<table class="table">
+	  <tr><th>A normal single argument function</th></tr>
+	  <tr>
+	    <td>
+	      <code>
+		<b>function</b> <code class="typename">f0</code><br>
+		&nbsp;&nbsp;<b>input</b> <code class="typename">Real</code> x;<br>
+		&nbsp;&nbsp;<b>output</b> <code class="typename">Real</code> y;<br>
+		<b>algorithm</b><br>
+		&nbsp;&nbsp;...<br>
+		&nbsp;&nbsp;<b>annotation</b>(derivative=f1);<br>
+		<b>end</b> <code class="typename">f0</code>;
+	      </code>
+	    </td>
+	  </tr>
+	  <tr>
+	    <th>Definition of the first derivative of <code class="typename">f0</code></th>
+	  </tr>
+	  <tr>
+	    <td>
+	      <code>
+		<b>function</b> <code class="typename">f1</code><br>
+		&nbsp;&nbsp;<b>input</b> <code class="typename">Real</code> x;<br>
+		&nbsp;&nbsp;<b>input</b> <code class="typename">Real</code> der_x;<br>
+		&nbsp;&nbsp;<b>output</b> <code class="typename">Real</code> der_y;<br>
+		<b>algorithm</b><br>
+		&nbsp;&nbsp;...<br>
+		<b>end</b> <code class="typename">f1</code>;
+	      </code>
+	    </td>
+	  </tr>
+	</table>
+	<div class="footnote">
+	  The <code>derivative</code> annotation is discussed in great
+	  detail in <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=145" target="_blank">&sect;12.7.1</a>.
+	</div>
+      </div>
+    </span>
+    <br>
+    <code>Dialog</code>
+    <span class="pull-right"><i class="clickable icon-align-left"></i>
+      <div class="popover" data-placement="top">
+	<table class="table">
+	  <tr><th>Definition</th></tr>
+	  <tr>
+	    <td>
+	      <code>
+		<b>record</b> <code class="typename">Dialog</code><br>
+		&nbsp;&nbsp;<b>parameter</b> <code class="typename">String</code>  &nbsp;tab = "General";<br>
+		&nbsp;&nbsp;<b>parameter</b> <code class="typename">String</code>  &nbsp;group = "Parameters";<br>
+		&nbsp;&nbsp;<b>parameter</b> <code class="typename">Boolean</code>  enable = <b>true</b>;<br>
+		&nbsp;&nbsp;<b>parameter</b> <code class="typename">Boolean</code>  showStartAttribute = <b>false</b>;<br>
+		&nbsp;&nbsp;<b>parameter</b> <code class="typename">String</code> &nbsp;groupImage = "";<br>
+		&nbsp;&nbsp;<b>parameter</b> <code class="typename">Boolean</code>  connectorSizing = <b>false</b>;<br>
+		<b>end</b> <code class="typename">Dialog</code>;
+	      </code>
+	    </td>
+	  </tr>
+	</table>
+	<div class="footnote">
+	  A detailed description of each field in the <code>Dialog</code>
+	  annotation can be found in <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=225" target="_blank">&sect;18.7</a>.
+	</div>
+      </div>
+    </span>
+
+    <br>
+    <code>Documentation</code>
+    <span class="pull-right"><i class="clickable icon-align-left"></i>
+      <div class="popover" data-placement="left">
+	<code>
+	  <b>annotation</b>(Documentation(info="&lt;html&gt;...&lt;/html&gt;",<br>
+	  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;revisions="..."));
+	</code>
+	<div class="footnote seminarrow">
+	  <p>
+	    <b>Note:</b> Within the <code>&lt;html&gt;</code> tags, it is
+	    possible to use "Modelica URIs" of the form:
+	  </p>
+	  <ul>
+	    <li><code>Modelica://Fully.Qualfied.Name#layer</code>: Where layer
+	    can be one of <code>diagram</code>, <code>info</code>, <code>text</code>
+	    or <code>icon</code>.</li>
+	    <li><code>Modelica://Fully.Qualfied.Name/dir/path/filename</code>:
+	    Where <code>dir/path</code> is a directory structure starting
+	    at the point where the
+	    package <code>Fully.Qualified.Name</code> is stored
+	    and <code>filename</code> is a file in that directory.</li>
+	  </ul>
+	  <p>
+	    Complete documentation for the <code>Documentation</code>
+	    annotation can be found in <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=214" target="_blank">&sect;18.2</a>.
+	  </p>
+	</div>
+      </div>
+    </span>
+
+    <br>
+    <code>DynamicSelect</code>
+    <span class="pull-right"><i class="clickable icon-align-left"></i>
+      <div class="popover" data-placement="top"
+	   title="Animation of Graphical Annotations">
+	<table class="table">
+	  <tr><th>Syntax</th></tr>
+	  <tr>
+	    <td>
+	      <code>
+		DynamicSelect(val1, val2)
+	      </code>
+	    </td>
+	  </tr>
+	  <tr><th>Explanation</th></tr>
+	  <tr>
+	    <td>
+	      <p class="seminarrow">
+		The <code>DynamicSelect</code> annotation can be used as a
+		value in any graphical annotation.  The first argument
+		must be a literal expression (no variables) and the
+		second argument can reference variables.  Tools can
+		then use the second expression in contexts
+		(<i>e.g.,</i> when simulation results are available)
+		to adjust the graphical representation according to
+		the values of the variables.
+	      </p>
+	    </td>
+	  </tr>
+	</table>
+      </div>
+    </span>
+    <br>
+    <code>Evaluate</code>
+    <span class="pull-right"><i class="clickable icon-comment"></i>
+      <div class="popover" data-placement="top">
+	<p class="seminarrow">
+	  When applied to a <code><b>parameter</b></code>,
+	  the <code>Evaluation</code> annotation indicates that the user
+	  does not intend to modify the value of the parameter between
+	  simulations.  As a result, some potentially significant
+	  symbolic optimizations can often be made.
+	</p>
+	<p>See <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=214" target="_blank">&sect;18.3</a> for more details.</p>
+      </div>
+    </span>
+    <br>
+    <code>experiment</code>
+    <span class="pull-right"><i class="clickable icon-comment"></i>
+      <div class="popover" data-placement="top">
+	<table class="table">
+	  <tr><th>Definition</th></tr>
+	  <tr>
+	    <td>
+	      <code>
+		<b>record</b> <code class="typename">experiment</code><br>
+		&nbsp;&nbsp;<b>parameter</b> <code class="typename">Real</code> StartTime;<br>
+		&nbsp;&nbsp;<b>parameter</b> <code class="typename">Real</code> StopTime;<br>
+		&nbsp;&nbsp;<b>parameter</b> <code class="typename">Real</code> Interval;<br>
+		&nbsp;&nbsp;<b>parameter</b> <code class="typename">Real</code> Tolerance;<br>
+		<b>end</b> <code class="typename">experiment</code>;
+	      </code>
+	    </td>
+	  </tr>
+	</table>
+	<div class="footnote">
+	  <p>
+	    <code>StartTime</code>, <code>StopTime</code>
+	    and <code>Interval</code> are all assumed to have units of
+	    seconds.
+	  </p>
+	  <p>See <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=215" target="_blank">&sect;18.4</a> for more details.</p>
+	</div>
+      </div>
+    </span>
+    <br>
+    <code>GenerateEvents</code>
+    <span class="pull-right"><i class="clickable icon-comment"></i>
+      <div class="popover" data-placement="top">
+	<p class="seminarrow">
+	  When the <code>GenerateEvents</code> annotation is associated
+	  with a function definition and given a value
+	  of <code><b>true</b></code>, this indicates that expressions in
+	  the function should generate events (<i>e.g.,</i> as if they
+	  appeared in an <code><b>equation</b></code> section).
+	</p>
+	<p>See <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=214" target="_blank">&sect;18.3</a> for more details.</p>
+      </div>
+    </span>
+    <br>
+    <code>HideResult</code>
+    <span class="pull-right"><i class="clickable icon-comment"></i>
+      <div class="popover" data-placement="top">
+	<p class="seminarrow">
+	  When applied to a variable declaration,
+	  the <code>HideResult</code> annotation indicates that the user
+	  does not wish to view this variable among the simulation
+	  results.
+	</p>
+	<p>See <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=214" target="_blank">&sect;18.3</a> for more details.</p>
+      </div>
+    </span>
+    <br>
+    <code>Inline</code>
+    <span class="pull-right"><i class="clickable icon-comment"></i>
+      <div class="popover" data-placement="top">
+	<p class="seminarrow">
+	  When the <code>Inline</code> annotation is associated with a
+	  function definition and given a value
+	  of <code><b>true</b></code>, this indicates that the function
+	  should be inlined prior to symbolic manipulation.
+	</p>
+	<p>See <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=214" target="_blank">&sect;18.3</a> for more details.</p>
+      </div>
+    </span>
+    <br>
+    <code>inverse</code>
+    <span class="pull-right"><i class="clickable icon-align-left"></i>
+      <div class="popover" data-placement="top">
+	<code>
+	  <b>function</b> <code class="typename">f</code><br>
+	  &nbsp;&nbsp;<b>input</b> <code class="typename">T1</code> u1;<br>
+	  &nbsp;&nbsp;<b>input</b> <code class="typename">T2</code> u2;<br>
+	  &nbsp;&nbsp;<b>output</b> <code class="typename">R</code> y;<br>
+	  <b>algorithm</b><br>
+	  &nbsp;&nbsp;...<br>
+	  &nbsp;&nbsp;<b>annotation</b>(inverse(u1=fi1(u2,y),<br>
+	  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;u2=fi2(u1, y)));<br>
+	  <b>end</b> <code class="typename">f</code>;
+	</code>
+      </div>
+    </span>
+    <br>
+    <code>LateInline</code>
+    <span class="pull-right"><i class="clickable icon-comment"></i>
+      <div class="popover" data-placement="top">
+	<p class="seminarrow">
+	  When the <code>LateInline</code> annotation is associated with a
+	  function definition and given a value
+	  of <code><b>true</b></code>, this indicates that the function
+	  should be inlined during the code generation process, but
+	  not before symbolic manipulation has been performed.
+	</p>
+	<p>See <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=214" target="_blank">&sect;18.3</a> for more details.</p>
+      </div>
+    </span>
+    <br>
+    <code>missingInnerMessage</code>
+    <span class="pull-right"><i class="clickable icon-comment"></i>
+      <div class="popover" data-placement="top">
+	<code><b>annotation</b>(missingInnerMessage="...");</code><br>
+	<p class="seminarrow">
+	  This annotation allows a tool to provide a customized
+	  message when an <code><b>outer</b></code> declaration cannot
+	  find a matching <code><b>inner</b></code>.  This allows library
+	  developers to provide more specific and meaningful
+	  diagnostics to users.
+	</p>
+	<p>See <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=224" target="_blank">&sect;18.7</a> for more details.</p>
+      </div>
+    </span>
+    <br>
+    <code>preferredView</code>
+    <span class="pull-right"><i class="clickable icon-comment"></i>
+      <div class="popover" data-placement="top">
+	<p class="seminarrow">
+	  In a definition, the <code>preferredView</code> annotation can
+	  be given the values <code>"info"</code>, <code>"diagram"</code>
+	  or <code>"text"</code> to indicate which particular view makes
+	  the most sense as the default view for that definition (see
+	  <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=214" target="_blank">&sect;18.2</a>).
+	</p>
+      </div>
+    </span>
+    <br>
+    <code>smoothOrder</code>
+    <span class="pull-right"><i class="clickable icon-comment"></i>
+      <div class="popover" data-placement="top">
+	<p class="seminarrow">
+	  In a function definition, the <code>smoothOrder</code>
+	  annotation indicates how many times the function can be
+	  differentiated and still have continuous outputs.  See <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=215" target="_blank">&sect;18.3</a> for complete details.
+	</p>
+      </div>
+    </span>
+    <br>
+    <code>unassignedMessage</code>
+    <span class="pull-right"><i class="clickable icon-comment"></i>
+      <div class="popover" data-placement="top">
+	<p class="seminarrow">
+	  If the <code>unassignedMessage</code> annotation is associated
+	  with a variable, then the value of the annotation (which
+	  must be a <code class="typename">String</code>) will be used as a diagnostic
+	  message to the user if the structural analysis of the
+	  problem does not yield an equation to compute that variable.
+	  See <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=224" target="_blank">&sect;18.7</a> for complete details.
+	</p>
+      </div>
+    </span>
+    <br>
+    <code>version</code>
+    <span class="pull-right"><i class="clickable icon-comment"></i>
+      <div class="popover" data-placement="top">
+	<p class="seminarrow">
+	  Within a top-level package, the <code>version</code> annotation
+	  is used to indicate the version number for that package.
+	  This is used to distinguish between multiple versions when
+	  they are available.  See <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=228" target="_blank">&sect;18.8.2</a> for more
+	  details about version handling.
+	</p>
+      </div>
+    </span>
+  </div>
+</div>
+	      </td>
+	    </tr>
+	  </table>
+	</div>
+      </div>
+
+      <div class="row">
+	<div id="basic_col1" class="span2">
+	</div>
+	<div id="basic_col2" class="span3">
+	</div>
+	<div id="basic_col3" class="span4">
+	</div>
+	<div id="basic_col4" class="span3">
+	</div>
+      </div>
+
+      <div class="row">
+	<div class="span12">
+	  <table id="foottab">
+	    <tr>
+	      <td>
+		<div id="legend">
+		  <p><b>Legend</b></p>
+		  <ul class="nobullets hlist">
+		    <li><i class="clickable icon-comment"></i>: Read more</li>
+		    <li><i class="clickable icon-warning-sign"></i>: Note of caution</li>
+		    <li><i class="clickable icon-align-left"></i>: Sample code</li>
+		  </ul>
+		  (You can hit the <code>Escape</code> key to
+		  close all popups)
+		</div>
+	      </td>
+	      <td class="centered">
+		<span id="copyright">
+		  &copy;&nbsp;2013
+		  <a href="http://www.xogeny.com/">
+		    <span class="xogeny">Xogeny</span>
+		  </a>
+		</span>
+	      </td>
+	      <td>
+		<ul class="pull-right hlist">
+		  <li>
+<div class="g-plusone" data-size="medium" data-href="http://modref.xogeny.com/"></div></li>
+		  <li>
+<iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fmodref.xogeny.com%2F&amp;send=false&amp;layout=button_count&amp;width=100&amp;show_faces=false&amp;font&amp;colorscheme=light&amp;action=like&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:100px; height:21px;" allowTransparency="true"></iframe>
+</li>
+		</ul>
+		<br><br>
+		<ul class="pull-right hlist">
+		  
+		  <li>
+		    <i class="icon-edit"></i>&nbsp;License
+		    <div class="popover" data-placement="top"
+			 title="License">
+		      
+<div id="license" class="seminarrow">
+  <small>
+    <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/deed.en_US">
+      <img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-nd/3.0/88x31.png" />
+    </a><br>
+    <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">
+      Modelica Web Reference
+    </span> is licensed under a <a rel="license"
+				   href="http://creativecommons.org/licenses/by-nc-nd/3.0/deed.en_US">Creative
+      Commons Attribution-NonCommercial-NoDerivs 3.0
+      Unported License</a>.
+    <br>
+    Permissions beyond the scope of this license may be available by
+    contacting <a xmlns:cc="http://creativecommons.org/ns#"
+    href="mailto:michael.tiller@xogeny.com"
+    rel="cc:morePermissions">michael.tiller@xogeny.com</a>.
+  </small>
+</div>
+
+		    </div>
+		  </li>
+		  <li>
+		    <i class="icon-bell"></i>&nbsp;Feedback
+		    <div class="popover" data-placement="top"
+			 title="Reporting Bugs">
+		      <a href="http://github.com/xogeny/ModelicaWebRef">
+			<img class="pull-right" src="img/github.png">
+		      </a>
+		      <p class="seminarrow">
+			If you find any error in this reference sheet or
+			have any enhancement requests, please report them in
+			the <a href="http://github.com/xogeny/ModelicaWebRef/issues">GitHub
+			  Issue Tracker</a>.
+		      </p>
+		      <p>
+			Even better, fork the repository and submit a pull
+			request with your suggested changes.
+		      </p>
+		      <p>We appreciate any and all feedback.</p>
+		    </div>
+		  </li>
+		  <li>
+		    <a id="ackbutton" href="#acks" role="button" data-toggle="modal">
+		      <i class="icon-bullhorn"></i>&nbsp;Acknowledgments
+		    </a>
+		  </li>
+		</ul>
+	      </td>
+	    </tr>
+	  </table>
+	</div>
+      </div>
+    </div>
+
+    <div id="acks" class="modal hide fade">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+    <h3>Acknowledgments</h3>
+  </div>
+  <div class="modal-body">
+    <p>
+      This page was created
+      by <a href="https://plus.google.com/u/0/106797365970607309985?rel=author">
+	Michael Tiller
+      </a>.
+    </p>
+    <p>
+      The inspiration for this web reference application came from
+      Derek Cheng
+      at <a href="http://www.cydesign.com/">CyDesign</a>.
+    <p>
+    <p>
+      Although a separate effort, this reference material
+      benefited from ideas and content in
+      the <code>ModelicaReference</code> package.  We gratefully
+      acknowledge the efforts of its authors: Modelica
+      Association, DLR, Telemark University College and Maplesoft.
+    </p>
+    <p>
+      Both the style and functionality of this web reference page
+      is enabled
+      by <a href="http://twitter.github.com/bootstrap">Bootstrap</a>
+      and <a href="http://glyphicons.com/">Glyphicons</a>.
+    </p>
+    <div>
+      <p>
+	This project benefited greatly from the feedback of the
+	following individuals:
+	<ul class="hlist">
+	  <li>Dietmar Winkler</li>
+	  <li>Derek Cheng</li>
+	  <li>Leo Gall (@LeoGall)</li>
+	  <li>Michael Sasena (@msasena)</li>
+	</ul>
+	<ul class="hlist">
+	  <li>Stefan Wischhusen (@wischhusen)</li>
+	  <li>Kevin Davies (@kdavies4)</li>
+	  <li>Dag Br&uuml;ck</li>
+	  <li>Matthis Thorade (@thorade)</li>
+	</ul>
+      </p>
+    </div>
+  </div>
+</div>
+
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/popovers.js"></script>
+
+    <script type="text/javascript">
+      (function() {
+      var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+      po.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+      })();
+    </script>
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-33034217-3']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+  </body>
+</html>

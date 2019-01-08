@@ -1,0 +1,336 @@
+html {
+    height: 100%;
+}
+
+body {
+    padding: 0px;
+    background-color: #c0c0c0;
+    height: 100%;
+}
+
+body .container {
+    padding: 10px;
+    background-color: #ffffff;
+    min-height: 100%;
+}
+
+h5 {
+    text-align: center;
+    background-color: #e0e0e0;
+    margin-top: 0px;
+    white-space: nowrap;
+}
+
+.module {
+/*    background-color: #f4f4f4;  */
+    border: 1px solid white;
+    background-color: white;
+    border-radius: 6px 6px 6px 6px;
+    margin-bottom: 10px;
+}
+
+div.module h5 {
+    padding-right: 30px;
+    border-top-left-radius: 6px 6px;
+    border-top-right-radius: 6px 6px;
+}
+
+table.root td {
+    padding-left: 8px;
+    height: 100%;
+    vertical-align: top;
+    min-width: 120px;
+}
+
+.var-module {
+    background-color: #f8f0f0;
+}
+
+.type-module {
+    background-color: #f0f0f8;
+}
+
+.class-module {
+    background-color: #f0f0f8;
+}
+
+.expr-module {
+    background-color: #f0f0f8;
+}
+
+.modbod {
+    padding-top: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+pre {
+    background-color: #f0f0f0;
+}
+
+button {
+    margin: 2px;
+}
+
+.row {
+    margin-left: -15px;
+    height: auto;
+}
+
+.hidden {
+    display: none; 
+}
+
+.centered {
+    text-align: center;
+}
+
+.rightjust {
+    text-align: right;
+}
+
+.heading {
+    margin: 0;
+    font-size: 24px;
+}
+
+#maintabs {
+    margin-top: 8px;
+}
+
+.nav {
+    margin-bottom: 8px;
+}
+
+.nav-tabs > li > a {
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+.module h5 {
+    padding-top: 1px;
+    padding-bottom: 1px;
+    margin-bottom: 0px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+[class*="span"] {
+    margin-left: 12px; 
+}
+
+
+.hlist {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nobullets {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.hlist li {
+    display: inline;
+    margin-right: 10px;
+}
+
+.modbod .table {
+    margin-bottom: 0px;
+}
+
+.module .table {
+    margin-bottom: 0px;
+}
+
+#tab_content {
+    min-height: 100%;
+    height: 100%;
+}
+
+.modal-header {
+    border-bottom: 1px solid #EEEEEE;
+    padding: 9px 15px;
+    background-color: #e0e0e0;
+}
+
+.typename {
+    color: #222288;
+}
+
+.comment {
+    color: #882222;
+}
+
+.descstr {
+    color: #228822;
+}
+
+.funcname {
+    color: #EE44EE;
+}
+
+.nobreak {
+    white-space: nowrap;
+}
+
+.popover {
+    max-width: 60%;
+}
+
+.narrow {
+    width: 200px;
+}
+
+.seminarrow {
+    width: 400px;
+}
+
+.nav-tabs > li > a {
+    color: #808080;
+}
+
+.nav-tabs > .active > a {
+    color: black;
+}
+
+.nav-tabs > .active > a:hover {
+    color: black;
+}
+
+.nav-tabs > .active > a:focus {
+    color: black;
+}
+
+.xogeny {
+    font-family: 'Philosopher', sans-serif;
+    font-size: 120%;
+}
+
+.footnote {
+    background-color: #F8F8F8;
+    margin-top: 5px;
+    border-top: 1px solid #DDDDDD;
+    box-shadow: 0 1px 0 #FFFFFF inset;
+    margin-bottom: 0;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-bottom-right-radius: 6px 6px;
+    border-bottom-left-radius: 6px 6px;
+}
+
+.footnote p {
+    margin-bottom: 0px;
+}
+
+.table.borderless td {
+    border-top: none;
+}
+
+td.borderless {
+    border-top: none;
+}
+
+/* Not what it sounds like ;-) */
+.headbut {
+    padding-right: 5px;
+}
+
+.table th {
+    background-color: #f8f8f8;
+    border-top: 0 none;
+    border-top-left-radius: 6px 6px;
+    border-top-right-radius: 6px 6px;
+}
+
+.table-centered td {
+    text-align: center;
+}
+
+.row-fluid [class*="span"] {
+    margin-left: 17px;
+}
+
+#header {
+    margin-bottom: 10px;
+    margin-left: 0px;
+}
+
+.row {
+    margin-left: 0px;
+}
+
+.span12 {
+    margin-left: 0px;
+}
+
+.table td.justified {
+    text-align: justify;
+}
+
+.table td.justified tt {
+    margin: 4px;
+}
+
+code.op {
+    margin-right: 8px;
+}
+
+.rightlogo {
+    margin-left: 30px;
+}
+
+#ackbutton {
+    color: #333333;
+    text-decoration: none;
+}
+
+#foottab {
+    width: 100%;
+}
+
+#foottab tr td {
+    vertical-align: bottom;
+}
+
+#license {
+    text-align: center;
+}
+
+.popover-title {
+    background-color: #e0e0e0;
+}
+
+code {
+    background-color: transparent;
+    border: none;
+    color: black;
+    font-size: 14px;
+    padding: 0px;
+}
+
+.clickable {
+    cursor: pointer;
+}
+
+.indented {
+    margin-left: 20px;
+}
+
+#copyright {
+    font-size: 120%;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+#legend {
+    background-color: #f0f0f0;
+    border: 1px solid #e0e0e0;
+    background-color: white;
+    border-radius: 6px 6px 6px 6px;
+    padding: 5px;
+    margin-bottom: 0px;
+}
