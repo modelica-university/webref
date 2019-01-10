@@ -1,17 +1,16 @@
-import { Popover, Icon, Elevation, Card } from "@blueprintjs/core";
+import { Popover, Elevation, Card } from "@blueprintjs/core";
 import React from "react";
 import ReactDOMServer from "react-dom/server";
 import { searchContext } from "../components/context";
+import { warningIcon, exampleIcon, commentIcon } from "./icons";
+import { IconSet, Caveats } from "./caveats";
 
-export interface TopicProps {
+export interface TopicProps extends Caveats {
     title: string | JSX.Element;
 }
 
-export interface TopicItemProps {
+export interface TopicItemProps extends Caveats {
     title: string | JSX.Element;
-    warning?: JSX.Element;
-    comment?: JSX.Element;
-    example?: JSX.Element;
 }
 
 function contains(elem: JSX.Element, term: string): boolean {
@@ -20,6 +19,7 @@ function contains(elem: JSX.Element, term: string): boolean {
         return true;
     }
 }
+
 function isVisible(item: TopicItem, term: string): boolean {
     if (term === "") return true;
     if (typeof item.props.title === "string") {
@@ -32,6 +32,7 @@ function isVisible(item: TopicItem, term: string): boolean {
     if (item.props.comment && contains(item.props.comment, term)) return true;
     return false;
 }
+
 export class TopicItem extends React.Component<TopicItemProps> {
     render() {
         return (
@@ -40,34 +41,7 @@ export class TopicItem extends React.Component<TopicItemProps> {
                     isVisible(this, state.search) && (
                         <div style={{ margin: "2px" }}>
                             {this.props.title}
-                            {this.props.warning && (
-                                <div style={{ float: "right" }}>
-                                    <Popover
-                                        content={this.props.warning}
-                                        target={
-                                            <Icon style={{ marginLeft: "4px", color: "red" }} icon="warning-sign" />
-                                        }
-                                    />
-                                </div>
-                            )}
-                            {this.props.comment && (
-                                <div style={{ float: "right" }}>
-                                    <Popover
-                                        content={this.props.comment}
-                                        target={
-                                            <Icon style={{ marginLeft: "4px", color: "black" }} icon="align-left" />
-                                        }
-                                    />
-                                </div>
-                            )}
-                            {this.props.example && (
-                                <div style={{ float: "right" }}>
-                                    <Popover
-                                        content={this.props.example}
-                                        target={<Icon style={{ marginLeft: "4px", color: "blue" }} icon="code" />}
-                                    />
-                                </div>
-                            )}
+                            <IconSet caveats={this.props} />
                         </div>
                     )
                 }
@@ -80,7 +54,7 @@ export class Topic extends React.Component<TopicProps> {
     static Item = TopicItem;
     render() {
         return (
-            <Card interactive={true} elevation={Elevation.TWO} style={{ padding: 0, marginBottom: 4 }}>
+            <Card interactive={false} elevation={Elevation.TWO} style={{ padding: 0, marginBottom: 4 }}>
                 <div
                     style={{
                         textAlign: "center",
@@ -92,6 +66,7 @@ export class Topic extends React.Component<TopicProps> {
                     className="cardHeader"
                 >
                     <b>{this.props.title}</b>
+                    <IconSet caveats={this.props} />
                 </div>
                 <div className="topicList" style={{ display: "flex", flexDirection: "column", padding: 4 }}>
                     {this.props.children}

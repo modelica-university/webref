@@ -1,7 +1,7 @@
 import React from "react";
 
-import Layout from "../src/components/layout";
 import { searchContext } from "../src/components/context";
+import { warningIcon, exampleIcon, commentIcon } from "../src/components/icons";
 
 import {
     lexicalRules,
@@ -62,6 +62,11 @@ const headerStyle: React.CSSProperties = {
     paddingTop: 5,
 };
 
+const legendStyle: React.CSSProperties = {
+    paddingLeft: 5,
+    paddingRight: 10,
+};
+
 export class Main extends React.Component<{}, MainState> {
     state = {
         search: "",
@@ -90,6 +95,14 @@ export class Main extends React.Component<{}, MainState> {
                                 </div>
                             );
                         })}
+                    </div>
+                    <div style={{ display: "flex", margin: 5 }}>
+                        <span style={legendStyle}>
+                            <b>Legend:</b>
+                        </span>
+                        {commentIcon} <span style={legendStyle}>Comment</span> {warningIcon}{" "}
+                        <span style={legendStyle}>Warning</span> {exampleIcon}
+                        <span style={legendStyle}>Example</span>
                     </div>
                 </div>
             </searchContext.Provider>
