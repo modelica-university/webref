@@ -18,8 +18,12 @@ import {
     eventFunctions,
     conversionFunctions,
     specialOperators,
-    reductionOperators,
     eventOperators,
+    reductionOperators,
+    statements,
+    complexExpressions,
+    operatorOperator,
+    standardAnnotations,
 } from "../src/topics";
 
 interface Column {
@@ -35,8 +39,8 @@ const ordering: Column[] = [
         elements: [lexicalRules, specializedClasses, classDefinitions, connectorQualifiers, variabilityQualifiers],
     },
     {
-        grow: 3,
-        min: 20,
+        grow: 1,
+        min: 15,
         elements: [
             builtinTypes,
             standardEnumerations,
@@ -49,7 +53,7 @@ const ordering: Column[] = [
         ],
     },
     { grow: 1, min: 10, elements: [specialOperators, reductionOperators, eventOperators] },
-    { grow: 1, min: 10, elements: [specializedClasses, lexicalRules] },
+    { grow: 1, min: 10, elements: [statements, complexExpressions, operatorOperator, standardAnnotations] },
 ];
 
 export interface MainState {

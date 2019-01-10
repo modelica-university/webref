@@ -14,3 +14,7 @@ export * from "./conv_functions";
 export * from "./spec_ops";
 export * from "./red_ops";
 export * from "./event_ops";
+export * from "./statements";
+export * from "./comp_expr";
+export * from "./operators";
+export * from "./annotations";
