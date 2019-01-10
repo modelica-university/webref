@@ -17,6 +17,9 @@ import {
     arrayFunctions,
     eventFunctions,
     conversionFunctions,
+    specialOperators,
+    reductionOperators,
+    eventOperators,
 } from "../src/topics";
 
 interface Column {
@@ -45,7 +48,7 @@ const ordering: Column[] = [
             conversionFunctions,
         ],
     },
-    { grow: 1, min: 10, elements: [lexicalRules] },
+    { grow: 1, min: 10, elements: [specialOperators, reductionOperators, eventOperators] },
     { grow: 1, min: 10, elements: [specializedClasses, lexicalRules] },
 ];
 
