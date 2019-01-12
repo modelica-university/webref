@@ -7,6 +7,7 @@ import { IconSet, Caveats } from "./caveats";
 
 export interface TopicProps extends Caveats {
     title: string | JSX.Element;
+    items?: TopicItemProps[];
 }
 
 export interface TopicItemProps extends Caveats {
@@ -69,6 +70,7 @@ export class Topic extends React.Component<TopicProps> {
                     <IconSet caveats={this.props} />
                 </div>
                 <div className="topicList" style={{ display: "flex", flexDirection: "column", padding: 4 }}>
+                    {this.props.items && this.props.items.map((item, i) => <Topic.Item {...item} key={i} />)}
                     {this.props.children}
                 </div>
             </Card>

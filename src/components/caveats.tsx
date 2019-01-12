@@ -12,7 +12,7 @@ export interface IconSetProps {
 }
 
 const ContentWrapper = (props: { children: JSX.Element }) => {
-    return <Card>{props.children}</Card>;
+    return <Card style={{ padding: 0 }}>{props.children}</Card>;
 };
 
 export const IconSet = (props: IconSetProps) => {

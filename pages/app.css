@@ -1,3 +1,21 @@
 body {
     margin: 0px;
 }
+
+table.table th {
+    background-color: #eee;
+    border-bottom: 1px solid #ccc;
+    padding: 5px;
+}
+
+table.table td {
+    padding: 10px;
+}
+
+table.table {
+    max-width: 65vw;
+}
+
+code span.comment {
+    color: rgb(136, 34, 34);
+}
