@@ -52,4 +52,34 @@ const references: { [id: string]: ReferenceDetails } = {
         section: "12.2",
         href: "https://www.modelica.org/documents/ModelicaSpec33.pdf#page=134",
     },
+    mods: {
+        title: "modifications",
+        section: "7.2",
+        href: "https://www.modelica.org/documents/ModelicaSpec33.pdf#page=70",
+    },
+    redecl: {
+        title: "redeclarations",
+        section: "7.3",
+        href: "https://www.modelica.org/documents/ModelicaSpec33.pdf#page=73",
+    },
+    encapsulated: {
+        title: "encapsulation",
+        section: "5.3.1",
+        href: "https://www.modelica.org/documents/ModelicaSpec33.pdf#page=54",
+    },
+    final: {
+        title: "final",
+        section: "7.2.6",
+        href: "https://www.modelica.org/documents/ModelicaSpec33.pdf#page=73",
+    },
+    partial: {
+        title: "partial",
+        section: "4.7",
+        href: "https://www.modelica.org/documents/ModelicaSpec33.pdf#page=43",
+    },
+    expandable: {
+        title: "expandable connectors",
+        section: "9.1.3",
+        href: "https://www.modelica.org/documents/ModelicaSpec33.pdf#page=94",
+    },
 };

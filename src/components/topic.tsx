@@ -40,7 +40,7 @@ export class TopicItem extends React.Component<TopicItemProps> {
             <searchContext.Consumer>
                 {state =>
                     isVisible(this, state.search) && (
-                        <div style={{ margin: "2px" }}>
+                        <div className="topic-title" style={{ margin: "2px" }}>
                             {this.props.title}
                             <IconSet caveats={this.props} />
                         </div>

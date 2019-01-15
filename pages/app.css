@@ -32,3 +32,7 @@ span.descstr {
 span.typename {
     color: #006;
 }
+
+div.topic-title code {
+    font-weight: bold;
+}
