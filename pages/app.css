@@ -12,10 +12,23 @@ table.table td {
     padding: 10px;
 }
 
+table.table td.note {
+    background-color: #fcfcfc;
+    border-top: 1px solid #ccc;
+}
+
 table.table {
     max-width: 65vw;
 }
 
 code span.comment {
     color: rgb(136, 34, 34);
+}
+
+span.descstr {
+    color: #060;
+}
+
+span.typename {
+    color: #006;
 }

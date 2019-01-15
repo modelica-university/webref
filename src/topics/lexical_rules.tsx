@@ -1,7 +1,7 @@
 import React from "react";
 import { Topic, TopicProps } from "../components/topic";
-import { references } from "./refs";
-import { Code } from "./helpers";
+import { Reference } from "./references";
+import { Code } from "../components/helpers";
 
 const commentDescription = (
     <div>
@@ -117,11 +117,7 @@ const numberDescription = (
         <tr>
             <td className="seminarrow">
                 Examples of expressions which are not allowed in Modelica because of interactions between binary
-                operators and unary operators (see{" "}
-                <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=15" target="_blank">
-                    {"&sect;3.2"}
-                </a>
-                ):
+                operators and unary operators (<Reference id="unary"/>):
                 <br />
                 <Code src="2*-2, --2, ++2, 2--2" />
             </td>
@@ -131,11 +127,7 @@ const numberDescription = (
 
 const data: TopicProps = {
     title: "Lexical Rules",
-    comment: (
-        <span>
-            See <a href={references.lexical}>§2</a> for more details
-        </span>
-    ),
+    comment: <Reference id="lexical"/>,
     items: [
         { title: "Comments", example: commentDescription },
         { title: "Identifiers", example: identifiersDescription },
