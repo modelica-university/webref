@@ -82,4 +82,49 @@ const references: { [id: string]: ReferenceDetails } = {
         section: "9.1.3",
         href: "https://www.modelica.org/documents/ModelicaSpec33.pdf#page=94",
     },
+    connectors: {
+        title: "connectors",
+        section: "9.1",
+        href: "https://www.modelica.org/documents/ModelicaSpec33.pdf#page=93",
+    },
+    conset: {
+        title: "connection sets",
+        section: "9.1.1",
+        href: "https://www.modelica.org/documents/ModelicaSpec33.pdf#page=94",
+    },
+    io: {
+        title: "inputs and outputs",
+        section: "9.3",
+        href: "https://www.modelica.org/documents/ModelicaSpec33.pdf#page=101",
+    },
+    flow: {
+        title: "conservation quantities",
+        section: "9.2",
+        href: "https://www.modelica.org/documents/ModelicaSpec33.pdf#page=98",
+    },
+    stream: {
+        title: "stream connectors",
+        section: "15",
+        href: "https://www.modelica.org/documents/ModelicaSpec33.pdf#page=175",
+    },
+    variability: {
+        title: "variability",
+        section: "3.8",
+        href: "https://www.modelica.org/documents/ModelicaSpec33.pdf#page=30",
+    },
+    constvar: {
+        title: "constant variability",
+        section: "3.8.1",
+        href: "https://www.modelica.org/documents/ModelicaSpec33.pdf#page=31",
+    },
+    paramvar: {
+        title: "parameter variability",
+        section: "3.8.2",
+        href: "https://www.modelica.org/documents/ModelicaSpec33.pdf#page=31",
+    },
+    discvar: {
+        title: "discrete variability",
+        section: "3.8.3",
+        href: "https://www.modelica.org/documents/ModelicaSpec33.pdf#page=31",
+    },
 };

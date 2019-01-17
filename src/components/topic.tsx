@@ -1,8 +1,7 @@
-import { Popover, Elevation, Card } from "@blueprintjs/core";
+import { Elevation, Card } from "@blueprintjs/core";
 import React from "react";
 import ReactDOMServer from "react-dom/server";
 import { searchContext } from "../components/context";
-import { warningIcon, exampleIcon, commentIcon } from "./icons";
 import { IconSet, Caveats } from "./caveats";
 
 export interface TopicProps extends Caveats {
@@ -61,8 +60,7 @@ export class Topic extends React.Component<TopicProps> {
                         textAlign: "center",
                         borderBottom: "1px solid #ccc",
                         backgroundColor: "#eee",
-                        paddingTop: 3,
-                        paddingBottom: 3,
+                        padding: 3,
                     }}
                     className="cardHeader"
                 >
