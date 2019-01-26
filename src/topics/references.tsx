@@ -127,4 +127,9 @@ const references: { [id: string]: ReferenceDetails } = {
         section: "3.8.3",
         href: "https://www.modelica.org/documents/ModelicaSpec33.pdf#page=31",
     },
+    builtinTypes: {
+        title: "builtin types",
+        section: "4.8",
+        href: "https://www.modelica.org/documents/ModelicaSpec33.pdf#page=48",
+    },
 };

@@ -1,8 +1,16 @@
 import React from "react";
 import { Topic } from "../components/topic";
+import { Reference } from "./references";
 
 export const builtinTypes = (
-    <Topic title="Builtin Types" comment={<span>Comment</span>}>
+    <Topic
+        title="Builtin Types"
+        comment={
+            <div style={{ padding: 5 }}>
+                <Reference id="builtinTypes" />
+            </div>
+        }
+    >
         <Topic.Item
             title={
                 <b>

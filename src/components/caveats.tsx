@@ -21,38 +21,17 @@ export const IconSet = (props: IconSetProps) => {
         <div style={{ float: "right", cursor: "pointer" }}>
             {props.caveats.warning && (
                 <div>
-                    <Popover
-                        content={
-                            <ContentWrapper>
-                                <SimpleCard title="Warning">{props.caveats.warning}</SimpleCard>
-                            </ContentWrapper>
-                        }
-                        target={warningIcon}
-                    />
+                    <Popover content={<ContentWrapper>{props.caveats.warning}</ContentWrapper>} target={warningIcon} />
                 </div>
             )}
             {props.caveats.comment && (
                 <div>
-                    <Popover
-                        content={
-                            <ContentWrapper>
-                                <SimpleCard title="Comment">{props.caveats.comment}</SimpleCard>
-                            </ContentWrapper>
-                        }
-                        target={commentIcon}
-                    />
+                    <Popover content={<ContentWrapper>{props.caveats.comment}</ContentWrapper>} target={commentIcon} />
                 </div>
             )}
             {props.caveats.example && (
                 <div>
-                    <Popover
-                        content={
-                            <ContentWrapper>
-                                <SimpleCard title="Example">{props.caveats.example}</SimpleCard>
-                            </ContentWrapper>
-                        }
-                        target={exampleIcon}
-                    />
+                    <Popover content={<ContentWrapper>{props.caveats.example}</ContentWrapper>} target={exampleIcon} />
                 </div>
             )}
         </div>
