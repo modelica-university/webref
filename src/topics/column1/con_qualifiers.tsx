@@ -1,7 +1,7 @@
 import React from "react";
-import { Topic, TopicProps } from "../components/topic";
-import { Reference } from "./references";
-import { SimpleCard } from "../components/helpers";
+import { Topic, TopicProps } from "../../components/topic";
+import { Reference } from "../references";
+import { SimpleCard } from "../../components/helpers";
 
 const inputDescription = (
     <SimpleCard title="Input Variables">
@@ -88,13 +88,15 @@ const streamDescription = (
 );
 
 const data: TopicProps = {
-    title: "Class Definitions",
+    title: "Connector Qualifiers",
     warning: (
-        <p className="seminarrow">
-            If a variable in a connector lacks any qualifier, the default connection behavior is to{" "}
-            <b>generate an equality equation</b>
-            with its counterpart on all other connectors in the connection set (Reference id="connectors"/>)
-        </p>
+        <div style={{ padding: 5 }}>
+            <p className="seminarrow">
+                If a variable in a connector lacks any qualifier, the default connection behavior is to{" "}
+                <b>generate an equality equation</b>
+                with its counterpart on all other connectors in the connection set (<Reference id="connectors" />)
+            </p>
+        </div>
     ),
     items: [
         { title: <code>input</code>, comment: inputDescription },

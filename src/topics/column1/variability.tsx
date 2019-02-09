@@ -1,7 +1,7 @@
 import React from "react";
-import { Topic, TopicProps } from "../components/topic";
-import { SimpleCard } from "../components/helpers";
-import { Reference } from "./references";
+import { Topic, TopicProps } from "../../components/topic";
+import { SimpleCard } from "../../components/helpers";
+import { Reference } from "../references";
 
 const constantDescription = (
     <SimpleCard title="Constant Variability">
@@ -32,10 +32,10 @@ const parameterDescription = (
 const discreteDescription = (
     <SimpleCard title="Discrete Variability">
         <p className="seminarrow">
-            The{" "}
+            The
             <b>
                 <code>discrete</code>
-            </b>{" "}
+            </b>
             qualifier is used for variables whose value changes during a simulation but only in response to discrete
             events. (<Reference id="discvar" />)
         </p>
@@ -43,16 +43,18 @@ const discreteDescription = (
 );
 
 const data: TopicProps = {
-    title: "Class Definitions",
+    title: "Variability",
     warning: (
-        <p className="seminarrow">
-            Default variability is <b>continuous</b>. So if a variable
-            <br />
-            doesn't have a variability qualifier, it is assumed to be
-            <br />
-            continuous (<Reference id="variability" />
-            ).
-        </p>
+        <div style={{ padding: 5 }}>
+            <p className="seminarrow">
+                Default variability is <b>continuous</b>. So if a variable
+                <br />
+                doesn't have a variability qualifier, it is assumed to be
+                <br />
+                continuous (<Reference id="variability" />
+                ).
+            </p>
+        </div>
     ),
     items: [
         { title: <code>constant</code>, comment: constantDescription },

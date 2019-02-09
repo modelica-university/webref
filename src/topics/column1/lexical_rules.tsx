@@ -1,10 +1,9 @@
 import React from "react";
-import { Topic, TopicProps } from "../components/topic";
-import { Reference } from "./references";
-import { Code } from "../components/helpers";
+import { Topic, TopicProps } from "../../components/topic";
+import { Reference } from "../references";
+import { Code } from "../../components/helpers";
 
 const commentDescription = (
-    <div>
         <table className="table">
             <tr>
                 <th>Single line comments</th>
@@ -24,7 +23,6 @@ const commentDescription = (
                 </td>
             </tr>
         </table>
-    </div>
 );
 
 const identifiersDescription = (
@@ -127,7 +125,7 @@ const numberDescription = (
 
 const data: TopicProps = {
     title: "Lexical Rules",
-    comment: <Reference id="lexical"/>,
+    comment: <div style={{padding: 5}}><Reference id="lexical"/></div>,
     items: [
         { title: "Comments", example: commentDescription },
         { title: "Identifiers", example: identifiersDescription },

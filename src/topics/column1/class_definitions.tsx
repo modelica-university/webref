@@ -1,7 +1,7 @@
 import React from "react";
-import { Topic, TopicProps } from "../components/topic";
-import { SimpleCard } from "../components/helpers";
-import { Reference } from "./references";
+import { Topic, TopicProps } from "../../components/topic";
+import { SimpleCard } from "../../components/helpers";
+import { Reference } from "../references";
 
 const extendsDescription = (
     <SimpleCard title="Inheritance">

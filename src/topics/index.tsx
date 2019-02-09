@@ -1,8 +1,9 @@
-export * from "./classes";
-export * from "./lexical_rules";
-export * from "./defs";
-export * from "./con_qualifiers";
-export * from "./variability";
+export * from "./column1/lexical_rules";
+export * from "./column1/specialized";
+export * from "./column1/class_definitions";
+export * from "./column1/con_qualifiers";
+export * from "./column1/variability";
+
 export * from "./types";
 export * from "./std_enums";
 export * from "./arithmetic";
