@@ -132,4 +132,9 @@ const references: { [id: string]: ReferenceDetails } = {
         section: "4.8",
         href: "https://www.modelica.org/documents/ModelicaSpec33.pdf#page=48",
     },
+    units: {
+        title: "units",
+        section: "19.1",
+        href: "https://www.modelica.org/documents/ModelicaSpec33.pdf#page=235",
+    },
 };
