@@ -1,5 +1,5 @@
 import React from "react";
-import { Topic } from "../components/topic";
+import { Topic } from "../../components/topic";
 
 export const complexExpressions = (
     <Topic title="Complex Expressions" comment={<span>Comment</span>}>

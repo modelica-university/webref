@@ -13,10 +13,11 @@ export * from "./column2/array_funcs";
 export * from "./column2/event_funcs";
 export * from "./column2/conv_functions";
 
-export * from "./spec_ops";
-export * from "./red_ops";
-export * from "./event_ops";
-export * from "./statements";
-export * from "./comp_expr";
-export * from "./operators";
-export * from "./annotations";
+export * from "./column3/spec_ops";
+export * from "./column3/red_ops";
+export * from "./column3/event_ops";
+
+export * from "./column4/statements";
+export * from "./column4/comp_expr";
+export * from "./column4/operators";
+export * from "./column4/annotations";

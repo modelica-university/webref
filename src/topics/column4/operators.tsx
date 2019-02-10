@@ -1,21 +1,10 @@
 import React from "react";
-import { Topic } from "../components/topic";
+import { Topic } from "../../components/topic";
 
-const operators = [
-    "pre",
-    "noEvent",
-    "change",
-    "edge",
-    "initial",
-    "terminal",
-    "reinit",
-    "sample",
-    "smooth",
-    "terminate",
-];
+const operators = ["operator record", "operator function", "operator"];
 
-export const eventOperators = (
-    <Topic title="Event Operators">
+export const operatorOperator = (
+    <Topic title="Operators">
         {operators.map((op, i) => (
             <Topic.Item
                 key={i}

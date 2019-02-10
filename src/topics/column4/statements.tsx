@@ -1,10 +1,10 @@
 import React from "react";
-import { Topic } from "../components/topic";
+import { Topic } from "../../components/topic";
 
-const operators = ["max", "min", "product", "sum"];
+const operators = ["if", "when", "while", "for"];
 
-export const reductionOperators = (
-    <Topic title="Reduction Operators">
+export const statements = (
+    <Topic title="Statements">
         {operators.map((op, i) => (
             <Topic.Item
                 key={i}
