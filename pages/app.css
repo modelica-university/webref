@@ -36,3 +36,7 @@ span.typename {
 div.topic-title code {
     font-weight: bold;
 }
+
+.seminarrow {
+    max-width: 30vw;
+}

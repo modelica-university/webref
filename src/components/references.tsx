@@ -1,15 +1,26 @@
 import React from "react";
 
-export const Reference = (props: { id: Keys<typeof references> }) => {
-    const ref = references[props.id];
+export type ReferenceTemplate = (link: JSX.Element, title: string) => JSX.Element;
+export interface ReferenceProps {
+    id: Keys<typeof references>;
+    children?: ReferenceTemplate;
+}
+
+const defaultChild = (link: JSX.Element, title: string) => {
     return (
         <span>
-            see {ref.title} in{" "}
-            <a href={ref.href} target="_blank">
-                §{ref.section}
-            </a>{" "}
-            for more details
+            For more information about {title}, see {link}.
         </span>
+    );
+};
+
+export const Reference = (props: ReferenceProps) => {
+    const ref = references[props.id];
+    return (props.children || defaultChild)(
+        <a href={ref.href} target="_blank">
+            §{ref.section}
+        </a>,
+        ref.title,
     );
 };
 

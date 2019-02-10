@@ -1,7 +1,7 @@
 import React from "react";
 import { Topic, TopicProps } from "../../components/topic";
 import { SimpleCard } from "../../components/helpers";
-import { Reference } from "../references";
+import { Reference } from "../../components/references";
 
 const extendsDescription = (
     <SimpleCard title="Inheritance">
@@ -33,7 +33,8 @@ const redeclareDescription = (
         title="Redeclarations"
         note={
             <span className="seminarrow">
-                <Reference id="mods" /> and <Reference id="redecls" />
+                For more information, see <Reference id="mods">{link => link}</Reference> and
+                <Reference id="redecls">{link => link}</Reference>
             </span>
         }
     >

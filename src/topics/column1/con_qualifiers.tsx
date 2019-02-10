@@ -1,6 +1,6 @@
 import React from "react";
 import { Topic, TopicProps } from "../../components/topic";
-import { Reference } from "../references";
+import { Reference } from "../../components/references";
 import { SimpleCard } from "../../components/helpers";
 
 const inputDescription = (

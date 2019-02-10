@@ -1,6 +1,6 @@
 import React from "react";
 import { Topic } from "../../components/topic";
-import { Reference } from "../references";
+import { Reference } from "../../components/references";
 
 const realAttributes = (
     <div>
