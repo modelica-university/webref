@@ -243,16 +243,6 @@ const for_elem = (
 
 const data: TopicProps = {
     title: "Statements",
-    comment: (
-        <span>
-            {" "}
-            These event related operators are discussed in{" "}
-            <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=29" target="_blank">
-                &sect;3.7.3
-            </a>
-            .
-        </span>
-    ),
     items: [
         {
             title: <code>if</code>,
