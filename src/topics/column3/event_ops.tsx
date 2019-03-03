@@ -284,7 +284,7 @@ const data: TopicProps = {
         },
         {
             title: <code>reinit</code>,
-            example: pre,
+            example: reinit,
         },
         {
             title: <code>sample</code>,
