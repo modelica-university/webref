@@ -16,6 +16,9 @@ const defaultChild = (link: JSX.Element, title: string) => {
 
 export const Reference = (props: ReferenceProps) => {
     const ref = references[props.id];
+    if (!ref) {
+        return <a href="#">??? {`(id=${props.id})`}</a>;
+    }
     return (props.children || defaultChild)(
         <a href={ref.href} target="_blank">
             §{ref.section}
@@ -32,7 +35,7 @@ interface ReferenceDetails {
     href: string;
 }
 
-const references: { [id: string]: ReferenceDetails } = {
+const references = {
     lexical: {
         title: "lexical rules",
         section: "2",

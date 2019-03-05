@@ -34,7 +34,7 @@ const redeclareDescription = (
         note={
             <span className="seminarrow">
                 For more information, see <Reference id="mods">{link => link}</Reference> and
-                <Reference id="redecls">{link => link}</Reference>
+                <Reference id="redecl">{link => link}</Reference>
             </span>
         }
     >
