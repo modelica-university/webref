@@ -77,6 +77,22 @@ const legendStyle: React.CSSProperties = {
     paddingRight: 10,
 };
 
+const RenderColumn = (props: { column: Column }) => (
+    <div
+        style={{
+            flexGrow: props.column.grow,
+            minWidth: `${props.column.min}em`,
+        }}
+        className="topicColumn"
+    >
+        {props.column.elements.map((elem, ei) => (
+            <div style={{ margin: 10 }} key={ei}>
+                {elem}
+            </div>
+        ))}
+    </div>
+);
+
 export class Main extends React.Component<{}, MainState> {
     state = {
         search: "",
@@ -87,28 +103,17 @@ export class Main extends React.Component<{}, MainState> {
     render() {
         return (
             <searchContext.Provider value={{ search: this.state.search, setTerm: this.setSearch }}>
-                <div style={{ background: "#f8f8fc", fontSize: "12px" }}>
+                <div id="columns">
                     <h1 style={headerStyle}>Modelica Web Reference</h1>
-                    <div style={{ display: "flex" }}>
-                        {ordering.map((column, ci) => {
-                            return (
-                                <div
-                                    style={{
-                                        flexGrow: column.grow,
-                                        minWidth: `${column.min}em`,
-                                        maxWidth: `${column.max}vw`,
-                                    }}
-                                    key={ci}
-                                    className="topicColumn"
-                                >
-                                    {column.elements.map((elem, ei) => (
-                                        <div style={{ margin: 10 }} key={ei}>
-                                            {elem}
-                                        </div>
-                                    ))}
-                                </div>
-                            );
-                        })}
+                    <div style={{ display: "flex", flexWrap: "wrap" }}>
+                        <div style={{ display: "flex", flexGrow: 1 }}>
+                            <RenderColumn column={ordering[0]} />
+                            <RenderColumn column={ordering[1]} />
+                        </div>
+                        <div style={{ display: "flex", flexGrow: 1 }}>
+                            <RenderColumn column={ordering[2]} />
+                            <RenderColumn column={ordering[3]} />
+                        </div>
                     </div>
                     <div style={{ float: "right", margin: 5 }}>
                         <b>Copyright 2019 - Michael Tiller</b>
