@@ -74,9 +74,9 @@ const modelDescription = (
 );
 
 const recordDescription = (
-    <SimpleCard title="Canonical Record" note={<span><code><b>record</b></code> <i>definitions cannot contain</i>
-      <code><b>protected</b></code> <i>sections,</i> <code><b>equation</b></code>
-      <i>sections or</i> <br/><code><b>algorithm</b></code> <i>sections</i> (<Reference id="recrest"/>)</span>}>
+    <SimpleCard title="Canonical Record" note={<span><code><b>record</b></code> <i>definitions cannot contain</i>{" "}
+      <code><b>protected</b></code> <i>sections,</i> <code><b>equation</b></code>{" "}
+      <i>sections or</i> <code><b>algorithm</b></code> <i>sections</i> (<Reference id="recrest"/>)</span>}>
   <code>
      <b>record</b> <span className="typename">RecordName</span><br/>
 &nbsp;&nbsp;<span className="typename">Real</span> x;<br/>
@@ -87,7 +87,7 @@ const recordDescription = (
 );
 
 const connectorDescription = (
-    <SimpleCard title="Connector Example" note={<span>A complete list of restrictions for the 
+    <SimpleCard title="Connector Example" note={<span>A complete list of restrictions for the{" "}
       <code><b>connector</b></code> class can be find in <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=42" target="_blank">&sect;4.6</a>.  More information about <code><b>expandable</b></code> connectors
       can be found in <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=94" target="_blank">&sect;9.1.3</a>.</span>
       }>
@@ -208,6 +208,11 @@ const functionDescription = (
 
 const data: TopicProps = {
     title: "Specialized Classes",
+    comment: (   
+        <div style={{padding: 5}}>
+            More information on the various kinds of classes can be found
+            in <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=41" target="_blank">&sect;4.6</a>.
+        </div>),
     items: [
         { title: <code>model</code>, example: modelDescription },
         { title: <code>record</code>, example: recordDescription },

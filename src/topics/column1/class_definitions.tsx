@@ -15,7 +15,7 @@ const extendsDescription = (
 const replaceableDescription = (
     <SimpleCard title="Replaceable Components">
         <div>
-            <h4>Replaceable Components</h4>
+            <h4 style={{ marginTop: 0 }}>Replaceable Components</h4>
             <code className="pull-right nobreak">
                 <b>replaceable</b> <span className="typename">D</span> comp;
             </code>
