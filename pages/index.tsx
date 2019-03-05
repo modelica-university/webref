@@ -116,6 +116,12 @@ export class Main extends React.Component<{}, MainState> {
                         </div>
                     </div>
                     <div style={{ float: "right", margin: 5 }}>
+                        <a
+                            style={{ fontSize: "120%", marginRight: 10 }}
+                            href="https://github.com/modelica-university/webref/issues"
+                        >
+                            🐞
+                        </a>
                         <b>Copyright 2019 - Michael Tiller</b>
                     </div>
                     <div style={{ display: "flex", margin: 5 }}>
