@@ -1,6 +1,5 @@
 import { Popover, Card } from "@blueprintjs/core";
 import { warningIcon, commentIcon, exampleIcon } from "./icons";
-import { SimpleCard } from "./helpers";
 
 export interface Caveats {
     warning?: JSX.Element;
@@ -18,7 +17,7 @@ const ContentWrapper = (props: { children: JSX.Element }) => {
 
 export const IconSet = (props: IconSetProps) => {
     return (
-        <div style={{ float: "right", cursor: "pointer" }}>
+        <div style={{ display: "flex", float: "right", cursor: "pointer" }}>
             {props.caveats.warning && (
                 <div>
                     <Popover content={<ContentWrapper>{props.caveats.warning}</ContentWrapper>} target={warningIcon} />

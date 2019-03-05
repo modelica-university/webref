@@ -466,6 +466,8 @@ export const builtinTypes = (
         }
     >
         <Topic.Item
+            num={0}
+            of={6}
             title={
                 <b>
                     <code>Real</code>
@@ -474,6 +476,8 @@ export const builtinTypes = (
             comment={realAttributes}
         />
         <Topic.Item
+            num={1}
+            of={6}
             title={
                 <b>
                     <code>Integer</code>
@@ -482,6 +486,8 @@ export const builtinTypes = (
             comment={integerAttributes}
         />
         <Topic.Item
+            num={2}
+            of={6}
             title={
                 <b>
                     <code>Boolean</code>
@@ -490,6 +496,8 @@ export const builtinTypes = (
             comment={booleanAttributes}
         />
         <Topic.Item
+            num={3}
+            of={6}
             title={
                 <b>
                     <code>String</code>
@@ -498,6 +506,8 @@ export const builtinTypes = (
             comment={stringAttributes}
         />
         <Topic.Item
+            num={4}
+            of={6}
             title={
                 <b>
                     <code>enumeration</code>
@@ -506,6 +516,8 @@ export const builtinTypes = (
             comment={enumerations}
         />
         <Topic.Item
+            num={5}
+            of={6}
             title={
                 <b>
                     <code>ExternalObject</code>

@@ -15,6 +15,8 @@ const comment = (
 export const conversionFunctions = (
     <Topic title="Numeric and Conversion Functions">
         <Topic.Item
+            num={0}
+            of={1}
             title={
                 <b>
                     <code>abs sign sqrt Integer String</code>

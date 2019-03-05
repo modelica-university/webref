@@ -40,3 +40,22 @@ div.topic-title code {
 .seminarrow {
     max-width: 30vw;
 }
+
+.topic-title {
+    margin: 0px;
+}
+
+.cardHeader {
+    text-align: center;
+    border-bottom: 1px solid #ccc;
+    background-color: #eee;
+    padding: 3px;
+}
+
+.odd-item {
+    background-color: #f8f8f8;
+}
+
+.top-border {
+    border-top: 1px solid #f0f0f0;
+}

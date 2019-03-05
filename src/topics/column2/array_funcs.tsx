@@ -100,6 +100,8 @@ const other = (
 export const arrayFunctions = (
     <Topic title="Array Functions">
         <Topic.Item
+            num={0}
+            of={3}
             title={
                 <b>
                     <code>scalar vector matrix</code>
@@ -108,6 +110,8 @@ export const arrayFunctions = (
             comment={tensor}
         />
         <Topic.Item
+            num={1}
+            of={3}
             title={
                 <b>
                     <code>identity diagonal zeros ones fill linspace</code>
@@ -116,6 +120,8 @@ export const arrayFunctions = (
             comment={construction}
         />
         <Topic.Item
+            num={2}
+            of={3}
             title={
                 <b>
                     <code>transpose outerProduct symmetric cross skew</code>

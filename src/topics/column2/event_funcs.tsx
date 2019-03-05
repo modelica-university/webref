@@ -15,6 +15,8 @@ const comment = (
 export const eventFunctions = (
     <Topic title="Event Generating Functions">
         <Topic.Item
+            num={0}
+            of={1}
             title={
                 <b>
                     <code>ceil div fill floor integer max min mod rem</code>

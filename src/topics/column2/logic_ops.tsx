@@ -18,6 +18,8 @@ const warning = (
 export const logicalOperators = (
     <Topic title="Logical Operators">
         <Topic.Item
+            num={0}
+            of={1}
             title={
                 <b>
                     <code>

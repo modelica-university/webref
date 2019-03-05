@@ -69,6 +69,8 @@ const comment = (
 export const mathematicalFunctions = (
     <Topic title="Mathematical Functions">
         <Topic.Item
+            num={0}
+            of={1}
             title={
                 <b>
                     <code>acos asin atan atan2 cos cosh exp log log10 sin sinh tan tanh</code>

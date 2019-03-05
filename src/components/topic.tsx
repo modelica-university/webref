@@ -6,11 +6,16 @@ import { IconSet, Caveats } from "./caveats";
 
 export interface TopicProps extends Caveats {
     title: string | JSX.Element;
-    items?: TopicItemProps[];
+    items?: TopicItemCoreProps[];
 }
 
-export interface TopicItemProps extends Caveats {
+export interface TopicItemCoreProps extends Caveats {
     title: string | JSX.Element;
+}
+
+export interface TopicItemProps extends TopicItemCoreProps {
+    num: number;
+    of: number;
 }
 
 function contains(elem: JSX.Element, term: string): boolean {
@@ -39,7 +44,13 @@ export class TopicItem extends React.Component<TopicItemProps> {
             <searchContext.Consumer>
                 {state =>
                     isVisible(this, state.search) && (
-                        <div className="topic-title" style={{ margin: "2px" }}>
+                        <div
+                            className={[
+                                "topic-title",
+                                this.props.num % 2 == 0 ? "even-item" : "odd-item",
+                                this.props.num > 0 ? "top-border" : "no-border",
+                            ].join(" ")}
+                        >
                             {this.props.title}
                             <IconSet caveats={this.props} />
                         </div>
@@ -55,20 +66,15 @@ export class Topic extends React.Component<TopicProps> {
     render() {
         return (
             <Card interactive={false} elevation={Elevation.TWO} style={{ padding: 0, marginBottom: 4 }}>
-                <div
-                    style={{
-                        textAlign: "center",
-                        borderBottom: "1px solid #ccc",
-                        backgroundColor: "#eee",
-                        padding: 3,
-                    }}
-                    className="cardHeader"
-                >
+                <div className="cardHeader">
                     <b>{this.props.title}</b>
                     <IconSet caveats={this.props} />
                 </div>
                 <div className="topicList" style={{ display: "flex", flexDirection: "column", padding: 4 }}>
-                    {this.props.items && this.props.items.map((item, i) => <Topic.Item {...item} key={i} />)}
+                    {this.props.items &&
+                        this.props.items.map((item, i) => (
+                            <Topic.Item {...item} key={i} num={i} of={this.props.items.length} />
+                        ))}
                     {this.props.children}
                 </div>
             </Card>

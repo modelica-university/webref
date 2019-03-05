@@ -1,5 +1,5 @@
 import React from "react";
-import { Topic } from "../../components/topic";
+import { Topic, TopicProps } from "../../components/topic";
 
 const comment = (
     <table className="table">
@@ -58,15 +58,29 @@ const comment = (
         </tr>
     </table>
 );
-export const arithmeticOperators = (
-    <Topic title="Arithmetic Operators">
-        <Topic.Item
-            title={
+
+const data: TopicProps = {
+    title: "Arithmetic Operators",
+    comment: (
+        <span>
+            {" "}
+            These event related operators are discussed in{" "}
+            <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=29" target="_blank">
+                &sect;3.7.3
+            </a>
+            .
+        </span>
+    ),
+    items: [
+        {
+            title: (
                 <b>
                     <code>+ - * / .+ .- .* ./</code>
                 </b>
-            }
-            comment={comment}
-        />
-    </Topic>
-);
+            ),
+            comment: comment,
+        },
+    ],
+};
+
+export const arithmeticOperators = <Topic {...data} />;
