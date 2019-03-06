@@ -1,9 +1,9 @@
 import React from "react";
-import { Topic } from "../../components/topic";
+import { Topic, Note } from "../../components";
 
 const warning = (
-    <div style={{ padding: 5 }}>
-        <p className="seminarrow">
+    <Note>
+        <p>
             These role of these operators is self-explanatory. However, it is worth pointing out that the relational
             operators <code>&lt;</code>, <code>&gt;</code>, <code>&lt;=</code>
             and <code>&gt;=</code> will generate events when used in conjunction with continuous time variables. More
@@ -13,7 +13,7 @@ const warning = (
             </a>
             .
         </p>
-    </div>
+    </Note>
 );
 export const logicalOperators = (
     <Topic title="Logical Operators">

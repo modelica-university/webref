@@ -1,10 +1,9 @@
 import React from "react";
-import { Topic } from "../../components/topic";
-import { Reference } from "../../components/references";
+import { Topic, Reference, Note } from "../../components";
 
 const realAttributes = (
-    <div>
-        <table className="table table-striped">
+    <div style={{ maxWidth: "85vw" }}>
+        <table style={{ width: "100%" }} className="table table-striped">
             <tr>
                 <th>Attribute</th>
                 <th>
@@ -218,28 +217,30 @@ const booleanAttributes = (
 );
 
 const externalObject = (
-    <div>
-        <p className="seminarrow">
-            External objects are used to refer (opaquely) to data or information outside the scope of the Modelica
-            language. That are initialized through{" "}
-            <code>
-                <b>external</b>
-            </code>
-            functions and can be passed back to{" "}
-            <code>
-                <b>external</b>
-            </code>
-            functions.
-        </p>
-        <p className="seminarrow">
-            More information about the <code className="typename">ExternalObject</code>
-            type can be found in{" "}
-            <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=159" target="_blank">
-                &sect;12.9.7
-            </a>
-            .
-        </p>
-    </div>
+    <Note>
+        <div>
+            <p>
+                External objects are used to refer (opaquely) to data or information outside the scope of the Modelica
+                language. That are initialized through{" "}
+                <code>
+                    <b>external</b>
+                </code>
+                functions and can be passed back to{" "}
+                <code>
+                    <b>external</b>
+                </code>
+                functions.
+            </p>
+            <p>
+                More information about the <code className="typename">ExternalObject</code>
+                type can be found in{" "}
+                <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=159" target="_blank">
+                    &sect;12.9.7
+                </a>
+                .
+            </p>
+        </div>
+    </Note>
 );
 
 const enumerations = (
@@ -314,7 +315,7 @@ const enumerations = (
                 </td>
             </tr>
         </table>
-        <div className="footnote">
+        <div style={{ padding: 5 }} className="footnote">
             Complete details on enumerations can be found in{" "}
             <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=50" target="_blank">
                 &sect;4.8.5
