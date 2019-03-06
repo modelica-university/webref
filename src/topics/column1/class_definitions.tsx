@@ -73,7 +73,7 @@ const redeclareDescription = (
                 </td>
             </tr>
             <tr>
-                <th>
+                <th className="separator">
                     Redeclaration in{" "}
                     <code>
                         <b>extends</b>
@@ -103,7 +103,7 @@ const redeclareDescription = (
                 </td>
             </tr>
             <tr>
-                <th>Redeclaration in component modifications</th>
+                <th className="separator">Redeclaration in component modifications</th>
             </tr>
             <tr>
                 <td className="seminarrow">
@@ -131,21 +131,22 @@ const redeclareDescription = (
 );
 
 const constrainedbyDescription = (
-    <SimpleCard title="Constraints on Replacements">
-        <div>
-            <h4>Replaceable Component</h4>
+    <TwoColumn
+        leftHeading="Usage"
+        rightHeading="Syntax"
+        leftColumn={[<span>Replaceable component</span>, <span>Replaceable class</span>]}
+        rightColumn={[
             <code className="pull-right nobreak">
                 <b>replaceable</b> <span className="typename">D</span> comp
                 <b>constrainedby</b> <span className="typename">C</span>;
-            </code>
-            <h4>Replaceable Class</h4>
+            </code>,
             <code className="pull-right nobreak">
                 <b>replaceable</b> <b>model</b> <span className="typename">M</span>
                 {" = "}
                 <span className="typename">D</span> <b>constrainedby</b> <span className="typename">C</span>;
-            </code>
-        </div>
-    </SimpleCard>
+            </code>,
+        ]}
+    />
 );
 
 const importDescription = (
@@ -160,7 +161,9 @@ const importDescription = (
     >
         <table className="table">
             <tr>
-                <th colSpan={2}>Import a named definition</th>
+                <th className="separator" colSpan={2}>
+                    Import a named definition
+                </th>
             </tr>
             <tr>
                 <td className="nobreak">
@@ -177,7 +180,9 @@ const importDescription = (
                 </td>
             </tr>
             <tr>
-                <th colSpan={2}>Import definition under an alias</th>
+                <th className="separator" colSpan={2}>
+                    Import definition under an alias
+                </th>
             </tr>
             <tr>
                 <td>
@@ -195,7 +200,7 @@ const importDescription = (
                 </td>
             </tr>
             <tr>
-                <th colSpan={2}>
+                <th className="separator" colSpan={2}>
                     Import contents of a{" "}
                     <code>
                         <b>package</b>
@@ -229,7 +234,7 @@ const importDescription = (
 
 const encapsulatedDescription = (
     <SimpleCard title="Encapsulated Definitions">
-        <p className="seminarrow">
+        <p>
             The{" "}
             <code>
                 <b>encapsulated</b>
@@ -241,7 +246,7 @@ const encapsulatedDescription = (
 
 const finalDescription = (
     <SimpleCard title="Finalizing Modifications">
-        <p className="seminarrow">
+        <p>
             The{" "}
             <code>
                 <b>final</b>
@@ -254,7 +259,7 @@ const finalDescription = (
 
 const partialDescription = (
     <SimpleCard title="Partial Definitions">
-        <p className="seminarrow">
+        <p>
             The{" "}
             <code>
                 <b>partial</b>
@@ -271,7 +276,7 @@ const partialDescription = (
 
 const expandabaleDescription = (
     <SimpleCard title="Expandable Connectors">
-        <p className="seminarrow">
+        <p>
             The{" "}
             <code>
                 <b>expandable</b>
@@ -284,7 +289,7 @@ const expandabaleDescription = (
             the{" "}
             <code>
                 <b>connector</b>
-            </code>
+            </code>{" "}
             definition. <Reference id="expandable" />
         </p>
     </SimpleCard>

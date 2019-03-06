@@ -41,7 +41,7 @@ const ordering: Column[] = [
         elements: [lexicalRules, specializedClasses, classDefinitions, connectorQualifiers, variabilityQualifiers],
     },
     {
-        grow: 1,
+        grow: 2,
         min: 30,
         max: 35,
         elements: [
