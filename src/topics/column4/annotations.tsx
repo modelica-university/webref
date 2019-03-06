@@ -38,14 +38,14 @@ export const choices = (
     </table>
 );
 export const defaultComponentName = (
-    <p className="seminarrow">
+    <p>
         The <code>defaultComponentName</code> annotation allows a default name to be associated with a given definition.
         When dragging new instances of a given definition into a diagram, the string associated with the{" "}
         <code>defaultComponentName</code> should be used as the basis for the initial instance name.
     </p>
 );
 export const defaultComponentPrefixes = (
-    <p className="seminarrow">
+    <p>
         The <code>defaultComponentPrefixes</code> annotation allows a default set of prefixes to be associated with a
         given definition. When dragging new instances of a given definition into a diagram, these prefixes should
         automatically be applied to the new instance.
@@ -190,7 +190,7 @@ export const dynamicSelect = (
         </tr>
         <tr>
             <td>
-                <p className="seminarrow">
+                <p>
                     The <code>DynamicSelect</code> annotation can be used as a value in any graphical annotation. The
                     first argument must be a literal expression (no variables) and the second argument can reference
                     variables. Tools can then use the second expression in contexts (<i>e.g.,</i> when simulation
@@ -204,7 +204,7 @@ export const dynamicSelect = (
 export const evaluate = (
     <div>
         {" "}
-        <p className="seminarrow">
+        <p>
             When applied to a{" "}
             <code>
                 <b>parameter</b>
@@ -265,7 +265,7 @@ export const experiment = (
 export const generateEvents = (
     <div>
         {" "}
-        <p className="seminarrow">
+        <p>
             When the <code>GenerateEvents</code> annotation is associated with a function definition and given a value
             of{" "}
             <code>
@@ -289,7 +289,7 @@ export const generateEvents = (
 );
 export const hideResult = (
     <div>
-        <p className="seminarrow">
+        <p>
             When applied to a variable declaration, the <code>HideResult</code> annotation indicates that the user does
             not wish to view this variable among the simulation results.
         </p>
@@ -305,7 +305,7 @@ export const hideResult = (
 export const inline = (
     <div>
         {" "}
-        <p className="seminarrow">
+        <p>
             When the <code>Inline</code> annotation is associated with a function definition and given a value of{" "}
             <code>
                 <b>true</b>
@@ -345,7 +345,7 @@ export const inverse = (
 );
 export const lateInline = (
     <div>
-        <p className="seminarrow">
+        <p>
             When the <code>LateInline</code> annotation is associated with a function definition and given a value of{" "}
             <code>
                 <b>true</b>
@@ -369,7 +369,7 @@ export const missingInnerMessage = (
             <b>annotation</b>(missingInnerMessage="...");
         </code>
         <br />
-        <p className="seminarrow">
+        <p>
             This annotation allows a tool to provide a customized message when an{" "}
             <code>
                 <b>outer</b>
@@ -391,7 +391,7 @@ export const missingInnerMessage = (
 );
 export const preferredView = (
     <div>
-        <p className="seminarrow">
+        <p>
             In a definition, the <code>preferredView</code> annotation can be given the values <code>"info"</code>,{" "}
             <code>"diagram"</code>
             or <code>"text"</code> to indicate which particular view makes the most sense as the default view for that
@@ -405,7 +405,7 @@ export const preferredView = (
 );
 export const smoothOrder = (
     <div>
-        <p className="seminarrow">
+        <p>
             In a function definition, the <code>smoothOrder</code>
             annotation indicates how many times the function can be differentiated and still have continuous outputs.
             See{" "}
@@ -418,7 +418,7 @@ export const smoothOrder = (
 );
 export const unassignedMessage = (
     <div>
-        <p className="seminarrow">
+        <p>
             If the <code>unassignedMessage</code> annotation is associated with a variable, then the value of the
             annotation (which must be a <code className="typename">String</code>) will be used as a diagnostic message
             to the user if the structural analysis of the problem does not yield an equation to compute that variable.
@@ -432,7 +432,7 @@ export const unassignedMessage = (
 );
 export const version = (
     <div>
-        <p className="seminarrow">
+        <p>
             Within a top-level package, the <code>version</code> annotation is used to indicate the version number for
             that package. This is used to distinguish between multiple versions when they are available. See{" "}
             <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=228" target="_blank">

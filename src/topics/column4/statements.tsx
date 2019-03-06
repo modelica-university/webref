@@ -78,7 +78,7 @@ const when_elem = (
     </table>
 );
 const when_warning = (
-    <div className="seminarrow">
+    <div>
         <p>
             <b>Tip:</b> It is easy to get into trouble with algebraic loops when using{" "}
             <code>

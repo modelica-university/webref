@@ -32,7 +32,7 @@ const redeclareDescription = (
     <SimpleCard
         title="Redeclarations"
         note={
-            <span className="seminarrow">
+            <span>
                 For more information, see <Reference id="mods">{link => link}</Reference> and
                 <Reference id="redecl">{link => link}</Reference>
             </span>
@@ -79,7 +79,7 @@ const redeclareDescription = (
                 </th>
             </tr>
             <tr>
-                <td className="seminarrow">
+                <td>
                     When inheriting from a definition, it is possible to redeclare{" "}
                     <code>
                         <b>replaceable</b>
@@ -103,7 +103,7 @@ const redeclareDescription = (
                 <th className="separator">Redeclaration in component modifications</th>
             </tr>
             <tr>
-                <td className="seminarrow">
+                <td>
                     When instantiating a component, it is possible to redeclare{" "}
                     <code>
                         <b>replaceable</b>
@@ -169,7 +169,7 @@ const importDescription = (
                     </code>
                 </td>
                 <td>
-                    <p className="seminarrow">
+                    <p>
                         Adds the definition
                         <code className="typename">Modelica.SIunits.Velocity</code> to the local scope under the name{" "}
                         <code className="typename">Velocity</code>.
@@ -189,7 +189,7 @@ const importDescription = (
                     </code>
                 </td>
                 <td>
-                    <p className="seminarrow">
+                    <p>
                         Adds a given definition to the local scope under an alias name (e.g.,{" "}
                         <code className="typename">Modelica.SIunits.Velocity</code>
                         could be referenced as <code className="typename">SI.Velocity</code> in this case).
@@ -211,13 +211,13 @@ const importDescription = (
                     </code>
                 </td>
                 <td>
-                    <p className="seminarrow">
+                    <p>
                         Adds all the definitions defined in
                         <code className="typename">Modelica.SIunits</code> to the local scope (under their normal
                         names).
                     </p>
                     <div className="alert alert-error">
-                        <p className="seminarrow">
+                        <p>
                             Use of the so-called "wildcard import" feature is strongly discouraged. It makes it unclear
                             which definitions are actually used and can easily result in duplicate conflicting local
                             names.

@@ -32,7 +32,7 @@ const inStream = (
             <td>
                 <code>inStream(v)</code>
             </td>
-            <td className="seminarrow">
+            <td>
                 <code>v</code> must be a stream variable (<i>i.e.,</i> be preceded by the{" "}
                 <code>
                     <b>stream</b>
@@ -59,7 +59,7 @@ const actualStream = (
             <td>
                 <code>actualStream(v)</code>
             </td>
-            <td className="seminarrow">
+            <td>
                 Returns the actual value of the stream variable <code>v</code> for any flow direction. For more details,
                 see{" "}
                 <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=179" target="_blank">
@@ -80,14 +80,16 @@ export const semiLinear = (
 
         <tr>
             <td>
-                <code>semiLinear(x, postivieSlope, negativeSlope)</code>
+                <code>semiLinear(x, pSlope, nSlope)</code>
             </td>
-            <td className="seminarrow">
+            <td>
                 Equivalent to:
+                <br />
+                <br />
                 <code className="nobreak">
-                    <b>if</b> x&gt;=0 <b>then</b>
-                    positiveSlope*x <b>else</b> negativeSlope*x;
+                    <b>if</b> x&gt;=0 <b>then</b> pSlope*x <b>else</b> nSlope*x;
                 </code>
+                <br />
                 <br />
                 See{" "}
                 <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=23" target="_blank">
@@ -110,7 +112,7 @@ export const spatialDistribution = (
             <td>
                 <code>spatialDistribution(...)</code>
             </td>
-            <td className="seminarrow">
+            <td>
                 See{" "}
                 <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=23" target="_blank">
                     &sect;3.7.2.2
@@ -131,7 +133,7 @@ export const getInstanceName = (
             <td>
                 <code>getInstanceName()</code>
             </td>
-            <td className="seminarrow">
+            <td>
                 Returns a string with model/block and instance names from which it is called. See{" "}
                 <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=28" target="_blank">
                     &sect;3.7.2.6
@@ -153,7 +155,7 @@ export const homotopy = (
             <td>
                 <code>homotopy(actual=...,simplified=...)</code>
             </td>
-            <td className="seminarrow">
+            <td>
                 The <code>homotopy</code> operator can be used to ease the solving of non-linear systems. Further
                 discussion of its use can be found in{" "}
                 <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=22" target="_blank">
@@ -177,7 +179,7 @@ export const delay = (
                 <br />
                 <code className="nobreak">delay(expr, delayTime, delayMax)&nbsp;</code>
             </td>
-            <td className="seminarrow">
+            <td>
                 Give the value of <code>expr</code> delayed by (the potentially variable) <code>delayTime</code>. See{" "}
                 <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=22" target="_blank">
                     &sect;3.7.2
@@ -206,9 +208,9 @@ export const assert = (
                     <code className="typename">AssertionLevel</code>.error)
                 </span>
             </td>
-            <td className="seminarrow">
+            <td>
                 Assertions are used to enforce limitations in a model through the conditional expression,{" "}
-                <code>cond</code>. Normally, the <code>level</code> argument defaults to
+                <code>cond</code>. Normally, the <code>level</code> argument defaults to{" "}
                 <code>
                     <code className="typename">AssertionLevel</code>.error
                 </code>
@@ -216,11 +218,15 @@ export const assert = (
                 <code>
                     <b>false</b>
                 </code>{" "}
-                value for <code>cond</code> isn't strictly an error, the <code>level</code> argument can be set to
+                value for <code>cond</code> need not be considered an error, the <code>level</code> argument can be set
+                to{" "}
                 <code>
                     <code className="typename">AssertionLevel</code>.warning
                 </code>
-                . See{" "}
+                .
+                <br />
+                <br />
+                See{" "}
                 <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=87" target="_blank">
                     &sect;8.3.7
                 </a>{" "}
@@ -243,7 +249,7 @@ export const ndims = (
                     <code>ndims(A)</code>
                 </span>
             </td>
-            <td className="seminarrow">
+            <td>
                 Returns the number of dimensions of <code>A</code>. See{" "}
                 <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=112" target="_blank">
                     &sect;10.3.1
@@ -267,9 +273,9 @@ export const size = (
                     <code>size(A,i)</code>
                 </span>
             </td>
-            <td className="seminarrow">
-                Returns the size of dimension <code>i</code> in <code>A</code>
-                where 0 &lt; <code>i</code> &lt;= <code>ndims(A)</code>.
+            <td>
+                Returns the size of dimension <code>i</code> in <code>A</code> where 0 &lt; <code>i</code> &lt;={" "}
+                <code>ndims(A)</code>.
             </td>
         </tr>
 
@@ -279,7 +285,7 @@ export const size = (
                     <code>size(A)</code>
                 </span>
             </td>
-            <td className="seminarrow">
+            <td>
                 Returns a vector containing the size of each dimension of <code>A</code>.
             </td>
         </tr>

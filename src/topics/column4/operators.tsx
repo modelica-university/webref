@@ -8,7 +8,7 @@ const orecord = (
     </tr>
     <tr>
       <td>
-        <p className="seminarrow">
+        <p>
       An <code><b>operator record</b></code> is like an
       ordinary <code><b>record</b></code> except that it is
       possible to define custom behavior for operators
@@ -44,7 +44,7 @@ const ofunction = (
 	  </tr>
 	  <tr>
 	    <td colSpan={2}>
-	      <p className="seminarrow">
+	      <p>
 		An <code><b>operator function</b></code> is a function
 		that implements an operator for an <code><b>operator
 		record</b></code>.
@@ -136,7 +136,7 @@ const operator = (
 	  </tr>
 	  <tr>
 	    <td>
-	      <p className="seminarrow">
+	      <p>
 		When an <code><b>operator record</b></code> requires more
 		than one implementation of a given operator,
 		e.g., <code>'+'</code>, a special type
@@ -183,7 +183,7 @@ const operator = (
 
 const data: TopicProps = {
     title: "Operator Overloading",
-    warning: (<p className="seminarrow">
+    warning: (<p>
 	Operator overloading is a complex topic and is covered in
 	detail in <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=167" target="_blank">&sect;14</a>
     </p>),

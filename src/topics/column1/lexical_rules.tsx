@@ -113,7 +113,7 @@ const numberDescription = (
             <th>Complications with signed numbers</th>
         </tr>
         <tr>
-            <td className="seminarrow">
+            <td>
                 Examples of expressions which are not allowed in Modelica because of interactions between binary
                 operators and unary operators (<Reference id="unary"/>):
                 <br />
