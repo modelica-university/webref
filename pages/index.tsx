@@ -36,7 +36,7 @@ interface Column {
 const ordering: Column[] = [
     {
         grow: 1,
-        min: 10,
+        min: 16,
         max: 25,
         elements: [lexicalRules, specializedClasses, classDefinitions, connectorQualifiers, variabilityQualifiers],
     },

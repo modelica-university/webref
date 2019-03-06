@@ -2,6 +2,7 @@ import React from "react";
 import { Topic, TopicProps } from "../../components/topic";
 import { SimpleCard } from "../../components/helpers";
 import { Reference } from "../../components/references";
+import { TwoColumn } from "../../components/twocolumn";
 
 const extendsDescription = (
     <SimpleCard title="Inheritance">
@@ -13,19 +14,21 @@ const extendsDescription = (
 );
 
 const replaceableDescription = (
-    <SimpleCard title="Replaceable Components">
-        <div>
-            <h4 style={{ marginTop: 0 }}>Replaceable Components</h4>
+    <TwoColumn
+        leftHeading="Usage"
+        rightHeading="Syntax"
+        leftColumn={[<span>Replaceable Components</span>, <span>Replaceable Class</span>]}
+        rightColumn={[
             <code className="pull-right nobreak">
                 <b>replaceable</b> <span className="typename">D</span> comp;
-            </code>
-            <h4>Replaceable Class</h4>
+            </code>,
             <code className="pull-right nobreak">
-                <b>replaceable</b> <b>model</b>
-                <span className="typename">M</span> =<span className="typename">D</span>
-            </code>
-        </div>
-    </SimpleCard>
+                <b>replaceable</b> <b>model</b> <span className="typename">M</span>
+                {" = "}
+                <span className="typename">D</span>
+            </code>,
+        ]}
+    />
 );
 
 const redeclareDescription = (
@@ -41,7 +44,7 @@ const redeclareDescription = (
         <table className="table">
             <tr>
                 <td>
-                    <p className="seminarrow">
+                    <p>
                         The{" "}
                         <code>
                             <b>redeclare</b>
@@ -137,9 +140,9 @@ const constrainedbyDescription = (
             </code>
             <h4>Replaceable Class</h4>
             <code className="pull-right nobreak">
-                <b>replaceable</b> <b>model</b>
-                <span className="typename">M</span> = <span className="typename">D</span> <b>constrainedby</b>{" "}
-                <span className="typename">C</span>;
+                <b>replaceable</b> <b>model</b> <span className="typename">M</span>
+                {" = "}
+                <span className="typename">D</span> <b>constrainedby</b> <span className="typename">C</span>;
             </code>
         </div>
     </SimpleCard>
@@ -289,6 +292,15 @@ const expandabaleDescription = (
 
 const data: TopicProps = {
     title: "Class Definitions",
+    comment: (
+        <div style={{ padding: 5 }}>
+            For complete details on all the predefined types, see{" "}
+            <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=48" target="_blank">
+                &sect;4.8
+            </a>
+            .
+        </div>
+    ),
     items: [
         {
             title: (
