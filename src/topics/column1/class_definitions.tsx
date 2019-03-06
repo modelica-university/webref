@@ -1,8 +1,5 @@
 import React from "react";
-import { Topic, TopicProps } from "../../components/topic";
-import { SimpleCard } from "../../components/helpers";
-import { Reference } from "../../components/references";
-import { TwoColumn } from "../../components/twocolumn";
+import { Topic, TopicProps, SimpleCard, Reference, TwoColumn, Note } from "../../components";
 
 const extendsDescription = (
     <SimpleCard title="Inheritance">
@@ -298,13 +295,15 @@ const expandabaleDescription = (
 const data: TopicProps = {
     title: "Class Definitions",
     comment: (
-        <div style={{ padding: 5 }}>
-            For complete details on all the predefined types, see{" "}
-            <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=48" target="_blank">
-                &sect;4.8
-            </a>
-            .
-        </div>
+        <Note>
+            <span>
+                For complete details on all the predefined types, see{" "}
+                <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=48" target="_blank">
+                    &sect;4.8
+                </a>
+                .
+            </span>
+        </Note>
     ),
     items: [
         {

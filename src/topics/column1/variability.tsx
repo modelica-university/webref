@@ -1,11 +1,9 @@
 import React from "react";
-import { Topic, TopicProps } from "../../components/topic";
-import { SimpleCard } from "../../components/helpers";
-import { Reference } from "../../components/references";
+import { Topic, TopicProps, SimpleCard, Reference, Note } from "../../components";
 
 const constantDescription = (
     <SimpleCard title="Constant Variability">
-        <p className="seminarrow">
+        <p>
             The{" "}
             <b>
                 <code>constant</code>
@@ -18,7 +16,7 @@ const constantDescription = (
 
 const parameterDescription = (
     <SimpleCard title="Parameter Variability">
-        <p className="seminarrow">
+        <p>
             The{" "}
             <b>
                 <code>parameter</code>
@@ -31,7 +29,7 @@ const parameterDescription = (
 
 const discreteDescription = (
     <SimpleCard title="Discrete Variability">
-        <p className="seminarrow">
+        <p>
             The
             <b>
                 <code>discrete</code>
@@ -45,8 +43,8 @@ const discreteDescription = (
 const data: TopicProps = {
     title: "Variability",
     warning: (
-        <div style={{ padding: 5 }}>
-            <p className="seminarrow">
+        <Note>
+            <p>
                 Default variability is <b>continuous</b>. So if a variable
                 <br />
                 doesn't have a variability qualifier, it is assumed to be
@@ -54,7 +52,7 @@ const data: TopicProps = {
                 continuous (<Reference id="variability" />
                 ).
             </p>
-        </div>
+        </Note>
     ),
     items: [
         { title: <code>constant</code>, comment: constantDescription },

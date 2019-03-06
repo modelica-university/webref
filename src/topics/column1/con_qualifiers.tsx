@@ -1,11 +1,9 @@
 import React from "react";
-import { Topic, TopicProps } from "../../components/topic";
-import { Reference } from "../../components/references";
-import { SimpleCard } from "../../components/helpers";
+import { Topic, TopicProps, Reference, SimpleCard, Note } from "../../components";
 
 const inputDescription = (
     <SimpleCard title="Input Variables">
-        <p className="seminarrow">
+        <p>
             The{" "}
             <code>
                 <b>input</b>
@@ -31,7 +29,7 @@ const inputDescription = (
 
 const outputDescription = (
     <SimpleCard title="Output Variables">
-        <p className="seminarrow">
+        <p>
             The{" "}
             <code>
                 <b>output</b>
@@ -55,7 +53,7 @@ const outputDescription = (
 
 const flowDescription = (
     <SimpleCard title="Flow Variables">
-        <p className="seminarrow">
+        <p>
             The{" "}
             <code>
                 <b>flow</b>
@@ -76,7 +74,7 @@ const flowDescription = (
 
 const streamDescription = (
     <SimpleCard title="Stream Variables">
-        <p className="seminarrow">
+        <p>
             The{" "}
             <code>
                 <b>stream</b>
@@ -90,13 +88,13 @@ const streamDescription = (
 const data: TopicProps = {
     title: "Connector Qualifiers",
     warning: (
-        <div style={{ padding: 5 }}>
-            <p className="seminarrow">
+        <Note>
+            <p>
                 If a variable in a connector lacks any qualifier, the default connection behavior is to{" "}
                 <b>generate an equality equation</b>
                 with its counterpart on all other connectors in the connection set (<Reference id="connectors" />)
             </p>
-        </div>
+        </Note>
     ),
     items: [
         { title: <code>input</code>, comment: inputDescription },
