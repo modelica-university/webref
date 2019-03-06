@@ -1,12 +1,24 @@
 import React from "react";
-import { Topic, TopicProps } from "../../components/topic";
+import { Topic, TopicProps, Note } from "../../components";
 
-const vliterals = <code>{"{..., ....}"}</code>;
+const vliterals = (
+    <Note>
+        <code>{"{..., ....}"}</code>
+    </Note>
+);
 
-const aliterals = <code>{"[..., ...; ..., ...]"}</code>;
+const aliterals = (
+    <Note>
+        <code>{"[..., ...; ..., ...]"}</code>
+    </Note>
+);
 
 const acomps = (
     <table className="table">
+        <tr>
+            <th>Case</th>
+            <th>Syntax</th>
+        </tr>
         <tr>
             <td>One index</td>
             <td>

@@ -1,5 +1,5 @@
 import React from "react";
-import { Topic, TopicProps } from "../../components/topic";
+import { Topic, TopicProps, Note, SimpleCard } from "../../components";
 
 export const choices = (
     <table className="table">
@@ -38,18 +38,22 @@ export const choices = (
     </table>
 );
 export const defaultComponentName = (
-    <p>
-        The <code>defaultComponentName</code> annotation allows a default name to be associated with a given definition.
-        When dragging new instances of a given definition into a diagram, the string associated with the{" "}
-        <code>defaultComponentName</code> should be used as the basis for the initial instance name.
-    </p>
+    <Note>
+        <p>
+            The <code>defaultComponentName</code> annotation allows a default name to be associated with a given
+            definition. When dragging new instances of a given definition into a diagram, the string associated with the{" "}
+            <code>defaultComponentName</code> should be used as the basis for the initial instance name.
+        </p>
+    </Note>
 );
 export const defaultComponentPrefixes = (
-    <p>
-        The <code>defaultComponentPrefixes</code> annotation allows a default set of prefixes to be associated with a
-        given definition. When dragging new instances of a given definition into a diagram, these prefixes should
-        automatically be applied to the new instance.
-    </p>
+    <Note>
+        <p>
+            The <code>defaultComponentPrefixes</code> annotation allows a default set of prefixes to be associated with
+            a given definition. When dragging new instances of a given definition into a diagram, these prefixes should
+            automatically be applied to the new instance.
+        </p>
+    </Note>
 );
 export const derivative = (
     <table className="table">
@@ -130,48 +134,55 @@ export const dialog = (
                 </td>
             </tr>
         </table>
-        <div className="footnote">
-            A detailed description of each field in the <code>Dialog</code>
-            annotation can be found in{" "}
-            <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=225" target="_blank">
-                &sect;18.7
-            </a>
-            .
-        </div>
-    </div>
-);
-export const documentation = (
-    <div>
-        <code>
-            <b>annotation</b>(Documentation(info="&lt;html&gt;...&lt;/html&gt;",
-            <br />
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;revisions="..."));
-        </code>
-        <div className="footnote seminarrow">
+        <Note>
             <p>
-                <b>Note:</b> Within the <code>&lt;html&gt;</code> tags, it is possible to use "Modelica URIs" of the
-                form:
-            </p>
-            <ul>
-                <li>
-                    <code>Modelica://Fully.Qualfied.Name#layer</code>: Where layer can be one of <code>diagram</code>,{" "}
-                    <code>info</code>, <code>text</code>
-                    or <code>icon</code>.
-                </li>
-                <li>
-                    <code>Modelica://Fully.Qualfied.Name/dir/path/filename</code>: Where <code>dir/path</code> is a
-                    directory structure starting at the point where the package <code>Fully.Qualified.Name</code> is
-                    stored and <code>filename</code> is a file in that directory.
-                </li>
-            </ul>
-            <p>
-                Complete documentation for the <code>Documentation</code>
-                annotation can be found in{" "}
-                <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=214" target="_blank">
-                    &sect;18.2
+                A detailed description of each field in the <code>Dialog</code> annotation can be found in{" "}
+                <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=225" target="_blank">
+                    &sect;18.7
                 </a>
                 .
             </p>
+        </Note>
+    </div>
+);
+export const documentation = (
+    <div style={{ padding: 5, maxWidth: "86vw" }}>
+        <div>
+            <code>
+                <b>annotation</b>(Documentation(info="&lt;html&gt;...&lt;/html&gt;",
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;revisions="..."));
+            </code>
+            <br />
+            <br />
+            <div>
+                <div>
+                    <p>
+                        <b>Note:</b> Within the <code>&lt;html&gt;</code> tags, it is possible to use "Modelica URIs" of
+                        the form:
+                    </p>
+                    <ul>
+                        <li>
+                            <code>Modelica://Fully.Qualfied.Name#layer</code>: Where layer can be one of{" "}
+                            <code>diagram</code>, <code>info</code>, <code>text</code>
+                            or <code>icon</code>.
+                        </li>
+                        <li>
+                            <code>Modelica://Fully.Qualfied.Name/dir/path/filename</code>: Where <code>dir/path</code>{" "}
+                            is a directory structure starting at the point where the package{" "}
+                            <code>Fully.Qualified.Name</code> is stored and <code>filename</code> is a file in that
+                            directory.
+                        </li>
+                    </ul>
+                    <p>
+                        Complete documentation for the <code>Documentation</code>
+                        annotation can be found in{" "}
+                        <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=214" target="_blank">
+                            &sect;18.2
+                        </a>
+                        .
+                    </p>
+                </div>
+            </div>
         </div>
     </div>
 );
@@ -202,90 +213,86 @@ export const dynamicSelect = (
     </table>
 );
 export const evaluate = (
-    <div>
-        {" "}
-        <p>
-            When applied to a{" "}
-            <code>
-                <b>parameter</b>
-            </code>
-            , the <code>Evaluation</code> annotation indicates that the user does not intend to modify the value of the
-            parameter between simulations. As a result, some potentially significant symbolic optimizations can often be
-            made.
-        </p>
-        <p>
-            See{" "}
-            <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=214" target="_blank">
-                &sect;18.3
-            </a>{" "}
-            for more details.
-        </p>
-    </div>
-);
-export const experiment = (
-    <div>
-        {" "}
-        <table className="table">
-            <tr>
-                <th>Definition</th>
-            </tr>
-            <tr>
-                <td>
-                    <code>
-                        <b>record</b> <code className="typename">experiment</code>
-                        <br />
-                        &nbsp;&nbsp;<b>parameter</b> <code className="typename">Real</code> StartTime;
-                        <br />
-                        &nbsp;&nbsp;<b>parameter</b> <code className="typename">Real</code> StopTime;
-                        <br />
-                        &nbsp;&nbsp;<b>parameter</b> <code className="typename">Real</code> Interval;
-                        <br />
-                        &nbsp;&nbsp;<b>parameter</b> <code className="typename">Real</code> Tolerance;
-                        <br />
-                        <b>end</b> <code className="typename">experiment</code>;
-                    </code>
-                </td>
-            </tr>
-        </table>
-        <div className="footnote">
+    <Note>
+        <div>
             <p>
-                <code>StartTime</code>, <code>StopTime</code>
-                and <code>Interval</code> are all assumed to have units of seconds.
+                When applied to a{" "}
+                <code>
+                    <b>parameter</b>
+                </code>
+                , the <code>Evaluation</code> annotation indicates that the user does not intend to modify the value of
+                the parameter between simulations. As a result, some potentially significant symbolic optimizations can
+                often be made.
             </p>
             <p>
                 See{" "}
-                <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=215" target="_blank">
-                    &sect;18.4
+                <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=214" target="_blank">
+                    &sect;18.3
                 </a>{" "}
                 for more details.
             </p>
         </div>
-    </div>
+    </Note>
+);
+export const experiment = (
+    <SimpleCard
+        title="Definition"
+        note={
+            <div>
+                <p>
+                    <code>StartTime</code>, <code>StopTime</code> and <code>Interval</code> are all assumed to have
+                    units of seconds.
+                </p>
+                <p>
+                    See{" "}
+                    <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=215" target="_blank">
+                        &sect;18.4
+                    </a>{" "}
+                    for more details.
+                </p>
+            </div>
+        }
+    >
+        <code>
+            <b>record</b> <code className="typename">experiment</code>
+            <br />
+            &nbsp;&nbsp;<b>parameter</b> <code className="typename">Real</code> StartTime;
+            <br />
+            &nbsp;&nbsp;<b>parameter</b> <code className="typename">Real</code> StopTime;
+            <br />
+            &nbsp;&nbsp;<b>parameter</b> <code className="typename">Real</code> Interval;
+            <br />
+            &nbsp;&nbsp;<b>parameter</b> <code className="typename">Real</code> Tolerance;
+            <br />
+            <b>end</b> <code className="typename">experiment</code>;
+        </code>
+    </SimpleCard>
 );
 export const generateEvents = (
-    <div>
-        {" "}
-        <p>
-            When the <code>GenerateEvents</code> annotation is associated with a function definition and given a value
-            of{" "}
-            <code>
-                <b>true</b>
-            </code>
-            , this indicates that expressions in the function should generate events (<i>e.g.,</i> as if they appeared
-            in an{" "}
-            <code>
-                <b>equation</b>
-            </code>{" "}
-            section).
-        </p>
-        <p>
-            See{" "}
-            <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=214" target="_blank">
-                &sect;18.3
-            </a>{" "}
-            for more details.
-        </p>
-    </div>
+    <Note>
+        <div>
+            <p>
+                When the <code>GenerateEvents</code> annotation is associated with a function definition and given a
+                value of{" "}
+                <code>
+                    <b>true</b>
+                </code>
+                , this indicates that expressions in the function should generate events (<i>e.g.,</i> as if they
+                appeared in an{" "}
+                <code>
+                    <b>equation</b>
+                </code>{" "}
+                section).
+            </p>
+            <p>
+                See{" "}
+                <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=214" target="_blank">
+                    &sect;18.3
+                </a>{" "}
+                for more details.
+            </p>
+        </div>
+    </Note>
 );
 export const hideResult = (
     <div>
@@ -303,144 +310,161 @@ export const hideResult = (
     </div>
 );
 export const inline = (
-    <div>
-        {" "}
-        <p>
-            When the <code>Inline</code> annotation is associated with a function definition and given a value of{" "}
-            <code>
-                <b>true</b>
-            </code>
-            , this indicates that the function should be inlined prior to symbolic manipulation.
-        </p>
-        <p>
-            See{" "}
-            <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=214" target="_blank">
-                &sect;18.3
-            </a>{" "}
-            for more details.
-        </p>
-    </div>
+    <Note>
+        <div>
+            <p>
+                When the <code>Inline</code> annotation is associated with a function definition and given a value of{" "}
+                <code>
+                    <b>true</b>
+                </code>
+                , this indicates that the function should be inlined prior to symbolic manipulation.
+            </p>
+            <p>
+                See{" "}
+                <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=214" target="_blank">
+                    &sect;18.3
+                </a>{" "}
+                for more details.
+            </p>
+        </div>
+    </Note>
 );
 export const inverse = (
-    <code>
-        <b>function</b> <code className="typename">f</code>
-        <br />
-        &nbsp;&nbsp;<b>input</b> <code className="typename">T1</code> u1;
-        <br />
-        &nbsp;&nbsp;<b>input</b> <code className="typename">T2</code> u2;
-        <br />
-        &nbsp;&nbsp;<b>output</b> <code className="typename">R</code> y;
-        <br />
-        <b>algorithm</b>
-        <br />
-        &nbsp;&nbsp;...
-        <br />
-        &nbsp;&nbsp;<b>annotation</b>(inverse(u1=fi1(u2,y),
-        <br />
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;u2=fi2(u1,
-        y)));
-        <br />
-        <b>end</b> <code className="typename">f</code>;
-    </code>
+    <Note>
+        <code>
+            <b>function</b> <code className="typename">f</code>
+            <br />
+            &nbsp;&nbsp;<b>input</b> <code className="typename">T1</code> u1;
+            <br />
+            &nbsp;&nbsp;<b>input</b> <code className="typename">T2</code> u2;
+            <br />
+            &nbsp;&nbsp;<b>output</b> <code className="typename">R</code> y;
+            <br />
+            <b>algorithm</b>
+            <br />
+            &nbsp;&nbsp;...
+            <br />
+            &nbsp;&nbsp;<b>annotation</b>(inverse(u1=fi1(u2,y),
+            <br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;u2=fi2(u1,
+            y)));
+            <br />
+            <b>end</b> <code className="typename">f</code>;
+        </code>
+    </Note>
 );
 export const lateInline = (
-    <div>
-        <p>
-            When the <code>LateInline</code> annotation is associated with a function definition and given a value of{" "}
-            <code>
-                <b>true</b>
-            </code>
-            , this indicates that the function should be inlined during the code generation process, but not before
-            symbolic manipulation has been performed.
-        </p>
-        <p>
-            See{" "}
-            <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=214" target="_blank">
-                &sect;18.3
-            </a>{" "}
-            for more details.
-        </p>
-    </div>
+    <Note>
+        <div>
+            <p>
+                When the <code>LateInline</code> annotation is associated with a function definition and given a value
+                of{" "}
+                <code>
+                    <b>true</b>
+                </code>
+                , this indicates that the function should be inlined during the code generation process, but not before
+                symbolic manipulation has been performed.
+            </p>
+            <p>
+                See{" "}
+                <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=214" target="_blank">
+                    &sect;18.3
+                </a>{" "}
+                for more details.
+            </p>
+        </div>
+    </Note>
 );
 export const missingInnerMessage = (
-    <div>
-        {" "}
-        <code>
-            <b>annotation</b>(missingInnerMessage="...");
-        </code>
-        <br />
-        <p>
-            This annotation allows a tool to provide a customized message when an{" "}
+    <Note>
+        <div>
             <code>
-                <b>outer</b>
-            </code>{" "}
-            declaration cannot find a matching{" "}
-            <code>
-                <b>inner</b>
+                <b>annotation</b>(missingInnerMessage="...");
             </code>
-            . This allows library developers to provide more specific and meaningful diagnostics to users.
-        </p>
-        <p>
-            See{" "}
-            <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=224" target="_blank">
-                &sect;18.7
-            </a>{" "}
-            for more details.
-        </p>
-    </div>
+            <br />
+            <br />
+            <p>
+                This annotation allows a tool to provide a customized message when an{" "}
+                <code>
+                    <b>outer</b>
+                </code>{" "}
+                declaration cannot find a matching{" "}
+                <code>
+                    <b>inner</b>
+                </code>
+                . This allows library developers to provide more specific and meaningful diagnostics to users.
+            </p>
+            <p>
+                See{" "}
+                <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=224" target="_blank">
+                    &sect;18.7
+                </a>{" "}
+                for more details.
+            </p>
+        </div>
+    </Note>
 );
 export const preferredView = (
-    <div>
-        <p>
-            In a definition, the <code>preferredView</code> annotation can be given the values <code>"info"</code>,{" "}
-            <code>"diagram"</code>
-            or <code>"text"</code> to indicate which particular view makes the most sense as the default view for that
-            definition (see
-            <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=214" target="_blank">
-                &sect;18.2
-            </a>
-            ).
-        </p>
-    </div>
+    <Note>
+        <div>
+            <p>
+                In a definition, the <code>preferredView</code> annotation can be given the values <code>"info"</code>,{" "}
+                <code>"diagram"</code>
+                or <code>"text"</code> to indicate which particular view makes the most sense as the default view for
+                that definition (see
+                <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=214" target="_blank">
+                    &sect;18.2
+                </a>
+                ).
+            </p>
+        </div>
+    </Note>
 );
 export const smoothOrder = (
-    <div>
+    <Note>
         <p>
             In a function definition, the <code>smoothOrder</code>
             annotation indicates how many times the function can be differentiated and still have continuous outputs.
+            <br />
+            <br />
             See{" "}
             <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=215" target="_blank">
                 &sect;18.3
             </a>{" "}
             for complete details.
         </p>
-    </div>
+    </Note>
 );
 export const unassignedMessage = (
-    <div>
+    <Note>
         <p>
             If the <code>unassignedMessage</code> annotation is associated with a variable, then the value of the
             annotation (which must be a <code className="typename">String</code>) will be used as a diagnostic message
             to the user if the structural analysis of the problem does not yield an equation to compute that variable.
+            <br />
+            <br />
             See{" "}
             <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=224" target="_blank">
                 &sect;18.7
             </a>{" "}
             for complete details.
         </p>
-    </div>
+    </Note>
 );
 export const version = (
-    <div>
+    <Note>
         <p>
             Within a top-level package, the <code>version</code> annotation is used to indicate the version number for
-            that package. This is used to distinguish between multiple versions when they are available. See{" "}
+            that package. This is used to distinguish between multiple versions when they are available.
+            <br />
+            <br />
+            See{" "}
             <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=228" target="_blank">
                 &sect;18.8.2
             </a>{" "}
             for more details about version handling.
         </p>
-    </div>
+    </Note>
 );
 
 const data: TopicProps = {
@@ -495,7 +519,7 @@ const data: TopicProps = {
             example: inline,
         },
         {
-            title: <code>Inverse</code>,
+            title: <code>inverse</code>,
             example: inverse,
         },
         {

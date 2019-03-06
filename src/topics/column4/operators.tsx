@@ -1,5 +1,5 @@
 import React from "react";
-import { Topic, TopicProps } from "../../components/topic";
+import { Topic, TopicProps, Note } from "../../components";
 
 const orecord = (
     <table className="table">
@@ -112,11 +112,11 @@ const ofunction = (
 	    <td colSpan={2}>
 	      <code><b>encapsulated operator function</b> '+'<br/>
 		&nbsp;&nbsp;<b>import</b> <span className="typename">Complex</span>;<br/>
-		&nbsp;&nbsp;<b>input</b> <span className="typename">Complex</span>
+		&nbsp;&nbsp;<b>input</b> <span className="typename">Complex</span>{" "}
 		c1;<br/>
-		&nbsp;&nbsp;<b>input</b> <span className="typename">Complex</span>
+		&nbsp;&nbsp;<b>input</b> <span className="typename">Complex</span>{" "}
 		c2;<br/>
-		&nbsp;&nbsp;<b>output</b> <span className="typename">Complex</span>
+		&nbsp;&nbsp;<b>output</b> <span className="typename">Complex</span>{" "}
 		result;<br/>
 		<b>algorithm</b><br/>
 		&nbsp;&nbsp;result
@@ -157,8 +157,8 @@ const operator = (
 		<b>enscapsulated operator</b> '-'<br/>
 		&nbsp;&nbsp;<code><b>import</b></code> <code className="typename">Complex</code>;<br/>
 		&nbsp;&nbsp;<code><b>function</b></code> <code className="typename">negate</code><br/>
-		&nbsp;&nbsp;&nbsp&nbsp;<code><b>input</b></code> <code className="typename">Complex</code> c;<br/>
-		&nbsp;&nbsp;&nbsp&nbsp;<code><b>output</b></code> <code className="typename">Complex</code> result;<br/>
+		&nbsp;&nbsp;&nbsp;&nbsp;<code><b>input</b></code> <code className="typename">Complex</code>{" "}c;<br/>
+		&nbsp;&nbsp;&nbsp;&nbsp;<code><b>output</b></code> <code className="typename">Complex</code>{" "}result;<br/>
 		&nbsp;&nbsp;<code><b>algorithm</b></code><br/>
 		&nbsp;&nbsp;&nbsp;&nbsp;result := <code className="typename">Complex</code>(-c.re, -c.im);<br/>
 		&nbsp;&nbsp;&nbsp;&nbsp;<code><b>annotation</b></code>(Inline=<code><b>true</b></code>);<br/>
@@ -166,9 +166,9 @@ const operator = (
 		<br/>
 
 		&nbsp;&nbsp;<code><b>function</b></code> <code className="typename">subtract</code><br/>
-		&nbsp;&nbsp;&nbsp&nbsp;<code><b>input</b></code> <code className="typename">Complex</code> c1;<br/>
-		&nbsp;&nbsp;&nbsp&nbsp;<code><b>input</b></code> <code className="typename">Complex</code> c2;<br/>
-		&nbsp;&nbsp;&nbsp&nbsp;<code><b>output</b></code> <code className="typename">Complex</code> result;<br/>
+		&nbsp;&nbsp;&nbsp;&nbsp;<code><b>input</b></code> <code className="typename">Complex</code> c1;<br/>
+		&nbsp;&nbsp;&nbsp;&nbsp;<code><b>input</b></code> <code className="typename">Complex</code> c2;<br/>
+		&nbsp;&nbsp;&nbsp;&nbsp;<code><b>output</b></code> <code className="typename">Complex</code> result;<br/>
 		&nbsp;&nbsp;<code><b>algorithm</b></code><br/>
 		&nbsp;&nbsp;&nbsp;&nbsp;result := <code className="typename">Complex</code>(c1.re-c2.re, c1.im-c2.im);<br/>
 		&nbsp;&nbsp;&nbsp;&nbsp;<code><b>annotation</b></code>(Inline=<code><b>true</b></code>);<br/>
@@ -183,10 +183,10 @@ const operator = (
 
 const data: TopicProps = {
     title: "Operator Overloading",
-    warning: (<p>
+    warning: (<Note><p>
 	Operator overloading is a complex topic and is covered in
 	detail in <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=167" target="_blank">&sect;14</a>
-    </p>),
+    </p></Note>),
     items: [
         {
             title: <code>operator record</code>,
@@ -195,19 +195,19 @@ const data: TopicProps = {
         {
             title: <code>operator function</code>,
             example: ofunction,
-            warning: 	(<div className="footnote">
+            warning: 	(<Note><p>
             <b>Note:</b> An <code><b>operator function</b></code> should
             be encapsulated.
-          </div>)
+          </p></Note>)
       
         },
         {
             title: <code>operator</code>,
             example: operator,
             warning: (
-                <span>	  <b>Note:</b> An <code><b>operator</b></code> should
+                <Note><p><b>Note:</b> An <code><b>operator</b></code> should
                 be encapsulated.
-          </span>
+                </p></Note>
             )
         },
     ],
