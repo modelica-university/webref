@@ -4,6 +4,8 @@ import { Position } from "@blueprintjs/core";
 
 const orecord = (
     <table className="table">
+        <tbody>
+
     <tr>
       <th>What's an <code><b>operator record</b></code>?</th>
     </tr>
@@ -35,11 +37,14 @@ const orecord = (
       <b>end</b> <code className="typename">Complex</code>;
         </code>
       </td>
-    </tr>
+    </tr>        </tbody>
+
   </table>
 );
 const ofunction = (
     <table className="table">
+    <tbody>
+
 	  <tr>
 	    <th colSpan={2}>What's an <code><b>operator function</b></code>?</th>
 	  </tr>
@@ -127,11 +132,15 @@ const ofunction = (
 		<b>end</b> '+';<br/></code>
 	    </td>
 	  </tr>
+      </tbody>
+
 	</table>
 
 );
 const operator = (
 	<table className="table">
+    <tbody>
+
 	  <tr>
 	    <th>What's an <code><b>operator</b></code>?</th>
 	  </tr>
@@ -178,6 +187,8 @@ const operator = (
 	      </code>
 	    </td>
 	  </tr>
+      </tbody>
+
 	</table>
 
 );

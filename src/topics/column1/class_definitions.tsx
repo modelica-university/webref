@@ -40,90 +40,93 @@ const redeclareDescription = (
         }
     >
         <table className="table">
-            <tr>
-                <td>
-                    <p>
-                        The{" "}
+            <tbody>
+                <tr>
+                    <td>
+                        <p>
+                            The{" "}
+                            <code>
+                                <b>redeclare</b>
+                            </code>{" "}
+                            keyword is used to override the value of a{" "}
+                            <code>
+                                <b>replaceable</b>
+                            </code>{" "}
+                            component. This is typically done either through inheritance or through modifications
+                            applied to components. To demonstrate, consider the following model:
+                            <br />
+                            <div className="indented">
+                                <code>
+                                    <b>model</b> <code className="typename">Circuit</code>
+                                    <br />
+                                    &nbsp;&nbsp;...
+                                    <br />
+                                    &nbsp;&nbsp;<b>replaceable</b> <code className="typename">Resistor</code>{" "}
+                                    R(R=100.0);
+                                    <br />
+                                    &nbsp;&nbsp;...
+                                    <br />
+                                    <b>end</b> <code className="typename">Circuit</code>;<br />
+                                </code>
+                            </div>
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <th className="separator">
+                        Redeclaration in{" "}
                         <code>
-                            <b>redeclare</b>
+                            <b>extends</b>
                         </code>{" "}
-                        keyword is used to override the value of a{" "}
+                        clauses
+                    </th>
+                </tr>
+                <tr>
+                    <td>
+                        When inheriting from a definition, it is possible to redeclare{" "}
                         <code>
                             <b>replaceable</b>
                         </code>{" "}
-                        component. This is typically done either through inheritance or through modifications applied to
-                        components. To demonstrate, consider the following model:
+                        components as follows:
+                        <br />
                         <br />
                         <div className="indented">
                             <code>
-                                <b>model</b> <code className="typename">Circuit</code>
+                                <b>model</b> <code className="typename">ThermalCircuit</code>
                                 <br />
-                                &nbsp;&nbsp;...
+                                &nbsp;&nbsp;<b>extends</b> <code className="typename">Circuit</code>(<b>redeclare</b>
+                                <code className="typename">ThermalResistor</code> R(R=100.0));
                                 <br />
-                                &nbsp;&nbsp;<b>replaceable</b> <code className="typename">Resistor</code> R(R=100.0);
-                                <br />
-                                &nbsp;&nbsp;...
-                                <br />
-                                <b>end</b> <code className="typename">Circuit</code>;<br />
+                                <b>end</b> <code className="typename">ThermalCircuit</code>;<br />
                             </code>
                         </div>
-                    </p>
-                </td>
-            </tr>
-            <tr>
-                <th className="separator">
-                    Redeclaration in{" "}
-                    <code>
-                        <b>extends</b>
-                    </code>{" "}
-                    clauses
-                </th>
-            </tr>
-            <tr>
-                <td>
-                    When inheriting from a definition, it is possible to redeclare{" "}
-                    <code>
-                        <b>replaceable</b>
-                    </code>{" "}
-                    components as follows:
-                    <br />
-                    <br />
-                    <div className="indented">
+                    </td>
+                </tr>
+                <tr>
+                    <th className="separator">Redeclaration in component modifications</th>
+                </tr>
+                <tr>
+                    <td>
+                        When instantiating a component, it is possible to redeclare{" "}
                         <code>
-                            <b>model</b> <code className="typename">ThermalCircuit</code>
-                            <br />
-                            &nbsp;&nbsp;<b>extends</b> <code className="typename">Circuit</code>(<b>redeclare</b>
-                            <code className="typename">ThermalResistor</code> R(R=100.0));
-                            <br />
-                            <b>end</b> <code className="typename">ThermalCircuit</code>;<br />
-                        </code>
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <th className="separator">Redeclaration in component modifications</th>
-            </tr>
-            <tr>
-                <td>
-                    When instantiating a component, it is possible to redeclare{" "}
-                    <code>
-                        <b>replaceable</b>
-                    </code>{" "}
-                    sub-components as follows:
-                    <br />
-                    <br />
-                    <div className="indented">
-                        <code>
-                            <b>model</b> <code className="typename">UsesCircuit</code>
-                            <br />
-                            &nbsp;&nbsp;<code className="typename">Circuit</code> circuit(<b>redeclare</b>{" "}
-                            <code className="typename">ThermalResistor</code> R(R=100.0));
-                            <br />
-                            <b>end</b> <code className="typename">UsesCircuit</code>;<br />
-                        </code>
-                    </div>
-                </td>
-            </tr>
+                            <b>replaceable</b>
+                        </code>{" "}
+                        sub-components as follows:
+                        <br />
+                        <br />
+                        <div className="indented">
+                            <code>
+                                <b>model</b> <code className="typename">UsesCircuit</code>
+                                <br />
+                                &nbsp;&nbsp;<code className="typename">Circuit</code> circuit(<b>redeclare</b>{" "}
+                                <code className="typename">ThermalResistor</code> R(R=100.0));
+                                <br />
+                                <b>end</b> <code className="typename">UsesCircuit</code>;<br />
+                            </code>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
         </table>
     </SimpleCard>
 );
@@ -158,74 +161,76 @@ const importDescription = (
         }
     >
         <table className="table">
-            <tr>
-                <th className="separator" colSpan={2}>
-                    Import a named definition
-                </th>
-            </tr>
-            <tr>
-                <td className="nobreak">
-                    <code>
-                        <b>import</b> <code className="typename">Modelica.SIunits.Velocity</code>;
-                    </code>
-                </td>
-                <td>
-                    <p>
-                        Adds the definition
-                        <code className="typename">Modelica.SIunits.Velocity</code> to the local scope under the name{" "}
-                        <code className="typename">Velocity</code>.
-                    </p>
-                </td>
-            </tr>
-            <tr>
-                <th className="separator" colSpan={2}>
-                    Import definition under an alias
-                </th>
-            </tr>
-            <tr>
-                <td>
-                    <code>
-                        <b>import</b>
-                        <code className="typename">SI</code>=<code className="typename">Modelica.SIunits</code>;
-                    </code>
-                </td>
-                <td>
-                    <p>
-                        Adds a given definition to the local scope under an alias name (e.g.,{" "}
-                        <code className="typename">Modelica.SIunits.Velocity</code>
-                        could be referenced as <code className="typename">SI.Velocity</code> in this case).
-                    </p>
-                </td>
-            </tr>
-            <tr>
-                <th className="separator" colSpan={2}>
-                    Import contents of a{" "}
-                    <code>
-                        <b>package</b>
-                    </code>
-                </th>
-            </tr>
-            <tr>
-                <td>
-                    <code>
-                        <b>import</b> <code className="typename">Modelica.SIunits.*</code>;
-                    </code>
-                </td>
-                <td>
-                    <p>
-                        Adds all the definitions defined in
-                        <code className="typename">Modelica.SIunits</code> to the local scope (under their normal
-                        names).
-                    </p>
-                    <div className="alert alert-error">
+            <tbody>
+                <tr>
+                    <th className="separator" colSpan={2}>
+                        Import a named definition
+                    </th>
+                </tr>
+                <tr>
+                    <td className="nobreak">
+                        <code>
+                            <b>import</b> <code className="typename">Modelica.SIunits.Velocity</code>;
+                        </code>
+                    </td>
+                    <td>
                         <p>
-                            Use of the so-called "wildcard import" feature is strongly discouraged. It makes it unclear
-                            which definitions are actually used and can easily result in duplicate conflicting local
-                            names.
+                            Adds the definition
+                            <code className="typename">Modelica.SIunits.Velocity</code> to the local scope under the
+                            name <code className="typename">Velocity</code>.
                         </p>
-                    </div>
-                </td>
-            </tr>
+                    </td>
+                </tr>
+                <tr>
+                    <th className="separator" colSpan={2}>
+                        Import definition under an alias
+                    </th>
+                </tr>
+                <tr>
+                    <td>
+                        <code>
+                            <b>import</b>
+                            <code className="typename">SI</code>=<code className="typename">Modelica.SIunits</code>;
+                        </code>
+                    </td>
+                    <td>
+                        <p>
+                            Adds a given definition to the local scope under an alias name (e.g.,{" "}
+                            <code className="typename">Modelica.SIunits.Velocity</code>
+                            could be referenced as <code className="typename">SI.Velocity</code> in this case).
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <th className="separator" colSpan={2}>
+                        Import contents of a{" "}
+                        <code>
+                            <b>package</b>
+                        </code>
+                    </th>
+                </tr>
+                <tr>
+                    <td>
+                        <code>
+                            <b>import</b> <code className="typename">Modelica.SIunits.*</code>;
+                        </code>
+                    </td>
+                    <td>
+                        <p>
+                            Adds all the definitions defined in
+                            <code className="typename">Modelica.SIunits</code> to the local scope (under their normal
+                            names).
+                        </p>
+                        <div className="alert alert-error">
+                            <p>
+                                Use of the so-called "wildcard import" feature is strongly discouraged. It makes it
+                                unclear which definitions are actually used and can easily result in duplicate
+                                conflicting local names.
+                            </p>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
         </table>
     </SimpleCard>
 );

@@ -4,78 +4,82 @@ import { Position } from "@blueprintjs/core";
 
 const if_elem = (
     <table className="table">
-        <tr>
-            <th>
-                If Statement (
-                <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=129" target="_blank">
-                    &sect;11.2.6
-                </a>
-                )
-            </th>
-        </tr>
-        <tr>
-            <td>
-                <code>
-                    <b>if</b> cond <b>then</b>
-                    <br />
-                    &nbsp;&nbsp;...
-                    <br />
-                    <b>elseif</b> cond <b>then</b>
-                    <br />
-                    &nbsp;&nbsp;...
-                    <br />
-                    <b>else</b>
-                    <br />
-                    &nbsp;&nbsp;...
-                    <br />
-                    <b>end</b> <b>if;</b>
-                </code>
-            </td>
-        </tr>
-        <tr>
-            <th>
-                If Expression (
-                <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=18" target="_blank">
-                    &sect;3.6.5
-                </a>
-                )
-            </th>
-        </tr>
-        <tr>
-            <td>
-                <code>
-                    <b>if</b> cond1 <b>then</b> expr1 <b>elseif</b> cond2 <b>then</b> expr2 <b>else</b> expr3;
-                </code>
-            </td>
-        </tr>
+        <tbody>
+            <tr>
+                <th>
+                    If Statement (
+                    <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=129" target="_blank">
+                        &sect;11.2.6
+                    </a>
+                    )
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <code>
+                        <b>if</b> cond <b>then</b>
+                        <br />
+                        &nbsp;&nbsp;...
+                        <br />
+                        <b>elseif</b> cond <b>then</b>
+                        <br />
+                        &nbsp;&nbsp;...
+                        <br />
+                        <b>else</b>
+                        <br />
+                        &nbsp;&nbsp;...
+                        <br />
+                        <b>end</b> <b>if;</b>
+                    </code>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    If Expression (
+                    <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=18" target="_blank">
+                        &sect;3.6.5
+                    </a>
+                    )
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <code>
+                        <b>if</b> cond1 <b>then</b> expr1 <b>elseif</b> cond2 <b>then</b> expr2 <b>else</b> expr3;
+                    </code>
+                </td>
+            </tr>
+        </tbody>
     </table>
 );
 const when_elem = (
     <table className="table">
-        <tr>
-            <th>
-                When Statement (
-                <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=130" target="_blank">
-                    &sect;11.2.7
-                </a>
-                )
-            </th>
-        </tr>
-        <tr>
-            <td>
-                <code>
-                    <b>when</b> cond <b>then</b>
-                    <br />
-                    &nbsp;&nbsp;...
-                    <br />
-                    <b>elsewhen</b> cond <b>then</b>
-                    <br />
-                    &nbsp;&nbsp;...
-                    <br />
-                    <b>end</b> <b>when</b>;
-                </code>
-            </td>
-        </tr>
+        <tbody>
+            <tr>
+                <th>
+                    When Statement (
+                    <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=130" target="_blank">
+                        &sect;11.2.7
+                    </a>
+                    )
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <code>
+                        <b>when</b> cond <b>then</b>
+                        <br />
+                        &nbsp;&nbsp;...
+                        <br />
+                        <b>elsewhen</b> cond <b>then</b>
+                        <br />
+                        &nbsp;&nbsp;...
+                        <br />
+                        <b>end</b> <b>when</b>;
+                    </code>
+                </td>
+            </tr>
+        </tbody>
     </table>
 );
 const when_warning = (
@@ -135,110 +139,114 @@ const when_warning = (
 );
 const while_elem = (
     <table className="table">
-        <tr>
-            <th>
-                While Statement (
-                <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=128" target="_blank">
-                    &sect;11.2.3
-                </a>
-                )
-            </th>
-        </tr>
-        <tr>
-            <td>
-                <code>
-                    <b>while</b> cond <b>loop</b>
-                    <br />
-                    &nbsp;&nbsp;...
-                    <br />
-                    <b>end</b> <b>while</b>;
-                </code>
-            </td>
-        </tr>
+        <tbody>
+            <tr>
+                <th>
+                    While Statement (
+                    <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=128" target="_blank">
+                        &sect;11.2.3
+                    </a>
+                    )
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <code>
+                        <b>while</b> cond <b>loop</b>
+                        <br />
+                        &nbsp;&nbsp;...
+                        <br />
+                        <b>end</b> <b>while</b>;
+                    </code>
+                </td>
+            </tr>
+        </tbody>
     </table>
 );
 const for_elem = (
     <table className="table">
-        <tr>
-            <th colSpan={2}>
-                For Statement (
-                <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=127" target="_blank">
-                    &sect;11.2.2
-                </a>
-                )
-            </th>
-        </tr>
-        <tr>
-            <td>Syntax</td>
-            <td>
-                <code>
-                    <b>for</b> indices <b>loop</b>
+        <tbody>
+            <tr>
+                <th colSpan={2}>
+                    For Statement (
+                    <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=127" target="_blank">
+                        &sect;11.2.2
+                    </a>
+                    )
+                </th>
+            </tr>
+            <tr>
+                <td>Syntax</td>
+                <td>
+                    <code>
+                        <b>for</b> indices <b>loop</b>
+                        <br />
+                        &nbsp;&nbsp;...
+                        <br />
+                        <b>end</b> <b>for</b>;
+                    </code>
+                </td>
+            </tr>
+            <tr>
+                <th colSpan={2}>Indices</th>
+            </tr>
+            <tr>
+                <td>
+                    <code>
+                        <b>for</b> i <b>in</b> 1:10 <b>loop</b>
+                    </code>
+                </td>
+                <td>
+                    Looping over a range of integers
                     <br />
-                    &nbsp;&nbsp;...
+                    <code>1,2,3,...,10</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <code>
+                        <b>for</b> i <b>in</b> 1.0 : 1.5 : 5.5 <b>loop</b>
+                    </code>
+                </td>
+                <td>
+                    Looping over reals
                     <br />
-                    <b>end</b> <b>for</b>;
-                </code>
-            </td>
-        </tr>
-        <tr>
-            <th colSpan={2}>Indices</th>
-        </tr>
-        <tr>
-            <td>
-                <code>
-                    <b>for</b> i <b>in</b> 1:10 <b>loop</b>
-                </code>
-            </td>
-            <td>
-                Looping over a range of integers
-                <br />
-                <code>1,2,3,...,10</code>
-            </td>
-        </tr>
+                    <code>1.0, 2.5, 4.0, 5.5</code>
+                </td>
+            </tr>
 
-        <tr>
-            <td>
-                <code>
-                    <b>for</b> i <b>in</b> 1.0 : 1.5 : 5.5 <b>loop</b>
-                </code>
-            </td>
-            <td>
-                Looping over reals
-                <br />
-                <code>1.0, 2.5, 4.0, 5.5</code>
-            </td>
-        </tr>
+            <tr>
+                <td>
+                    <code>
+                        <b>for</b> i <b>in</b> {"{1,3,6,7}"} <b>loop</b>
+                    </code>
+                </td>
+                <td>
+                    Looping over a collection of values
+                    <br />
+                    <code>1, 3, 6, 7</code>
+                </td>
+            </tr>
 
-        <tr>
-            <td>
-                <code>
-                    <b>for</b> i <b>in</b> {"{1,3,6,7}"} <b>loop</b>
-                </code>
-            </td>
-            <td>
-                Looping over a collection of values
-                <br />
-                <code>1, 3, 6, 7</code>
-            </td>
-        </tr>
-
-        <tr>
-            <td>
-                <code>
-                    <b>for</b> i <b>in</b> TwoEnums <b>loop</b>
-                </code>
-            </td>
-            <td>
-                Looping over enum values
-                <br />
-                <code>TwoEnums.one, TwoEnums.two</code>
-                <br />
-                where{" "}
-                <code>
-                    <b>type</b> TwoEnums = <b>enumeration</b>(one, two)
-                </code>
-            </td>
-        </tr>
+            <tr>
+                <td>
+                    <code>
+                        <b>for</b> i <b>in</b> TwoEnums <b>loop</b>
+                    </code>
+                </td>
+                <td>
+                    Looping over enum values
+                    <br />
+                    <code>TwoEnums.one, TwoEnums.two</code>
+                    <br />
+                    where{" "}
+                    <code>
+                        <b>type</b> TwoEnums = <b>enumeration</b>(one, two)
+                    </code>
+                </td>
+            </tr>
+        </tbody>
     </table>
 );
 

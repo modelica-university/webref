@@ -20,80 +20,86 @@ const words = [
 
 const tensor = (
     <table className="table">
-        <tr>
-            <th>Functions</th>
-            <th>Documentation</th>
-        </tr>
-        <tr>
-            <td>
-                <code>scalar(A)</code>
-                <br />
-                <code>vector(A)</code>
-                <br />
-                <code>matrix(A)</code>
-            </td>
-            <td>
-                <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=112" target="_blank">
-                    &sect;10.3.2
-                </a>
-            </td>
-        </tr>
+        <tbody>
+            <tr>
+                <th>Functions</th>
+                <th>Documentation</th>
+            </tr>
+            <tr>
+                <td>
+                    <code>scalar(A)</code>
+                    <br />
+                    <code>vector(A)</code>
+                    <br />
+                    <code>matrix(A)</code>
+                </td>
+                <td>
+                    <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=112" target="_blank">
+                        &sect;10.3.2
+                    </a>
+                </td>
+            </tr>
+        </tbody>
     </table>
 );
 
 const construction = (
     <table className="table">
-        <tr>
-            <th>Functions</th>
-            <th>Documentation</th>
-        </tr>
-        <tr>
-            <td>
-                <code>identity(n)</code>
-                <br />
-                <code>diagonal(v)</code>
-                <br />
-                <code>zeros(n1,n2,n3,...)</code>
-                <br />
-                <code>ones(n1,n2,n3,...)</code>
-                <br />
-                <code>fill(s,n1,n2,n3,...)</code>
-                <br />
-                <code>linspace(x1,x2,n)</code>
-            </td>
-            <td>
-                <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=112" target="_blank">
-                    &sect;10.3.3
-                </a>
-            </td>
-        </tr>
+        <tbody>
+            <tr>
+                <th>Functions</th>
+                <th>Documentation</th>
+            </tr>
+            <tr>
+                <td>
+                    <code>identity(n)</code>
+                    <br />
+                    <code>diagonal(v)</code>
+                    <br />
+                    <code>zeros(n1,n2,n3,...)</code>
+                    <br />
+                    <code>ones(n1,n2,n3,...)</code>
+                    <br />
+                    <code>fill(s,n1,n2,n3,...)</code>
+                    <br />
+                    <code>linspace(x1,x2,n)</code>
+                </td>
+                <td>
+                    <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=112" target="_blank">
+                        &sect;10.3.3
+                    </a>
+                </td>
+            </tr>
+        </tbody>
     </table>
 );
 
 const other = (
     <table className="table">
-        <tr>
-            <th>Functions</th>
-            <th>Documentation</th>
-        </tr>
-        <tr>
-            <td>
-                <code>transpose(A)</code>
-                <br />
-                <code>outerProduct(v1,v2)</code>
-                <br />
-                <code>symmetric(A)</code>
-                <br />
-                <code>cross(x,y)</code>
-                <br />
-                <code>skew(x)</code>
-            </td>
-            <td>
-                <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=114" target="_blank">
-                    &sect;10.3.5
-                </a>
-            </td>
-        </tr>
+        <tbody>
+            <tr>
+                <th>Functions</th>
+                <th>Documentation</th>
+            </tr>
+            <tr>
+                <td>
+                    <code>transpose(A)</code>
+                    <br />
+                    <code>outerProduct(v1,v2)</code>
+                    <br />
+                    <code>symmetric(A)</code>
+                    <br />
+                    <code>cross(x,y)</code>
+                    <br />
+                    <code>skew(x)</code>
+                </td>
+                <td>
+                    <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=114" target="_blank">
+                        &sect;10.3.5
+                    </a>
+                </td>
+            </tr>
+        </tbody>
     </table>
 );
 

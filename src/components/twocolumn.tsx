@@ -9,15 +9,17 @@ export interface TwoColumnProps {
 
 export const TwoColumn = (props: TwoColumnProps) => (
     <table className="table">
-        <tr>
-            <th>{props.leftHeading}</th>
-            <th>{props.rightHeading}</th>
-        </tr>
-        {props.leftColumn.map((left, i) => (
+        <tbody>
             <tr>
-                <td>{left}</td>
-                <td>{props.rightColumn[i]}</td>
+                <th>{props.leftHeading}</th>
+                <th>{props.rightHeading}</th>
             </tr>
-        ))}
+            {props.leftColumn.map((left, i) => (
+                <tr>
+                    <td>{left}</td>
+                    <td>{props.rightColumn[i]}</td>
+                </tr>
+            ))}
+        </tbody>
     </table>
 );

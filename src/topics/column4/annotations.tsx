@@ -4,38 +4,40 @@ import { Position } from "@blueprintjs/core";
 
 export const choices = (
     <table className="table">
-        <tr>
-            <th>Explicit values for a variable</th>
-        </tr>
-        <tr>
-            <td>
-                <code>
-                    <b>parameter</b> <code className="typename">Integer</code> x<br />
-                    &nbsp;&nbsp;<b>annotation</b>(choices(choice=3 "Desc", choice=5 "Desc"));
-                </code>
-                <br />
-            </td>
-        </tr>
-        <tr>
-            <th>Explicit redeclarations</th>
-        </tr>
-        <tr>
-            <td>
-                <code>
-                    <b>replaceable</b> model <code className="typename">Resistor</code> Load(R=2) <b>constrainedby</b>{" "}
-                    <code className="typename">TwoPin</code>
+        <tbody>
+            <tr>
+                <th>Explicit values for a variable</th>
+            </tr>
+            <tr>
+                <td>
+                    <code>
+                        <b>parameter</b> <code className="typename">Integer</code> x<br />
+                        &nbsp;&nbsp;<b>annotation</b>(choices(choice=3 "Desc", choice=5 "Desc"));
+                    </code>
                     <br />
-                    &nbsp;&nbsp;<b>annotation</b>(choices(
-                    <br />
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;choice(
-                    <b>redeclare</b> <code className="typename">ThermalResistor</code> Load(R=2,T0=273)),
-                    <br />
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;choice(
-                    <b>redeclare</b> <code className="typename">Capacitor</code> Load(C=2e-3))));
-                    <br />
-                </code>
-            </td>
-        </tr>
+                </td>
+            </tr>
+            <tr>
+                <th>Explicit redeclarations</th>
+            </tr>
+            <tr>
+                <td>
+                    <code>
+                        <b>replaceable</b> model <code className="typename">Resistor</code> Load(R=2){" "}
+                        <b>constrainedby</b> <code className="typename">TwoPin</code>
+                        <br />
+                        &nbsp;&nbsp;<b>annotation</b>(choices(
+                        <br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;choice(
+                        <b>redeclare</b> <code className="typename">ThermalResistor</code> Load(R=2,T0=273)),
+                        <br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;choice(
+                        <b>redeclare</b> <code className="typename">Capacitor</code> Load(C=2e-3))));
+                        <br />
+                    </code>
+                </td>
+            </tr>
+        </tbody>
     </table>
 );
 export const defaultComponentName = (
@@ -58,82 +60,86 @@ export const defaultComponentPrefixes = (
 );
 export const derivative = (
     <table className="table">
-        <tr>
-            <th>A normal single argument function</th>
-        </tr>
-        <tr>
-            <td>
-                <code>
-                    <b>function</b> <code className="typename">f0</code>
-                    <br />
-                    &nbsp;&nbsp;<b>input</b> <code className="typename">Real</code> x;
-                    <br />
-                    &nbsp;&nbsp;<b>output</b> <code className="typename">Real</code> y;
-                    <br />
-                    <b>algorithm</b>
-                    <br />
-                    &nbsp;&nbsp;...
-                    <br />
-                    &nbsp;&nbsp;<b>annotation</b>(derivative=f1);
-                    <br />
-                    <b>end</b> <code className="typename">f0</code>;
-                </code>
-            </td>
-        </tr>
-        <tr>
-            <th>
-                Definition of the first derivative of <code className="typename">f0</code>
-            </th>
-        </tr>
-        <tr>
-            <td>
-                <code>
-                    <b>function</b> <code className="typename">f1</code>
-                    <br />
-                    &nbsp;&nbsp;<b>input</b> <code className="typename">Real</code> x;
-                    <br />
-                    &nbsp;&nbsp;<b>input</b> <code className="typename">Real</code> der_x;
-                    <br />
-                    &nbsp;&nbsp;<b>output</b> <code className="typename">Real</code> der_y;
-                    <br />
-                    <b>algorithm</b>
-                    <br />
-                    &nbsp;&nbsp;...
-                    <br />
-                    <b>end</b> <code className="typename">f1</code>;
-                </code>
-            </td>
-        </tr>
+        <tbody>
+            <tr>
+                <th>A normal single argument function</th>
+            </tr>
+            <tr>
+                <td>
+                    <code>
+                        <b>function</b> <code className="typename">f0</code>
+                        <br />
+                        &nbsp;&nbsp;<b>input</b> <code className="typename">Real</code> x;
+                        <br />
+                        &nbsp;&nbsp;<b>output</b> <code className="typename">Real</code> y;
+                        <br />
+                        <b>algorithm</b>
+                        <br />
+                        &nbsp;&nbsp;...
+                        <br />
+                        &nbsp;&nbsp;<b>annotation</b>(derivative=f1);
+                        <br />
+                        <b>end</b> <code className="typename">f0</code>;
+                    </code>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    Definition of the first derivative of <code className="typename">f0</code>
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <code>
+                        <b>function</b> <code className="typename">f1</code>
+                        <br />
+                        &nbsp;&nbsp;<b>input</b> <code className="typename">Real</code> x;
+                        <br />
+                        &nbsp;&nbsp;<b>input</b> <code className="typename">Real</code> der_x;
+                        <br />
+                        &nbsp;&nbsp;<b>output</b> <code className="typename">Real</code> der_y;
+                        <br />
+                        <b>algorithm</b>
+                        <br />
+                        &nbsp;&nbsp;...
+                        <br />
+                        <b>end</b> <code className="typename">f1</code>;
+                    </code>
+                </td>
+            </tr>
+        </tbody>
     </table>
 );
 export const dialog = (
     <div>
         <table className="table">
-            <tr>
-                <th>Definition</th>
-            </tr>
-            <tr>
-                <td>
-                    <code>
-                        <b>record</b> <code className="typename">Dialog</code>
-                        <br />
-                        &nbsp;&nbsp;<b>parameter</b> <code className="typename">String</code> &nbsp;tab = "General";
-                        <br />
-                        &nbsp;&nbsp;<b>parameter</b> <code className="typename">String</code> &nbsp;group =
-                        "Parameters";
-                        <br />
-                        &nbsp;&nbsp;<b>parameter</b> <code className="typename">Boolean</code> enable = <b>true</b>;
-                        <br />
-                        &nbsp;&nbsp;<b>parameter</b> <code className="typename">Boolean</code> showStartAttribute ={" "}
-                        <b>false</b>;<br />
-                        &nbsp;&nbsp;<b>parameter</b> <code className="typename">String</code> &nbsp;groupImage = "";
-                        <br />
-                        &nbsp;&nbsp;<b>parameter</b> <code className="typename">Boolean</code> connectorSizing ={" "}
-                        <b>false</b>;<br />
-                        <b>end</b> <code className="typename">Dialog</code>;
-                    </code>
-                </td>
-            </tr>
+            <tbody>
+                <tr>
+                    <th>Definition</th>
+                </tr>
+                <tr>
+                    <td>
+                        <code>
+                            <b>record</b> <code className="typename">Dialog</code>
+                            <br />
+                            &nbsp;&nbsp;<b>parameter</b> <code className="typename">String</code> &nbsp;tab = "General";
+                            <br />
+                            &nbsp;&nbsp;<b>parameter</b> <code className="typename">String</code> &nbsp;group =
+                            "Parameters";
+                            <br />
+                            &nbsp;&nbsp;<b>parameter</b> <code className="typename">Boolean</code> enable = <b>true</b>;
+                            <br />
+                            &nbsp;&nbsp;<b>parameter</b> <code className="typename">Boolean</code> showStartAttribute ={" "}
+                            <b>false</b>;<br />
+                            &nbsp;&nbsp;<b>parameter</b> <code className="typename">String</code> &nbsp;groupImage = "";
+                            <br />
+                            &nbsp;&nbsp;<b>parameter</b> <code className="typename">Boolean</code> connectorSizing ={" "}
+                            <b>false</b>;<br />
+                            <b>end</b> <code className="typename">Dialog</code>;
+                        </code>
+                    </td>
+                </tr>
+            </tbody>
         </table>
         <Note>
             <p>
@@ -189,28 +195,30 @@ export const documentation = (
 );
 export const dynamicSelect = (
     <table className="table">
-        <tr>
-            <th>Syntax</th>
-        </tr>
-        <tr>
-            <td>
-                <code>DynamicSelect(val1, val2)</code>
-            </td>
-        </tr>
-        <tr>
-            <th>Explanation</th>
-        </tr>
-        <tr>
-            <td>
-                <p>
-                    The <code>DynamicSelect</code> annotation can be used as a value in any graphical annotation. The
-                    first argument must be a literal expression (no variables) and the second argument can reference
-                    variables. Tools can then use the second expression in contexts (<i>e.g.,</i> when simulation
-                    results are available) to adjust the graphical representation according to the values of the
-                    variables.
-                </p>
-            </td>
-        </tr>
+        <tbody>
+            <tr>
+                <th>Syntax</th>
+            </tr>
+            <tr>
+                <td>
+                    <code>DynamicSelect(val1, val2)</code>
+                </td>
+            </tr>
+            <tr>
+                <th>Explanation</th>
+            </tr>
+            <tr>
+                <td>
+                    <p>
+                        The <code>DynamicSelect</code> annotation can be used as a value in any graphical annotation.
+                        The first argument must be a literal expression (no variables) and the second argument can
+                        reference variables. Tools can then use the second expression in contexts (<i>e.g.,</i> when
+                        simulation results are available) to adjust the graphical representation according to the values
+                        of the variables.
+                    </p>
+                </td>
+            </tr>
+        </tbody>
     </table>
 );
 export const evaluate = (

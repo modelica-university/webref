@@ -19,21 +19,23 @@ export interface SimpleCardProps {
 export const SimpleCard = (props: SimpleCardProps) => {
     return (
         <table className="table">
-            <tr>
-                <th>{props.title}</th>
-            </tr>
-            <tr>
-                <td>{props.children}</td>
-            </tr>
-            {props.note && (
+            <tbody>
                 <tr>
-                    <td className="note">
-                        <p style={{ maxWidth: "50vw" }}>
-                            <em>Note:</em> {props.note}
-                        </p>
-                    </td>
+                    <th>{props.title}</th>
                 </tr>
-            )}
+                <tr>
+                    <td>{props.children}</td>
+                </tr>
+                {props.note && (
+                    <tr>
+                        <td className="note">
+                            <p style={{ maxWidth: "50vw" }}>
+                                <em>Note:</em> {props.note}
+                            </p>
+                        </td>
+                    </tr>
+                )}
+            </tbody>
         </table>
     );
 };

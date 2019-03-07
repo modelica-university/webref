@@ -3,244 +3,264 @@ import { Topic, TopicProps, Note } from "../../components";
 
 const pre = (
     <table className="table">
-        <tr>
-            <th>Usage</th>
-            <th>Description</th>
-        </tr>
-        <tr>
-            <td>
-                <code>pre(y)</code>
-            </td>
-            <td>
-                At an event, the <code>pre</code> operator is used to refer to the value of a variable prior to that
-                event. There are several caveats related to the use of <code>pre</code>. These can be found in{" "}
-                <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=29" target="_blank">
-                    &sect;3.7.3
-                </a>
-                .
-            </td>
-        </tr>
+        <tbody>
+            <tr>
+                <th>Usage</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td>
+                    <code>pre(y)</code>
+                </td>
+                <td>
+                    At an event, the <code>pre</code> operator is used to refer to the value of a variable prior to that
+                    event. There are several caveats related to the use of <code>pre</code>. These can be found in{" "}
+                    <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=29" target="_blank">
+                        &sect;3.7.3
+                    </a>
+                    .
+                </td>
+            </tr>
+        </tbody>
     </table>
 );
 
 const noEvent = (
     <table className="table">
-        <tr>
-            <th>Usage</th>
-            <th>Description</th>
-        </tr>
-        <tr>
-            <td>
-                <code>noEvent(expr)</code>
-            </td>
-            <td>
-                The <code>noEvent</code> operator suppresses the generation of events by any event generating operators
-                or functions in the expression <code>expr</code>. Further information about the <code>noEvent</code>{" "}
-                operator can be found in{" "}
-                <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=29" target="_blank">
-                    &sect;3.7.3.2
-                </a>{" "}
-                and{" "}
-                <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=88" target="_blank">
-                    &sect;8.5
-                </a>
-                .
-            </td>
-        </tr>
+        <tbody>
+            <tr>
+                <th>Usage</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td>
+                    <code>noEvent(expr)</code>
+                </td>
+                <td>
+                    The <code>noEvent</code> operator suppresses the generation of events by any event generating
+                    operators or functions in the expression <code>expr</code>. Further information about the{" "}
+                    <code>noEvent</code> operator can be found in{" "}
+                    <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=29" target="_blank">
+                        &sect;3.7.3.2
+                    </a>{" "}
+                    and{" "}
+                    <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=88" target="_blank">
+                        &sect;8.5
+                    </a>
+                    .
+                </td>
+            </tr>
+        </tbody>
     </table>
 );
 
 const change = (
     <table className="table">
-        <tr>
-            <th>Usage</th>
-            <th>Description</th>
-        </tr>
-        <tr>
-            <td>
-                <code>change(v)</code>
-            </td>
-            <td>
-                The expression <code>change(v)</code>
-                becomes{" "}
-                <code>
-                    <b>true</b>
-                </code>{" "}
-                only for the instant that the value of the variable <code>v</code> changes (<i>i.e.,</i>{" "}
-                <code>{`v<>pre(v)`}</code>). See the <code>pre</code> operator and/or{" "}
-                <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=30" target="_blank">
-                    &sect;3.7.3.1
-                </a>{" "}
-                for more details and restrictions.
-            </td>
-        </tr>
+        <tbody>
+            <tr>
+                <th>Usage</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td>
+                    <code>change(v)</code>
+                </td>
+                <td>
+                    The expression <code>change(v)</code>
+                    becomes{" "}
+                    <code>
+                        <b>true</b>
+                    </code>{" "}
+                    only for the instant that the value of the variable <code>v</code> changes (<i>i.e.,</i>{" "}
+                    <code>{`v<>pre(v)`}</code>). See the <code>pre</code> operator and/or{" "}
+                    <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=30" target="_blank">
+                        &sect;3.7.3.1
+                    </a>{" "}
+                    for more details and restrictions.
+                </td>
+            </tr>
+        </tbody>
     </table>
 );
 
 const edge = (
     <table className="table">
-        <tr>
-            <th>Usage</th>
-            <th>Description</th>
-        </tr>
-        <tr>
-            <td>
-                <code>edge(b)</code>
-            </td>
-            <td>
-                The <code>edge</code> operator becomes{" "}
-                <code>
-                    <b>true</b>
-                </code>{" "}
-                only at the instant when the expression <code>b</code> goes from{" "}
-                <code>
-                    <b>false</b>
-                </code>
-                {" to "}
-                <code>
-                    <b>true</b>
-                </code>{" "}
-                (<i>i.e.,</i> <code>b and not pre(b)</code>). See the <code>pre</code> operator and/or{" "}
-                <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=30" target="_blank">
-                    &sect;3.7.3.1
-                </a>{" "}
-                for more details and restrictions.
-            </td>
-        </tr>
+        <tbody>
+            <tr>
+                <th>Usage</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td>
+                    <code>edge(b)</code>
+                </td>
+                <td>
+                    The <code>edge</code> operator becomes{" "}
+                    <code>
+                        <b>true</b>
+                    </code>{" "}
+                    only at the instant when the expression <code>b</code> goes from{" "}
+                    <code>
+                        <b>false</b>
+                    </code>
+                    {" to "}
+                    <code>
+                        <b>true</b>
+                    </code>{" "}
+                    (<i>i.e.,</i> <code>b and not pre(b)</code>). See the <code>pre</code> operator and/or{" "}
+                    <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=30" target="_blank">
+                        &sect;3.7.3.1
+                    </a>{" "}
+                    for more details and restrictions.
+                </td>
+            </tr>
+        </tbody>
     </table>
 );
 const initial = (
     <table className="table">
-        <tr>
-            <th>Usage</th>
-            <th>Description</th>
-        </tr>
-        <tr>
-            <td>
-                <code>initial()</code>
-            </td>
-            <td>
-                The <code>initial</code> operator is{" "}
-                <code>
-                    <b>true</b>
-                </code>{" "}
-                during the initialization phase of the simulation.
-            </td>
-        </tr>
+        <tbody>
+            <tr>
+                <th>Usage</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td>
+                    <code>initial()</code>
+                </td>
+                <td>
+                    The <code>initial</code> operator is{" "}
+                    <code>
+                        <b>true</b>
+                    </code>{" "}
+                    during the initialization phase of the simulation.
+                </td>
+            </tr>
+        </tbody>
     </table>
 );
 
 const terminal = (
     <table className="table">
-        <tr>
-            <th>Usage</th>
-            <th>Description</th>
-        </tr>
-        <tr>
-            <td>
-                <code>terminal()</code>
-            </td>
-            <td>
-                The <code>terminal</code> operator becomes{" "}
-                <code>
-                    <b>true</b>
-                </code>{" "}
-                at the end of a <b>successful</b> simulation.
-            </td>
-        </tr>
+        <tbody>
+            <tr>
+                <th>Usage</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td>
+                    <code>terminal()</code>
+                </td>
+                <td>
+                    The <code>terminal</code> operator becomes{" "}
+                    <code>
+                        <b>true</b>
+                    </code>{" "}
+                    at the end of a <b>successful</b> simulation.
+                </td>
+            </tr>
+        </tbody>
     </table>
 );
 
 const reinit = (
     <table className="table">
-        <tr>
-            <th>Usage</th>
-            <th>Description</th>
-        </tr>
-        <tr>
-            <td>
-                <code>reinit(x, expr)</code>
-            </td>
-            <td>
-                The <code>reinit</code> operator sets the value of the variable <code>x</code> to be equal to the of{" "}
-                <code>expr</code>. Note, <code>reinit</code> can only be used within a{" "}
-                <code>
-                    <b>when</b>
-                </code>{" "}
-                clause. For more details on the usage and restrictions of <code>reinit</code>, see{" "}
-                <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=86" target="_blank">
-                    &sect;8.3.6
-                </a>
-                .
-            </td>
-        </tr>
+        <tbody>
+            <tr>
+                <th>Usage</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td>
+                    <code>reinit(x, expr)</code>
+                </td>
+                <td>
+                    The <code>reinit</code> operator sets the value of the variable <code>x</code> to be equal to the of{" "}
+                    <code>expr</code>. Note, <code>reinit</code> can only be used within a{" "}
+                    <code>
+                        <b>when</b>
+                    </code>{" "}
+                    clause. For more details on the usage and restrictions of <code>reinit</code>, see{" "}
+                    <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=86" target="_blank">
+                        &sect;8.3.6
+                    </a>
+                    .
+                </td>
+            </tr>
+        </tbody>
     </table>
 );
 
 const sample = (
     <table className="table">
-        <tr>
-            <th>Usage</th>
-            <th>Description</th>
-        </tr>
-        <tr>
-            <td>
-                <code>sample(start, interval)</code>
-            </td>
-            <td>
-                The <code>sample</code> operator because true when <code>time>=start</code> and again every{" "}
-                <code>interval</code> seconds after that. Further details can be found in{" "}
-                <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=29" target="_blank">
-                    &sect;3.7.3
-                </a>
-                .
-            </td>
-        </tr>
+        <tbody>
+            <tr>
+                <th>Usage</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td>
+                    <code>sample(start, interval)</code>
+                </td>
+                <td>
+                    The <code>sample</code> operator because true when <code>time>=start</code> and again every{" "}
+                    <code>interval</code> seconds after that. Further details can be found in{" "}
+                    <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=29" target="_blank">
+                        &sect;3.7.3
+                    </a>
+                    .
+                </td>
+            </tr>
+        </tbody>
     </table>
 );
 
 const smooth = (
     <table className="table">
-        <tr>
-            <th>Usage</th>
-            <th>Description</th>
-        </tr>
-        <tr>
-            <td>
-                <code>smooth(p, expr)</code>
-            </td>
-            <td>
-                When evaluated, the <code>smooth</code> operator simply returns the value of the expression{" "}
-                <code>expr</code>. But it also acts as a guarantee that <code>expr</code> is <code>p</code> times
-                continuously differentiable. For further details, see{" "}
-                <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=30" target="_blank">
-                    &sect;3.7.3.2
-                </a>
-                .
-            </td>
-        </tr>
+        <tbody>
+            <tr>
+                <th>Usage</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td>
+                    <code>smooth(p, expr)</code>
+                </td>
+                <td>
+                    When evaluated, the <code>smooth</code> operator simply returns the value of the expression{" "}
+                    <code>expr</code>. But it also acts as a guarantee that <code>expr</code> is <code>p</code> times
+                    continuously differentiable. For further details, see{" "}
+                    <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=30" target="_blank">
+                        &sect;3.7.3.2
+                    </a>
+                    .
+                </td>
+            </tr>
+        </tbody>
     </table>
 );
 
 const terminate = (
     <table className="table">
-        <tr>
-            <th>Usage</th>
-            <th>Description</th>
-        </tr>
-        <tr>
-            <td>
-                <code>terminate()</code>
-            </td>
-            <td>
-                The <code>terminate</code> operator instructs the underlying simulation environment to terminate the
-                simulation after the completion of the next integration step or event iteration. See{" "}
-                <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=87" target="_blank">
-                    &sect;8.3.8
-                </a>{" "}
-                for more details.
-            </td>
-        </tr>
+        <tbody>
+            <tr>
+                <th>Usage</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td>
+                    <code>terminate()</code>
+                </td>
+                <td>
+                    The <code>terminate</code> operator instructs the underlying simulation environment to terminate the
+                    simulation after the completion of the next integration step or event iteration. See{" "}
+                    <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=87" target="_blank">
+                        &sect;8.3.8
+                    </a>{" "}
+                    for more details.
+                </td>
+            </tr>
+        </tbody>
     </table>
 );
 

@@ -23,272 +23,293 @@ const der = (
 
 const inStream = (
     <table className="table">
-        <tr>
-            <th>Usage</th>
-            <th>Description</th>
-        </tr>
+        <tbody>
+            <tr>
+                <th>Usage</th>
+                <th>Description</th>
+            </tr>
 
-        <tr>
-            <td>
-                <code>inStream(v)</code>
-            </td>
-            <td>
-                <code>v</code> must be a stream variable (<i>i.e.,</i> be preceded by the{" "}
-                <code>
-                    <b>stream</b>
-                </code>{" "}
-                qualifier on a connector). This operator provides the value of the stream variable close to the
-                connection point assuming inward flow. For more details, see{" "}
-                <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=176" target="_blank">
-                    &sect;15.2
-                </a>
-                .
-            </td>
-        </tr>
+            <tr>
+                <td>
+                    <code>inStream(v)</code>
+                </td>
+                <td>
+                    <code>v</code> must be a stream variable (<i>i.e.,</i> be preceded by the{" "}
+                    <code>
+                        <b>stream</b>
+                    </code>{" "}
+                    qualifier on a connector). This operator provides the value of the stream variable close to the
+                    connection point assuming inward flow. For more details, see{" "}
+                    <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=176" target="_blank">
+                        &sect;15.2
+                    </a>
+                    .
+                </td>
+            </tr>
+        </tbody>
     </table>
 );
 
 const actualStream = (
     <table className="table">
-        <tr>
-            <th>Usage</th>
-            <th>Description</th>
-        </tr>
+        <tbody>
+            <tr>
+                <th>Usage</th>
+                <th>Description</th>
+            </tr>
 
-        <tr>
-            <td>
-                <code>actualStream(v)</code>
-            </td>
-            <td>
-                Returns the actual value of the stream variable <code>v</code> for any flow direction. For more details,
-                see{" "}
-                <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=179" target="_blank">
-                    &sect;15.3
-                </a>
-                .
-            </td>
-        </tr>
+            <tr>
+                <td>
+                    <code>actualStream(v)</code>
+                </td>
+                <td>
+                    Returns the actual value of the stream variable <code>v</code> for any flow direction. For more
+                    details, see{" "}
+                    <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=179" target="_blank">
+                        &sect;15.3
+                    </a>
+                    .
+                </td>
+            </tr>
+        </tbody>
     </table>
 );
 
 export const semiLinear = (
     <table className="table">
-        <tr>
-            <th>Usage</th>
-            <th>Description</th>
-        </tr>
+        <tbody>
+            <tr>
+                <th>Usage</th>
+                <th>Description</th>
+            </tr>
 
-        <tr>
-            <td>
-                <code>semiLinear(x, pSlope, nSlope)</code>
-            </td>
-            <td>
-                Equivalent to:
-                <br />
-                <br />
-                <code className="nobreak">
-                    <b>if</b> x&gt;=0 <b>then</b> pSlope*x <b>else</b> nSlope*x;
-                </code>
-                <br />
-                <br />
-                See{" "}
-                <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=23" target="_blank">
-                    &sect;3.7.2
-                </a>{" "}
-                for more details.
-            </td>
-        </tr>
+            <tr>
+                <td>
+                    <code>semiLinear(x, pSlope, nSlope)</code>
+                </td>
+                <td>
+                    Equivalent to:
+                    <br />
+                    <br />
+                    <code className="nobreak">
+                        <b>if</b> x&gt;=0 <b>then</b> pSlope*x <b>else</b> nSlope*x;
+                    </code>
+                    <br />
+                    <br />
+                    See{" "}
+                    <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=23" target="_blank">
+                        &sect;3.7.2
+                    </a>{" "}
+                    for more details.
+                </td>
+            </tr>
+        </tbody>
     </table>
 );
 
 export const spatialDistribution = (
     <table className="table">
-        <tr>
-            <th>Usage</th>
-            <th>Description</th>
-        </tr>
+        <tbody>
+            <tr>
+                <th>Usage</th>
+                <th>Description</th>
+            </tr>
 
-        <tr>
-            <td>
-                <code>spatialDistribution(...)</code>
-            </td>
-            <td>
-                See{" "}
-                <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=23" target="_blank">
-                    &sect;3.7.2.2
-                </a>
-            </td>
-        </tr>
+            <tr>
+                <td>
+                    <code>spatialDistribution(...)</code>
+                </td>
+                <td>
+                    See{" "}
+                    <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=23" target="_blank">
+                        &sect;3.7.2.2
+                    </a>
+                </td>
+            </tr>
+        </tbody>
     </table>
 );
 
 export const getInstanceName = (
     <table className="table">
-        <tr>
-            <th>Usage</th>
-            <th>Description</th>
-        </tr>
+        <tbody>
+            <tr>
+                <th>Usage</th>
+                <th>Description</th>
+            </tr>
 
-        <tr>
-            <td>
-                <code>getInstanceName()</code>
-            </td>
-            <td>
-                Returns a string with model/block and instance names from which it is called. See{" "}
-                <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=28" target="_blank">
-                    &sect;3.7.2.6
-                </a>
-                for further details.
-            </td>
-        </tr>
+            <tr>
+                <td>
+                    <code>getInstanceName()</code>
+                </td>
+                <td>
+                    Returns a string with model/block and instance names from which it is called. See{" "}
+                    <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=28" target="_blank">
+                        &sect;3.7.2.6
+                    </a>
+                    for further details.
+                </td>
+            </tr>
+        </tbody>
     </table>
 );
 
 export const homotopy = (
     <table className="table">
-        <tr>
-            <th>Usage</th>
-            <th>Description</th>
-        </tr>
+        <tbody>
+            <tr>
+                <th>Usage</th>
+                <th>Description</th>
+            </tr>
 
-        <tr>
-            <td>
-                <code>homotopy(actual=...,simplified=...)</code>
-            </td>
-            <td>
-                The <code>homotopy</code> operator can be used to ease the solving of non-linear systems. Further
-                discussion of its use can be found in{" "}
-                <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=22" target="_blank">
-                    &sect;3.7.2
-                </a>
-                .
-            </td>
-        </tr>
+            <tr>
+                <td>
+                    <code>homotopy(actual=...,simplified=...)</code>
+                </td>
+                <td>
+                    The <code>homotopy</code> operator can be used to ease the solving of non-linear systems. Further
+                    discussion of its use can be found in{" "}
+                    <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=22" target="_blank">
+                        &sect;3.7.2
+                    </a>
+                    .
+                </td>
+            </tr>
+        </tbody>
     </table>
 );
 
 export const delay = (
     <table className="table">
-        <tr>
-            <th>Usage</th>
-            <th>Description</th>
-        </tr>
-        <tr>
-            <td>
-                <code>delay(expr, delayTime)</code>
-                <br />
-                <code className="nobreak">delay(expr, delayTime, delayMax)&nbsp;</code>
-            </td>
-            <td>
-                Give the value of <code>expr</code> delayed by (the potentially variable) <code>delayTime</code>. See{" "}
-                <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=22" target="_blank">
-                    &sect;3.7.2
-                </a>{" "}
-                and{" "}
-                <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=23" target="_blank">
-                    &sect;3.7.2.1
-                </a>{" "}
-                for more details.
-            </td>
-        </tr>
+        <tbody>
+            <tr>
+                <th>Usage</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td>
+                    <code>delay(expr, delayTime)</code>
+                    <br />
+                    <code className="nobreak">delay(expr, delayTime, delayMax)&nbsp;</code>
+                </td>
+                <td>
+                    Give the value of <code>expr</code> delayed by (the potentially variable) <code>delayTime</code>.
+                    See{" "}
+                    <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=22" target="_blank">
+                        &sect;3.7.2
+                    </a>{" "}
+                    and{" "}
+                    <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=23" target="_blank">
+                        &sect;3.7.2.1
+                    </a>{" "}
+                    for more details.
+                </td>
+            </tr>
+        </tbody>
     </table>
 );
 
 export const assert = (
     <table className="table">
-        <tr>
-            <th>Usage</th>
-            <th>Description</th>
-        </tr>
+        <tbody>
+            <tr>
+                <th>Usage</th>
+                <th>Description</th>
+            </tr>
 
-        <tr>
-            <td>
-                <span className="nobreak">
-                    <code>assert(cond, message, level=</code>
-                    <code className="typename">AssertionLevel</code>.error)
-                </span>
-            </td>
-            <td>
-                Assertions are used to enforce limitations in a model through the conditional expression,{" "}
-                <code>cond</code>. Normally, the <code>level</code> argument defaults to{" "}
-                <code>
-                    <code className="typename">AssertionLevel</code>.error
-                </code>
-                . However, if a{" "}
-                <code>
-                    <b>false</b>
-                </code>{" "}
-                value for <code>cond</code> need not be considered an error, the <code>level</code> argument can be set
-                to{" "}
-                <code>
-                    <code className="typename">AssertionLevel</code>.warning
-                </code>
-                .
-                <br />
-                <br />
-                See{" "}
-                <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=87" target="_blank">
-                    &sect;8.3.7
-                </a>{" "}
-                for more details about <code>assert</code>.
-            </td>
-        </tr>
+            <tr>
+                <td>
+                    <span className="nobreak">
+                        <code>assert(cond, message, level=</code>
+                        <code className="typename">AssertionLevel</code>.error)
+                    </span>
+                </td>
+                <td>
+                    Assertions are used to enforce limitations in a model through the conditional expression,{" "}
+                    <code>cond</code>. Normally, the <code>level</code> argument defaults to{" "}
+                    <code>
+                        <code className="typename">AssertionLevel</code>.error
+                    </code>
+                    . However, if a{" "}
+                    <code>
+                        <b>false</b>
+                    </code>{" "}
+                    value for <code>cond</code> need not be considered an error, the <code>level</code> argument can be
+                    set to{" "}
+                    <code>
+                        <code className="typename">AssertionLevel</code>.warning
+                    </code>
+                    .
+                    <br />
+                    <br />
+                    See{" "}
+                    <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=87" target="_blank">
+                        &sect;8.3.7
+                    </a>{" "}
+                    for more details about <code>assert</code>.
+                </td>
+            </tr>
+        </tbody>
     </table>
 );
 
 export const ndims = (
     <table className="table">
-        <tr>
-            <th>Usage</th>
-            <th>Description</th>
-        </tr>
+        <tbody>
+            <tr>
+                <th>Usage</th>
+                <th>Description</th>
+            </tr>
 
-        <tr>
-            <td>
-                <span className="nobreak">
-                    <code>ndims(A)</code>
-                </span>
-            </td>
-            <td>
-                Returns the number of dimensions of <code>A</code>. See{" "}
-                <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=112" target="_blank">
-                    &sect;10.3.1
-                </a>{" "}
-                for more details.
-            </td>
-        </tr>
+            <tr>
+                <td>
+                    <span className="nobreak">
+                        <code>ndims(A)</code>
+                    </span>
+                </td>
+                <td>
+                    Returns the number of dimensions of <code>A</code>. See{" "}
+                    <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=112" target="_blank">
+                        &sect;10.3.1
+                    </a>{" "}
+                    for more details.
+                </td>
+            </tr>
+        </tbody>
     </table>
 );
 
 export const size = (
     <table className="table">
-        <tr>
-            <th>Usage</th>
-            <th>Description</th>
-        </tr>
+        <tbody>
+            <tr>
+                <th>Usage</th>
+                <th>Description</th>
+            </tr>
 
-        <tr>
-            <td>
-                <span className="nobreak">
-                    <code>size(A,i)</code>
-                </span>
-            </td>
-            <td>
-                Returns the size of dimension <code>i</code> in <code>A</code> where 0 &lt; <code>i</code> &lt;={" "}
-                <code>ndims(A)</code>.
-            </td>
-        </tr>
+            <tr>
+                <td>
+                    <span className="nobreak">
+                        <code>size(A,i)</code>
+                    </span>
+                </td>
+                <td>
+                    Returns the size of dimension <code>i</code> in <code>A</code> where 0 &lt; <code>i</code> &lt;={" "}
+                    <code>ndims(A)</code>.
+                </td>
+            </tr>
 
-        <tr>
-            <td>
-                <span className="nobreak">
-                    <code>size(A)</code>
-                </span>
-            </td>
-            <td>
-                Returns a vector containing the size of each dimension of <code>A</code>.
-            </td>
-        </tr>
+            <tr>
+                <td>
+                    <span className="nobreak">
+                        <code>size(A)</code>
+                    </span>
+                </td>
+                <td>
+                    Returns a vector containing the size of each dimension of <code>A</code>.
+                </td>
+            </tr>
+        </tbody>
     </table>
 );
 
