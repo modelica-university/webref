@@ -1,5 +1,6 @@
 import React from "react";
 import { Topic, TopicProps, SimpleCard, Reference, Note } from "../../components";
+import { Position } from "@blueprintjs/core";
 
 const constantDescription = (
     <SimpleCard title="Constant Variability">
@@ -42,6 +43,7 @@ const discreteDescription = (
 
 const data: TopicProps = {
     title: "Variability",
+    position: Position.RIGHT,
     warning: (
         <Note>
             <p>

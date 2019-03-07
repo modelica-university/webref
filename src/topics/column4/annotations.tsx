@@ -1,5 +1,6 @@
 import React from "react";
 import { Topic, TopicProps, Note, SimpleCard } from "../../components";
+import { Position } from "@blueprintjs/core";
 
 export const choices = (
     <table className="table">
@@ -469,6 +470,7 @@ export const version = (
 
 const data: TopicProps = {
     title: "Statements",
+    position: Position.LEFT,
     items: [
         {
             title: <code>choices</code>,

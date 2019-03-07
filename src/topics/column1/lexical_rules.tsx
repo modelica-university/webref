@@ -2,27 +2,35 @@ import React from "react";
 import { Topic, TopicProps } from "../../components/topic";
 import { Reference } from "../../components/references";
 import { Code } from "../../components/helpers";
+import { Position } from "@blueprintjs/core";
 
 const commentDescription = (
-        <table className="table">
-            <tr>
-                <th>Single line comments</th>
-            </tr>
-            <tr>
-                <td>
-                    <Code src="// until EOL" />
-                </td>
-            </tr>
-            <tr>
-                <th>Multi-Line Comment</th>
-            </tr>
-            <tr>
-                <td>
-                    <Code
-                        src={<span>/* Can span multiple<br/>multiple lines */</span>}                    />
-                </td>
-            </tr>
-        </table>
+    <table className="table">
+        <tr>
+            <th>Single line comments</th>
+        </tr>
+        <tr>
+            <td>
+                <Code src="// until EOL" />
+            </td>
+        </tr>
+        <tr>
+            <th>Multi-Line Comment</th>
+        </tr>
+        <tr>
+            <td>
+                <Code
+                    src={
+                        <span>
+                            /* Can span multiple
+                            <br />
+                            multiple lines */
+                        </span>
+                    }
+                />
+            </td>
+        </tr>
+    </table>
 );
 
 const identifiersDescription = (
@@ -115,7 +123,8 @@ const numberDescription = (
         <tr>
             <td>
                 Examples of expressions which are not allowed in Modelica because of interactions between binary
-                operators and unary operators (<Reference id="unary"/>):
+                operators and unary operators (<Reference id="unary" />
+                ):
                 <br />
                 <Code src="2*-2, --2, ++2, 2--2" />
             </td>
@@ -125,7 +134,12 @@ const numberDescription = (
 
 const data: TopicProps = {
     title: "Lexical Rules",
-    comment: <div style={{padding: 5}}><Reference id="lexical"/></div>,
+    position: Position.RIGHT,
+    comment: (
+        <div style={{ padding: 5 }}>
+            <Reference id="lexical" />
+        </div>
+    ),
     items: [
         { title: "Comments", example: commentDescription },
         { title: "Identifiers", example: identifiersDescription },

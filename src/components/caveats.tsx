@@ -1,5 +1,6 @@
 import { Popover, Card } from "@blueprintjs/core";
 import { warningIcon, commentIcon, exampleIcon } from "./icons";
+import { Position } from "@blueprintjs/core";
 
 export interface Caveats {
     warning?: JSX.Element;
@@ -9,6 +10,7 @@ export interface Caveats {
 
 export interface IconSetProps {
     caveats: Caveats;
+    position?: Position;
 }
 
 const ContentWrapper = (props: { children: JSX.Element }) => {
@@ -16,21 +18,34 @@ const ContentWrapper = (props: { children: JSX.Element }) => {
 };
 
 export const IconSet = (props: IconSetProps) => {
+    const pos: Position | undefined = props.position;
     return (
         <div style={{ display: "flex", float: "right", cursor: "pointer" }}>
             {props.caveats.warning && (
                 <div>
-                    <Popover content={<ContentWrapper>{props.caveats.warning}</ContentWrapper>} target={warningIcon} />
+                    <Popover
+                        position={pos}
+                        content={<ContentWrapper>{props.caveats.warning}</ContentWrapper>}
+                        target={warningIcon}
+                    />
                 </div>
             )}
             {props.caveats.comment && (
                 <div>
-                    <Popover content={<ContentWrapper>{props.caveats.comment}</ContentWrapper>} target={commentIcon} />
+                    <Popover
+                        position={pos}
+                        content={<ContentWrapper>{props.caveats.comment}</ContentWrapper>}
+                        target={commentIcon}
+                    />
                 </div>
             )}
             {props.caveats.example && (
                 <div>
-                    <Popover content={<ContentWrapper>{props.caveats.example}</ContentWrapper>} target={exampleIcon} />
+                    <Popover
+                        position={pos}
+                        content={<ContentWrapper>{props.caveats.example}</ContentWrapper>}
+                        target={exampleIcon}
+                    />
                 </div>
             )}
         </div>

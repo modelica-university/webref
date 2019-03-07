@@ -28,7 +28,7 @@ export const SimpleCard = (props: SimpleCardProps) => {
             {props.note && (
                 <tr>
                     <td className="note">
-                        <p>
+                        <p style={{ maxWidth: "50vw" }}>
                             <em>Note:</em> {props.note}
                         </p>
                     </td>

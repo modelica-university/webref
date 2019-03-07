@@ -1,5 +1,6 @@
 import React from "react";
 import { Topic, TopicProps, Note } from "../../components";
+import { Position } from "@blueprintjs/core";
 
 const vliterals = (
     <Note>
@@ -46,6 +47,7 @@ const acomps = (
 
 const data: TopicProps = {
     title: "Complex Expressions",
+    position: Position.LEFT,
     items: [
         {
             title: "Vector Literals",

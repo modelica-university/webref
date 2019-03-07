@@ -2,6 +2,7 @@ import React from "react";
 import { Topic, TopicProps } from "../../components/topic";
 import { Code, SimpleCard } from "../../components/helpers";
 import { Reference } from "../../components/references";
+import { Position } from "@blueprintjs/core";
 
 const modelDescription = (
     <SimpleCard title="Canonical Model">
@@ -208,6 +209,7 @@ const functionDescription = (
 
 const data: TopicProps = {
     title: "Specialized Classes",
+    position: Position.RIGHT,
     comment: (   
         <div style={{padding: 5}}>
             More information on the various kinds of classes can be found

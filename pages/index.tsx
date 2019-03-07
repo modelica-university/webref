@@ -104,6 +104,33 @@ export class Main extends React.Component<{}, MainState> {
         return (
             <searchContext.Provider value={{ search: this.state.search, setTerm: this.setSearch }}>
                 <div id="columns" style={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}>
+                    <div style={{ display: "flex" }}>
+                        <div style={{ display: "flex", margin: 5 }}>
+                            <span style={legendStyle}>
+                                <b>Legend:</b>
+                            </span>
+                            {commentIcon} <span style={legendStyle}>Comment</span> {warningIcon}{" "}
+                            <span style={legendStyle}>Warning</span> {exampleIcon}
+                            <span style={legendStyle}>Example</span>
+                        </div>
+                        <div
+                            style={{ flexGrow: 1, textAlign: "center", fontSize: "125%", margin: 5, marginTop: "auto" }}
+                        >
+                            <span>
+                                <b>Modelica Web Reference (v2)</b>
+                            </span>
+                        </div>
+                        <div style={{ margin: 5, marginTop: "auto" }}>
+                            <b>Copyright 2019 - Michael Tiller</b>
+                            <a
+                                style={{ fontSize: "150%", marginLeft: 10 }}
+                                href="https://github.com/modelica-university/webref/issues"
+                            >
+                                <span>🐞</span>
+                            </a>
+                        </div>
+                    </div>
+
                     <div style={{ display: "flex", flexWrap: "wrap" }}>
                         <div style={{ display: "flex", flexGrow: 1 }}>
                             <RenderColumn column={ordering[0]} />
@@ -112,30 +139,6 @@ export class Main extends React.Component<{}, MainState> {
                         <div style={{ display: "flex", flexGrow: 1 }}>
                             <RenderColumn column={ordering[2]} />
                             <RenderColumn column={ordering[3]} />
-                        </div>
-                    </div>
-                    <div style={{ display: "flex", marginTop: "auto" }}>
-                        <div style={{ display: "flex", margin: 5, marginTop: "auto" }}>
-                            <span style={legendStyle}>
-                                <b>Legend:</b>
-                            </span>
-                            {commentIcon} <span style={legendStyle}>Comment</span> {warningIcon}{" "}
-                            <span style={legendStyle}>Warning</span> {exampleIcon}
-                            <span style={legendStyle}>Example</span>
-                        </div>
-                        <div style={{ flexGrow: 1, textAlign: "center", fontSize: "125%", margin: 5, marginTop: "auto" }}>
-                            <span>
-                                <b>Modelica Web Reference (v2)</b>
-                            </span>
-                        </div>
-                        <div style={{ margin: 5, marginTop: "auto" }}>
-                            <a
-                                style={{ fontSize: "150%", marginRight: 10 }}
-                                href="https://github.com/modelica-university/webref/issues"
-                            >
-                                🐞
-                            </a>
-                            <b>Copyright 2019 - Michael Tiller</b>
                         </div>
                     </div>
                 </div>

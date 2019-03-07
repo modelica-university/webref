@@ -1,5 +1,6 @@
 import React from "react";
 import { Topic, TopicProps, Reference, SimpleCard, Note } from "../../components";
+import { Position } from "@blueprintjs/core";
 
 const inputDescription = (
     <SimpleCard title="Input Variables">
@@ -87,6 +88,7 @@ const streamDescription = (
 
 const data: TopicProps = {
     title: "Connector Qualifiers",
+    position: Position.RIGHT,
     warning: (
         <Note>
             <p>

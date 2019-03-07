@@ -1,5 +1,6 @@
 import React from "react";
 import { Topic, TopicProps, Note } from "../../components";
+import { Position } from "@blueprintjs/core";
 
 const orecord = (
     <table className="table">
@@ -183,6 +184,7 @@ const operator = (
 
 const data: TopicProps = {
     title: "Operator Overloading",
+    position: Position.LEFT,
     warning: (<Note><p>
 	Operator overloading is a complex topic and is covered in
 	detail in <a href="https://www.modelica.org/documents/ModelicaSpec33.pdf#page=167" target="_blank">&sect;14</a>

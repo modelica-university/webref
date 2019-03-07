@@ -1,5 +1,6 @@
 import React from "react";
 import { Topic, TopicProps, SimpleCard, Reference, TwoColumn, Note } from "../../components";
+import { Position } from "@blueprintjs/core";
 
 const extendsDescription = (
     <SimpleCard title="Inheritance">
@@ -305,6 +306,7 @@ const data: TopicProps = {
             </span>
         </Note>
     ),
+    position: Position.RIGHT,
     items: [
         {
             title: (

@@ -1,4 +1,4 @@
-import { Elevation, Card } from "@blueprintjs/core";
+import { Elevation, Card, Position } from "@blueprintjs/core";
 import React from "react";
 import ReactDOMServer from "react-dom/server";
 import { searchContext } from "../components/context";
@@ -6,11 +6,13 @@ import { IconSet, Caveats } from "./caveats";
 
 export interface TopicProps extends Caveats {
     title: string | JSX.Element;
+    position?: Position;
     items?: TopicItemCoreProps[];
 }
 
 export interface TopicItemCoreProps extends Caveats {
     title: string | JSX.Element;
+    position?: Position;
 }
 
 export interface TopicItemProps extends TopicItemCoreProps {
@@ -52,7 +54,7 @@ export class TopicItem extends React.Component<TopicItemProps> {
                             ].join(" ")}
                         >
                             {this.props.title}
-                            <IconSet caveats={this.props} />
+                            <IconSet position={this.props.position} caveats={this.props} />
                         </div>
                     )
                 }
@@ -68,12 +70,18 @@ export class Topic extends React.Component<TopicProps> {
             <Card interactive={false} elevation={Elevation.TWO} style={{ padding: 0, marginBottom: 4 }}>
                 <div className="cardHeader">
                     <b>{this.props.title}</b>
-                    <IconSet caveats={this.props} />
+                    <IconSet caveats={this.props} position={this.props.position} />
                 </div>
                 <div className="topicList" style={{ display: "flex", flexDirection: "column", padding: 4 }}>
                     {this.props.items &&
                         this.props.items.map((item, i) => (
-                            <Topic.Item {...item} key={i} num={i} of={this.props.items.length} />
+                            <Topic.Item
+                                position={this.props.position}
+                                {...item}
+                                key={i}
+                                num={i}
+                                of={this.props.items.length}
+                            />
                         ))}
                     {this.props.children}
                 </div>

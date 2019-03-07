@@ -1,5 +1,6 @@
 import React from "react";
 import { Topic, TopicProps } from "../../components/topic";
+import { Position } from "@blueprintjs/core";
 
 const if_elem = (
     <table className="table">
@@ -243,6 +244,7 @@ const for_elem = (
 
 const data: TopicProps = {
     title: "Statements",
+    position: Position.LEFT,
     items: [
         {
             title: <code>if</code>,
