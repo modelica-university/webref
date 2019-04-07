@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import { searchContext } from "../src/components/context";
 import { warningIcon, exampleIcon, commentIcon } from "../src/components/icons";
@@ -25,7 +25,7 @@ import {
     operatorOperator,
     standardAnnotations,
 } from "../src/topics";
-import { Position, Popover } from "@blueprintjs/core";
+import { Position, Popover, Icon, Overlay, Button, Card } from "@blueprintjs/core";
 
 interface Column {
     grow: number;
@@ -97,9 +97,13 @@ const RenderColumn = (props: { column: Column }) => (
 export class Main extends React.Component<{}, MainState> {
     state = {
         search: "",
+        isOpen: false,
     };
     setSearch = (term: string) => {
         this.setState({ search: term });
+    };
+    setOpen = (open: boolean) => {
+        this.setState({ isOpen: open });
     };
     render() {
         return (
@@ -128,21 +132,22 @@ export class Main extends React.Component<{}, MainState> {
                                 href="https://github.com/modelica-university/webref/issues"
                             >
                                 <span>🐞</span>
-                                <Popover
-                                    position={Position.BOTTOM_LEFT}
-                                    content={
-                                        <div>
-                                            <p>
-                                                This cheatsheet is implemented in <a href="react.js.org">React</a> and
-                                                leverages <a href="nextjs.org">Next.js</a> to take are of server side
-                                                rendering. The code itself is all written in{" "}
-                                                <a href="http://typescript-lang.org">TypeScript</a>
-                                            </p>
-                                        </div>
-                                    }
-                                    target={<span>❔</span>}
-                                />
                             </a>
+                            <a
+                                style={{ fontSize: "95%", marginLeft: 10 }}
+                                onClick={() => this.setOpen(!this.state.isOpen)}
+                            >
+                                <Icon icon="info-sign" />
+                            </a>
+                            <Overlay usePortal={false} isOpen={this.state.isOpen} onClose={() => this.setOpen(false)}>
+                                <Card>
+                                    <p>
+                                        This cheatsheet is implemented in <a href="react.js.org">React</a> and leverages{" "}
+                                        <a href="nextjs.org">Next.js</a> to take are of server side rendering. The code
+                                        itself is all written in <a href="http://typescript-lang.org">TypeScript</a>
+                                    </p>
+                                </Card>
+                            </Overlay>
                         </div>
                     </div>
 
