@@ -93,8 +93,8 @@ const data: TopicProps = {
         <Note>
             <p>
                 If a variable in a connector lacks any qualifier, the default connection behavior is to{" "}
-                <b>generate an equality equation</b>
-                with its counterpart on all other connectors in the connection set (<Reference id="connectors" />)
+                <b>generate an equality equation</b> with its counterpart on all other connectors in the connection set
+                (<Reference id="connectors" />)
             </p>
         </Note>
     ),
