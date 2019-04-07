@@ -25,6 +25,7 @@ import {
     operatorOperator,
     standardAnnotations,
 } from "../src/topics";
+import { Position, Popover } from "@blueprintjs/core";
 
 interface Column {
     grow: number;
@@ -117,7 +118,7 @@ export class Main extends React.Component<{}, MainState> {
                             style={{ flexGrow: 1, textAlign: "center", fontSize: "125%", margin: 5, marginTop: "auto" }}
                         >
                             <span>
-                                <b>Modelica Web Reference (v2)</b>
+                                <b>Modelica Web Reference</b>
                             </span>
                         </div>
                         <div style={{ margin: 5, marginTop: "auto" }}>
@@ -127,6 +128,20 @@ export class Main extends React.Component<{}, MainState> {
                                 href="https://github.com/modelica-university/webref/issues"
                             >
                                 <span>🐞</span>
+                                <Popover
+                                    position={Position.BOTTOM_LEFT}
+                                    content={
+                                        <div>
+                                            <p>
+                                                This cheatsheet is implemented in <a href="react.js.org">React</a> and
+                                                leverages <a href="nextjs.org">Next.js</a> to take are of server side
+                                                rendering. The code itself is all written in{" "}
+                                                <a href="http://typescript-lang.org">TypeScript</a>
+                                            </p>
+                                        </div>
+                                    }
+                                    target={<span>❔</span>}
+                                />
                             </a>
                         </div>
                     </div>
