@@ -477,7 +477,7 @@ export const version = (
 );
 
 const data: TopicProps = {
-    title: "Statements",
+    title: "Annotations",
     position: Position.LEFT,
     items: [
         {
