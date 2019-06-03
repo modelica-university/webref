@@ -12,6 +12,18 @@ export default class MyDocument extends Document<{}> {
                         href="https://unpkg.com/@blueprintjs/icons@^3.0.0/lib/css/blueprint-icons.css"
                         rel="stylesheet"
                     />
+
+                    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-33034217-3" />
+                    <script
+                        dangerouslySetInnerHTML={{
+                            __html: `
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-33034217-3');`,
+                        }}
+                    />
                 </Head>
                 <body className="custom_class">
                     <Main />

@@ -62,6 +62,7 @@ const ordering: Column[] = [
 
 export interface MainState {
     search: string;
+    isOpen: boolean;
 }
 
 const headerStyle: React.CSSProperties = {
