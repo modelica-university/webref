@@ -138,8 +138,7 @@ const constrainedbyDescription = (
         leftColumn={[<span>Replaceable component</span>, <span>Replaceable class</span>]}
         rightColumn={[
             <code className="pull-right nobreak">
-                <b>replaceable</b> <span className="typename">D</span> comp
-                <b>constrainedby</b> <span className="typename">C</span>;
+                <b>replaceable</b> <span className="typename">D</span> comp <b>constrainedby</b> <span className="typename">C</span>;
             </code>,
             <code className="pull-right nobreak">
                 <b>replaceable</b> <b>model</b> <span className="typename">M</span>
